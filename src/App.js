@@ -1,5 +1,5 @@
 import React from 'react';
-// import Navbar from './components/Navbar';
+import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import AboutMe from './components/AboutMe';
 import Works from './components/Works';
@@ -8,7 +8,7 @@ import './App.css';
 
 const App = () => (
   <div className="container">
-    {/* <Navbar /> */}
+    <Navbar />
     <Hero />
     <AboutMe />
     <Works />
