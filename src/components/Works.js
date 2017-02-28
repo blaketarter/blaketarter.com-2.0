@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import WorkItem from './WorkItem';
-import {  margin } from '../globals/sizes';
+import { margin, maxWidth } from '../globals/sizes';
 import { primary, secondary, black } from '../globals/colors';
 import { sectionTitle } from '../globals/fonts';
 
@@ -13,6 +13,26 @@ const worksData = [
   },
   {
     title: 'foo 2',
+    desc: 'lorem ipsum dolor set amut, foo bar baz fizz buzz.',
+    url: 'example.com',
+  },
+  {
+    title: 'foo 3',
+    desc: 'lorem ipsum dolor set amut, foo bar baz fizz buzz.',
+    url: 'example.com',
+  },
+  {
+    title: 'foo 4',
+    desc: 'lorem ipsum dolor set amut, foo bar baz fizz buzz.',
+    url: 'example.com',
+  },
+  {
+    title: 'foo 5',
+    desc: 'lorem ipsum dolor set amut, foo bar baz fizz buzz.',
+    url: 'example.com',
+  },
+  {
+    title: 'foo 6',
     desc: 'lorem ipsum dolor set amut, foo bar baz fizz buzz.',
     url: 'example.com',
   },
@@ -55,6 +75,11 @@ const Polygon2 = styled.div`
   transform-origin: bottom left;
 `;
 
+const InnerWrapper = styled.div`
+  margin: 0 auto;
+  max-width: ${ maxWidth }px;
+`;
+
 const WorkItemsWrapper = styled.ul`
   display: flex;
   flex-direction: row;
@@ -69,10 +94,12 @@ const Works = () => (
     <Polygon1 />
     <Polygon2 />
     <Clip>
-      <Title>My Work.</Title>
-      <WorkItemsWrapper>
-        {worksList}
-      </WorkItemsWrapper>
+      <InnerWrapper>
+        <Title>My Work.</Title>
+        <WorkItemsWrapper>
+          {worksList}
+        </WorkItemsWrapper>
+      </InnerWrapper>
     </Clip>
   </WorksWrapper>
 );

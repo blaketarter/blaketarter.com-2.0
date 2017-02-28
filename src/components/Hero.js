@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { heroHeight, margin } from '../globals/sizes';
+import { heroHeight, margin, maxWidth } from '../globals/sizes';
 import { primary, white } from '../globals/colors';
 import { heroTitle, sectionTitle } from '../globals/fonts';
 
@@ -36,9 +36,11 @@ const ClipWrapper = styled.div`
 `;
 
 const Center = styled.div`
-  margin: 0 ${margin}px;
+  margin: 0 auto;
   position: relative;
   width: 100%;
+  padding: 0 ${ margin }px;
+  max-width: ${ maxWidth }px;
 `;
 
 const Title = styled.h1`
@@ -66,7 +68,7 @@ const Hero = () => (
     <Polygon />
     <ClipWrapper>
       <Center>
-        <Title>Hi, I'm Blake Tarter</Title>
+        <Title>Hi, I'm Blake Tarter.</Title>
         <Subtitle>A Kansas City based web developer</Subtitle>
       </Center>
     </ClipWrapper>

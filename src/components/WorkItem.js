@@ -9,8 +9,8 @@ const WorkItemWrapper = styled.li`
   background: ${ white };
   list-style: none;
   margin-bottom: ${ margin }px;
-  width: 47.5%;
-  padding-bottom: 47.5%;
+  width: 30%;
+  padding-bottom: 30%;
 `;
 
 const Link = styled.a`

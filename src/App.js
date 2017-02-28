@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import AboutMe from './components/AboutMe';
 import Works from './components/Works';
+import FindMe from './components/FindMe';
 import Footer from './components/Footer';
 import { fontFamily } from './globals/fonts';
 import './vendor/normalize.css';
@@ -21,6 +22,7 @@ const App = () => (
     <Hero />
     <AboutMe />
     <Works />
+    <FindMe />
     <Footer />
   </Container>
 );
