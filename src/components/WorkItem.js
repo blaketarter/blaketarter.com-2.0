@@ -11,6 +11,8 @@ const WorkItemWrapper = styled.li`
   margin-bottom: ${ margin }px;
   width: 30%;
   padding-bottom: 30%;
+  transform: ${ props => props.hovered ? 'scale(1.1)' : 'scale(1)' };
+  transition: .2s ease;
 `;
 
 const Link = styled.a`
@@ -27,6 +29,9 @@ const Title = styled.h3`
   margin-left: ${ margin }px;
 `;
 
+const notHoveredClip = 'polygon(100% 0, 100% 0, 100% 100%, 0 100%, 0 20%)';
+const hoveredClip = 'polygon(100% 0, 100% 0, 100% 100%, 0 100%, 0 10%)';
+
 const Clip = styled.div`
   position: absolute;
   bottom: 0;
@@ -34,7 +39,8 @@ const Clip = styled.div`
   width: 100%;
   background: ${ primary };
   font-size: ${ bodyCopy }px;
-  clip-path: polygon(100% 0, 100% 0, 100% 100%, 0 100%, 0 20%);
+  clip-path: ${ props => props.hovered ? hoveredClip : notHoveredClip };
+  transition: .2s ease;
 `;
 
 const Copy = styled.p`
@@ -44,19 +50,42 @@ const Copy = styled.p`
   margin-top: 20%;
 `;
 
-const WorkItem = ({
-  title,
-  desc,
-  url,
-}) => (
-  <WorkItemWrapper>
-    <Link href={url}>
-      <Title>{title}</Title>
-      <Clip>
-        <Copy>{desc}</Copy>
-      </Clip>
-    </Link>
-  </WorkItemWrapper>
-  );
+class WorkItem extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      hovered: false,
+    };
+  }
+
+  onMouseEnter = () => {
+    console.info('enter');
+    this.setState({ hovered: true })
+  }
+
+  onMouseLeave = () => {
+    console.info('leave');
+    this.setState({ hovered: false })
+  }
+
+  render() {
+    const {
+      title,
+      desc,
+      url,
+    } = this.props;
+
+    return (
+      <WorkItemWrapper onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave} hovered={this.state.hovered}>
+        <Link href={url}>
+          <Title>{title}</Title>
+          <Clip hovered={this.state.hovered}>
+            <Copy>{desc}</Copy>
+          </Clip>
+        </Link>
+      </WorkItemWrapper>
+    );
+  }
+}
 
 export default WorkItem;

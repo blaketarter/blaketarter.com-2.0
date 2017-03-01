@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import AboutMe from './components/AboutMe';
-import Works from './components/Works';
+import MyWork from './components/MyWork';
 import FindMe from './components/FindMe';
 import Footer from './components/Footer';
 import { fontFamily } from './globals/fonts';
@@ -21,7 +21,7 @@ const App = () => (
     <Navbar />
     <Hero />
     <AboutMe />
-    <Works />
+    <MyWork />
     <FindMe />
     <Footer />
   </Container>

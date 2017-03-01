@@ -89,7 +89,7 @@ const WorkItemsWrapper = styled.ul`
   justify-content: space-around;
 `;
 
-const Works = () => (
+const MyWork = () => (
   <WorksWrapper id="my-work">
     <Polygon1 />
     <Polygon2 />
@@ -104,4 +104,4 @@ const Works = () => (
   </WorksWrapper>
 );
 
-export default Works;
+export default MyWork;
