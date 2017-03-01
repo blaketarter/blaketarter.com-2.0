@@ -86,7 +86,7 @@ class SkillsSwapper extends React.Component {
 
   componentDidMount() {
     setTimeout(() => {
-      window.requestAnimationFrame(this.deleteLetterOrWord);      
+      window.requestAnimationFrame(this.deleteLetterOrWord);
     }, wordLength);
   }
 
@@ -94,18 +94,6 @@ class SkillsSwapper extends React.Component {
     const mode = this.state.skillsRandomized[0].length ? 'letter' : 'word';
 
     switch (mode) {
-      case 'letter':
-        setTimeout(() => {
-          const firstWord = this.state.skillsRandomized[0].substring(1);
-
-          this.setState({
-            skillsRandomized: [firstWord, ...this.state.skillsRandomized.slice(1)],
-            mode,
-          });
-
-          window.requestAnimationFrame(this.deleteLetterOrWord);
-        }, keystrokeLength);
-        break;
       case 'word':
         setTimeout(() => {
           const firstWord = this.state.skillsRandomized[1];
@@ -119,6 +107,17 @@ class SkillsSwapper extends React.Component {
           window.requestAnimationFrame(this.deleteLetterOrWord);
         }, wordLength);
         break;
+      default:
+        setTimeout(() => {
+          const firstWord = this.state.skillsRandomized[0].substring(1);
+
+          this.setState({
+            skillsRandomized: [firstWord, ...this.state.skillsRandomized.slice(1)],
+            mode,
+          });
+
+          window.requestAnimationFrame(this.deleteLetterOrWord);
+        }, keystrokeLength);
     }
   }
 

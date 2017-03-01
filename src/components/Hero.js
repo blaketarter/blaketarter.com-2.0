@@ -1,8 +1,11 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
+import smoothscroll from 'smoothscroll-polyfill';
 import { heroHeight, margin, maxWidth } from '../globals/sizes';
 import { primary, white } from '../globals/colors';
 import { heroTitle, sectionTitle } from '../globals/fonts';
+
+smoothscroll.polyfill();
 
 const HeroWrapper = styled.section`
   height: ${heroHeight}vh;
@@ -107,6 +110,15 @@ const ScrollDownIcon = styled.div`
   }
 `;
 
+const scrollDown = (e) => {
+  e.preventDefault();
+  window.scrollBy({
+    top: window.innerHeight,
+    left: 0,
+    behavior: 'smooth',
+  });
+}
+
 const Hero = () => (
   <HeroWrapper>
     <Polygon />
@@ -117,7 +129,7 @@ const Hero = () => (
       </Center>
     </ClipWrapper>
     <ScrollDownCenter>
-      <ScrollDownIcon />
+      <ScrollDownIcon onClick={scrollDown} />
     </ScrollDownCenter>
   </HeroWrapper>
 );

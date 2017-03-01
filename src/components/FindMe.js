@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { margin, maxWidth } from '../globals/sizes';
 import { black } from '../globals/colors';
-import { sectionTitle, largeCopy, bodyLineHeight, bodyCopy } from '../globals/fonts';
+import { sectionTitle, largeCopy, bodyCopy } from '../globals/fonts';
 
 const MoreAboutMeWrapper = styled.section`
   margin: ${3 * margin}px auto;

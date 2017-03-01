@@ -41,25 +41,34 @@ const NavBarLinkWrapper = styled.a`
   color: ${ white };
 `;
 
+const navItems = [
+  {
+    text: 'About Me',
+    href: '#about-me',
+  },
+  {
+    text: 'My Work',
+    href: '#my-work',
+  },
+  {
+    text: 'Find Me',
+    href: '#find-me',
+  },
+];
+
+const NavItemComponents = navItems.map((item, index) => (
+  <NavBarItemWrapper key={index}>
+    <NavBarLinkWrapper href={item.href}>
+      {item.text}
+    </NavBarLinkWrapper>
+  </NavBarItemWrapper>
+));
+
 const Navbar = () => (
   <NavbarWrapper>
     <LogoWrapper>blaketarter</LogoWrapper>
     <NavBarInnerWrapper>
-      <NavBarItemWrapper>
-        <NavBarLinkWrapper href="#about-me">
-          About Me
-        </NavBarLinkWrapper>
-      </NavBarItemWrapper>
-      <NavBarItemWrapper>
-        <NavBarLinkWrapper href="#my-work">
-          My Work
-        </NavBarLinkWrapper>
-      </NavBarItemWrapper>
-      <NavBarItemWrapper>
-        <NavBarLinkWrapper href="#find-me">
-          Find Me
-        </NavBarLinkWrapper>
-      </NavBarItemWrapper>
+      { NavItemComponents }
     </NavBarInnerWrapper>
   </NavbarWrapper>
 );
