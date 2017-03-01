@@ -28,7 +28,7 @@ const Summary = styled.p`
 `;
 
 const AboutMe = () => (
-  <AboutMeWrapper>
+  <AboutMeWrapper id="about-me">
     <Title>About Me.</Title>
     <Summary>{ copy }</Summary>
     <SkillsSwapper copy="I know" />

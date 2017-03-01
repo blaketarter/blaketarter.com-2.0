@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { heroHeight, margin, maxWidth } from '../globals/sizes';
 import { primary, white } from '../globals/colors';
 import { heroTitle, sectionTitle } from '../globals/fonts';
@@ -63,6 +63,50 @@ const Polygon = styled.div`
   transform-origin: bottom right;
 `;
 
+const ScrollDownCenter = styled.div`
+  position: absolute;
+  bottom: 7vh;
+  width: 100%;
+`;
+
+const ScrollAnimation = keyframes`
+  from {
+    opacity: 1;
+  }
+
+  to {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+`;
+
+const ScrollDownIcon = styled.div`
+  background-image: url('../images/mouse.png');
+  background-position: 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 50px;
+  margin: 0 auto;
+  width: 25px;
+  position: relative;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:before {
+    content: '•';
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    display: block;
+    animation: ${ ScrollAnimation } 3s infinite;
+    position: relative;
+    top: 30px;
+    will-change: transform, opacity;
+  }
+`;
+
 const Hero = () => (
   <HeroWrapper>
     <Polygon />
@@ -72,9 +116,9 @@ const Hero = () => (
         <Subtitle>A Kansas City based web developer</Subtitle>
       </Center>
     </ClipWrapper>
-    {/*<div className="scroll-down-center">
-      <div className="scroll"></div>
-    </div>*/}
+    <ScrollDownCenter>
+      <ScrollDownIcon />
+    </ScrollDownCenter>
   </HeroWrapper>
 );
 

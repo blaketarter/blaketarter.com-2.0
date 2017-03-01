@@ -32,18 +32,34 @@ const NavBarInnerWrapper = styled.ul`
 `;
 
 const NavBarItemWrapper = styled.li`
-  color: ${ white };
   list-style: none;
   margin: 0 ${margin}px;
+`;
+
+const NavBarLinkWrapper = styled.a`
+  text-decoration: none;
+  color: ${ white };
 `;
 
 const Navbar = () => (
   <NavbarWrapper>
     <LogoWrapper>blaketarter</LogoWrapper>
     <NavBarInnerWrapper>
-      <NavBarItemWrapper>About</NavBarItemWrapper>
-      <NavBarItemWrapper>Work</NavBarItemWrapper>
-      <NavBarItemWrapper>Contact</NavBarItemWrapper>
+      <NavBarItemWrapper>
+        <NavBarLinkWrapper href="#about-me">
+          About Me
+        </NavBarLinkWrapper>
+      </NavBarItemWrapper>
+      <NavBarItemWrapper>
+        <NavBarLinkWrapper href="#my-work">
+          My Work
+        </NavBarLinkWrapper>
+      </NavBarItemWrapper>
+      <NavBarItemWrapper>
+        <NavBarLinkWrapper href="#find-me">
+          Find Me
+        </NavBarLinkWrapper>
+      </NavBarItemWrapper>
     </NavBarInnerWrapper>
   </NavbarWrapper>
 );

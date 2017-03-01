@@ -32,7 +32,7 @@ const Link = styled.a`
 `;
 
 const FindMe = () => (
-  <MoreAboutMeWrapper>
+  <MoreAboutMeWrapper id="find-me">
     <Title>Find Me on the Internet.</Title>
     <Label>Github <Link href="https://github.com/blaketarter">https://github.com/blaketarter</Link></Label>
     <Label>Codepen <Link href="https://codepen.io/blaketarter/">https://codepen.io/blaketarter/</Link></Label>

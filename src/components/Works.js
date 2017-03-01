@@ -90,7 +90,7 @@ const WorkItemsWrapper = styled.ul`
 `;
 
 const Works = () => (
-  <WorksWrapper>
+  <WorksWrapper id="my-work">
     <Polygon1 />
     <Polygon2 />
     <Clip>
