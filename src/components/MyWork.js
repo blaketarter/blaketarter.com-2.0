@@ -7,34 +7,34 @@ import { sectionTitle } from '../globals/fonts';
 
 const worksData = [
   {
-    title: 'foo',
-    desc: 'lorem ipsum dolor set amut, foo bar baz fizz buzz.',
-    url: 'example.com',
+    title: 'Web Audio Synth',
+    desc: 'Web-based synthesizer using a computer keyboard.',
+    url: 'https://codepen.io/blaketarter/full/GgdOXd/',
   },
   {
-    title: 'foo 2',
-    desc: 'lorem ipsum dolor set amut, foo bar baz fizz buzz.',
-    url: 'example.com',
+    title: 'Random Text Replacer',
+    desc: 'Exploration of how to make similar random phrases.',
+    url: 'https://codepen.io/blaketarter/full/QbxKXm/',
   },
   {
-    title: 'foo 3',
-    desc: 'lorem ipsum dolor set amut, foo bar baz fizz buzz.',
-    url: 'example.com',
+    title: 'PaginatedListView',
+    desc: 'Extension of React-Native ListView to allow easier pagination.',
+    url: 'https://www.npmjs.com/package/react-native-paginated-listview',
   },
   {
-    title: 'foo 4',
-    desc: 'lorem ipsum dolor set amut, foo bar baz fizz buzz.',
-    url: 'example.com',
+    title: 'simple-fp',
+    desc: 'A simple, small, no dependency functional programming library.',
+    url: 'https://www.npmjs.com/package/simple-fp',
   },
   {
-    title: 'foo 5',
-    desc: 'lorem ipsum dolor set amut, foo bar baz fizz buzz.',
-    url: 'example.com',
+    title: 'Dungeon Gen',
+    desc: 'Playing around with randomly generating ascii based dungeons.',
+    url: 'https://github.com/blaketarter/dungeon-gen/blob/master/game.js',
   },
   {
-    title: 'foo 6',
-    desc: 'lorem ipsum dolor set amut, foo bar baz fizz buzz.',
-    url: 'example.com',
+    title: 'More Code Generator',
+    desc: 'Javascript code that turns plain text into Morse Code style dots and dashes.',
+    url: 'https://codepen.io/blaketarter/full/bNROPP/',
   },
 ];
 const worksList = worksData.map((workItem, index) => <WorkItem key={index} { ...workItem } />);

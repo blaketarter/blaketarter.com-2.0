@@ -58,15 +58,9 @@ class WorkItem extends React.Component {
     };
   }
 
-  onMouseEnter = () => {
-    console.info('enter');
-    this.setState({ hovered: true })
-  }
+  onMouseEnter = () => this.setState({ hovered: true })
 
-  onMouseLeave = () => {
-    console.info('leave');
-    this.setState({ hovered: false })
-  }
+  onMouseLeave = () => this.setState({ hovered: false })
 
   render() {
     const {
