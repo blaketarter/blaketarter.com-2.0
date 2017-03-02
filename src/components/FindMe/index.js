@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { margin, maxWidth, mediumUpQuery } from '../globals/sizes';
-import { black } from '../globals/colors';
-import { sectionTitle, largeCopy, bodyCopy } from '../globals/fonts';
+import { margin, maxWidth, mediumUpQuery } from '../../globals/sizes';
+import { black } from '../../globals/colors';
+import { sectionTitle, largeCopy, bodyCopy } from '../../globals/fonts';
 
 const MoreAboutMeWrapper = styled.section`
   margin: ${3 * margin}px auto;

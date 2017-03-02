@@ -1,9 +1,9 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import smoothscroll from 'smoothscroll-polyfill';
-import { heroHeight, margin, maxWidth, mediumUpQuery, mobileSizeMod } from '../globals/sizes';
-import { primary, white } from '../globals/colors';
-import { heroTitle, sectionTitle } from '../globals/fonts';
+import { heroHeight, margin, maxWidth, mediumUpQuery, mobileSizeMod } from '../../globals/sizes';
+import { primary, white } from '../../globals/colors';
+import { heroTitle, sectionTitle } from '../../globals/fonts';
 
 smoothscroll.polyfill();
 

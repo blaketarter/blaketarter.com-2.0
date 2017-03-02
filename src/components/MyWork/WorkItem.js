@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { white, grey, primary, black } from '../globals/colors';
-import { bodyCopy } from '../globals/fonts';
-import { margin, mediumUpQuery } from '../globals/sizes';
+import { white, grey, primary, black } from '../../globals/colors';
+import { bodyCopy } from '../../globals/fonts';
+import { margin, mediumUpQuery } from '../../globals/sizes';
 
 const WorkItemWrapper = styled.li`
   position: relative;

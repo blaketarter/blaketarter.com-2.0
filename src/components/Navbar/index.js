@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { navbarHeight, margin, mediumUpQuery } from '../globals/sizes';
-import { white } from '../globals/colors';
+import { navbarHeight, margin, mediumUpQuery } from '../../globals/sizes';
+import { white } from '../../globals/colors';
 
 const NavbarWrapper = styled.nav`
   height: ${navbarHeight}px;

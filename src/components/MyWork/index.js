@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import WorkItem from './WorkItem';
-import { margin, maxWidth, mediumUpQuery } from '../globals/sizes';
-import { primary, secondary, black } from '../globals/colors';
-import { sectionTitle } from '../globals/fonts';
+import { margin, maxWidth, mediumUpQuery } from '../../globals/sizes';
+import { primary, secondary, black } from '../../globals/colors';
+import { sectionTitle } from '../../globals/fonts';
 
 const worksData = [
   {

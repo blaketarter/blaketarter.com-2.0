@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { margin, maxWidth } from '../globals/sizes';
-import { black } from '../globals/colors';
+import { margin, maxWidth } from '../../globals/sizes';
+import { black } from '../../globals/colors';
 
 const FooterWrapper = styled.section`
   margin: ${margin}px auto;

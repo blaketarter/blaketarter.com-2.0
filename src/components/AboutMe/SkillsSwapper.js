@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { margin } from '../globals/sizes';
-import { bodyCopy } from '../globals/fonts';
+import { margin } from '../../globals/sizes';
+import { bodyCopy } from '../../globals/fonts';
 
 const skills = [
   'HTML5',

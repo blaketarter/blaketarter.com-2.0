@@ -13,22 +13,3 @@ html {
 *:after {
   box-sizing: inherit;
 }
-
-.skill {
-  /*color: red !important;*/
-}
-
-.skill-appear {
-  /*color: blue;
-  transition: .2s ease color;*/
-}
-
-.skill-enter {
-  /*color: green;
-  transition: .2s ease color;*/
-}
-
-.skill-enter-active {
-  /*color: green;
-  transition: .2s ease color;*/
-}

@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import SkillsSwapper from './SkillsSwapper';
-import { margin, maxWidth } from '../globals/sizes';
-import { black } from '../globals/colors';
-import { sectionTitle, bodyCopy, bodyLineHeight } from '../globals/fonts';
+import { margin, maxWidth } from '../../globals/sizes';
+import { black } from '../../globals/colors';
+import { sectionTitle, bodyCopy, bodyLineHeight } from '../../globals/fonts';
 
 const copy = 'Blake is a Javascript developer with 3+ years of experience planning, creating, and maintaining websites and various application platforms. Some technologies that he uses on a regular basis are React, Angular, and Ionic. His projects include client and consumer facing websites, as well as react-native and hybrid applications. He has experience working in a team environment, exceeds in time management skills, and strives to remain on the cutting-edge of the front-end development scene.';
 
