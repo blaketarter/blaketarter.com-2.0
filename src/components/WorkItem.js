@@ -2,17 +2,22 @@ import React from 'react';
 import styled from 'styled-components';
 import { white, grey, primary, black } from '../globals/colors';
 import { bodyCopy } from '../globals/fonts';
-import { margin } from '../globals/sizes';
+import { margin, mediumUpQuery } from '../globals/sizes';
 
 const WorkItemWrapper = styled.li`
   position: relative;
   background: ${ white };
   list-style: none;
   margin-bottom: ${ margin }px;
-  width: 30%;
-  padding-bottom: 30%;
   transform: ${ props => props.hovered ? 'scale(1.1)' : 'scale(1)' };
   transition: .2s ease;
+  width: 100%;
+  padding-bottom: 100%;
+
+  ${ mediumUpQuery } {
+    width: 30%;
+    padding-bottom: 30%;
+  }
 `;
 
 const Link = styled.a`

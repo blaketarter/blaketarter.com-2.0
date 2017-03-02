@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import smoothscroll from 'smoothscroll-polyfill';
-import { heroHeight, margin, maxWidth } from '../globals/sizes';
+import { heroHeight, margin, maxWidth, mediumUpQuery, mobileSizeMod } from '../globals/sizes';
 import { primary, white } from '../globals/colors';
 import { heroTitle, sectionTitle } from '../globals/fonts';
 
@@ -48,12 +48,20 @@ const Center = styled.div`
 
 const Title = styled.h1`
   color: ${ white };
-  font-size: ${ heroTitle }px;
+  font-size: ${ heroTitle * mobileSizeMod }px;
+
+  ${ mediumUpQuery } {
+    font-size: ${ heroTitle }px;
+  }
 `;
 
 const Subtitle = styled.p`
   color: ${ white };
-  font-size: ${ sectionTitle }px;
+  font-size: ${ sectionTitle * mobileSizeMod }px;
+
+  ${ mediumUpQuery } {
+    font-size: ${ sectionTitle }px;
+  }
 `;
 
 const Polygon = styled.div`

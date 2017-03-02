@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { navbarHeight, margin } from '../globals/sizes';
+import { navbarHeight, margin, mediumUpQuery } from '../globals/sizes';
 import { white } from '../globals/colors';
 
 const NavbarWrapper = styled.nav`
@@ -23,12 +23,16 @@ const LogoWrapper = styled.a`
 `;
 
 const NavBarInnerWrapper = styled.ul`
-  display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: stretch;
   margin: 0 ${margin}px 0 0;
   padding: 0;
+  display: none;
+
+  ${ mediumUpQuery } {
+    display: flex;
+  }
 `;
 
 const NavBarItemWrapper = styled.li`

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import WorkItem from './WorkItem';
-import { margin, maxWidth } from '../globals/sizes';
+import { margin, maxWidth, mediumUpQuery } from '../globals/sizes';
 import { primary, secondary, black } from '../globals/colors';
 import { sectionTitle } from '../globals/fonts';
 
@@ -84,9 +84,15 @@ const WorkItemsWrapper = styled.ul`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: ${margin}px;
   padding: 0;
   justify-content: space-between;
+  margin: ${margin * 3}px auto;
+  width: 75%;
+
+  ${ mediumUpQuery } {
+    margin: ${margin}px;
+    width: initial;
+  }
 `;
 
 const MyWork = () => (

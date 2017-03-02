@@ -57,6 +57,8 @@ const SkillsListWrapper = styled.ul`
   padding: 0;
   display: inline-block;
   flex: 1;
+  height: 30px;
+  overflow: hidden;
 `;
 
 const SkillItem = styled.li`

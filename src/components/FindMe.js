@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { margin, maxWidth } from '../globals/sizes';
+import { margin, maxWidth, mediumUpQuery } from '../globals/sizes';
 import { black } from '../globals/colors';
 import { sectionTitle, largeCopy, bodyCopy } from '../globals/fonts';
 
@@ -27,8 +27,14 @@ const Link = styled.a`
   font-size: ${ bodyCopy }px;
   font-weight: normal;
   color: ${ black };
-  text-decordation: none;
-  margin-left: ${ margin / 3 }px;
+  display: block;
+  width: 100%;
+  word-break: break-all;
+
+  ${ mediumUpQuery } {
+    margin-left: ${ margin / 3 }px;
+    display: initial;
+  }
 `;
 
 const FindMe = () => (
