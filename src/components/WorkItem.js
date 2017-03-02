@@ -42,10 +42,31 @@ const Clip = styled.div`
   bottom: 0;
   height: 85%;
   width: 100%;
-  background: ${ primary };
   font-size: ${ bodyCopy }px;
   clip-path: ${ props => props.hovered ? hoveredClip : notHoveredClip };
   transition: .2s ease;
+`;
+
+const BackgroundColor = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: ${ primary };
+  opacity: ${ props => props.hovered ? 0.2 : 0.9 };
+`;
+
+const BackgroundImage = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url(images/${ props => props.img });
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 `;
 
 const Copy = styled.p`
@@ -53,6 +74,8 @@ const Copy = styled.p`
   color: ${ black };
   margin: ${ margin }px;
   margin-top: 20%;
+  position: relative;
+  opacity: ${ props => props.hovered ? 0 : 1 }
 `;
 
 class WorkItem extends React.Component {
@@ -72,6 +95,7 @@ class WorkItem extends React.Component {
       title,
       desc,
       url,
+      img,
     } = this.props;
 
     return (
@@ -79,7 +103,9 @@ class WorkItem extends React.Component {
         <Link href={url}>
           <Title>{title}</Title>
           <Clip hovered={this.state.hovered}>
-            <Copy>{desc}</Copy>
+            <BackgroundImage img={img}/>
+            <BackgroundColor hovered={this.state.hovered} />
+            <Copy hovered={this.state.hovered}>{desc}</Copy>
           </Clip>
         </Link>
       </WorkItemWrapper>
