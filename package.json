@@ -9,12 +9,15 @@
     "styled-components": "^1.4.3"
   },
   "devDependencies": {
-    "react-scripts": "0.9.2"
+    "react-scripts": "0.9.2",
+    "sw-precache": "^5.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "postbuild": "npm run optimize",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "optimize": "node ./node_modules/sw-precache/cli.js --root='build/' --static-file-globs='build/**/!(*map*)'"
   }
 }

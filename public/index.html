@@ -4,10 +4,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
     <title>blaketarter | Javascript Developer based in Kansas City, MO</title>
   </head>
   <body>
     <div id="root"></div>
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js').catch(function(ex) {
+          console.warn(ex);
+          console.warn('(This warning can be safely ignored outside of the production build.)');
+        });
+      }
+    </script>
   </body>
 </html>
