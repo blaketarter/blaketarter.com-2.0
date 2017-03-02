@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.webmanifest">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
     <title>blaketarter | Javascript Developer based in Kansas City, MO</title>
@@ -14,7 +15,6 @@
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('service-worker.js').catch(function(ex) {
           console.warn(ex);
-          console.warn('(This warning can be safely ignored outside of the production build.)');
         });
       }
     </script>
