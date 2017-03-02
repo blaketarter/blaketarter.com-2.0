@@ -86,7 +86,7 @@ const WorkItemsWrapper = styled.ul`
   flex-wrap: wrap;
   margin: ${margin}px;
   padding: 0;
-  justify-content: space-around;
+  justify-content: space-between;
 `;
 
 const MyWork = () => (
