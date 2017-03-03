@@ -4,7 +4,7 @@ import { margin, maxWidth, mediumUpQuery } from '../../globals/sizes';
 import { black } from '../../globals/colors';
 import { sectionTitle, largeCopy, bodyCopy } from '../../globals/fonts';
 
-const MoreAboutMeWrapper = styled.section`
+const MoreAboutMeWrapper = styled.footer`
   margin: ${3 * margin}px auto;
   padding: 0 ${ margin }px;
   max-width: ${ maxWidth }px;
