@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import smoothscroll from 'smoothscroll-polyfill';
-import { heroHeight, margin, maxWidth, mediumUpQuery, mobileSizeMod } from '../../globals/sizes';
+import { heroHeight, margin, maxWidth, smallUpQuery, mobileSizeMod } from '../../globals/sizes';
 import { primary, white } from '../../globals/colors';
 import { heroTitle, sectionTitle } from '../../globals/fonts';
 
@@ -50,7 +50,7 @@ const Title = styled.h1`
   color: ${ white };
   font-size: ${ heroTitle * mobileSizeMod }px;
 
-  ${ mediumUpQuery } {
+  ${ smallUpQuery } {
     font-size: ${ heroTitle }px;
   }
 `;
@@ -59,7 +59,7 @@ const Subtitle = styled.p`
   color: ${ white };
   font-size: ${ sectionTitle * mobileSizeMod }px;
 
-  ${ mediumUpQuery } {
+  ${ smallUpQuery } {
     font-size: ${ sectionTitle }px;
   }
 `;

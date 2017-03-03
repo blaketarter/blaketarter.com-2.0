@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { navbarHeight, margin, mediumUpQuery } from '../../globals/sizes';
+import { navbarHeight, margin, smallUpQuery } from '../../globals/sizes';
 import { white } from '../../globals/colors';
 
 const NavbarWrapper = styled.nav`
@@ -30,7 +30,7 @@ const NavBarInnerWrapper = styled.ul`
   padding: 0;
   display: none;
 
-  ${ mediumUpQuery } {
+  ${ smallUpQuery } {
     display: flex;
   }
 `;

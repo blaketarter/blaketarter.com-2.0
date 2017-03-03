@@ -16,9 +16,11 @@ const Copyright = styled.p`
   color: ${black};
 `;
 
-const Footer = () => (
+const Footer = ({
+  copyright,
+}) => (
   <FooterWrapper>
-    <Copyright>{`© ${ new Date().getFullYear() } Blake Tarter`}</Copyright>
+    <Copyright>{ copyright.replace(/(CURR_YEAR)/, new Date().getFullYear()) }</Copyright>
   </FooterWrapper>
 );
 

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { white, grey, primary, black } from '../../globals/colors';
 import { bodyCopy } from '../../globals/fonts';
-import { margin, mediumUpQuery } from '../../globals/sizes';
+import { margin, mediumUpQuery, smallUpQuery } from '../../globals/sizes';
 
 const WorkItemWrapper = styled.li`
   position: relative;
@@ -13,6 +13,11 @@ const WorkItemWrapper = styled.li`
   transition: .2s ease;
   width: 100%;
   padding-bottom: 100%;
+
+  ${ smallUpQuery } {
+    width: 47%;
+    padding-bottom: 47%;
+  }
 
   ${ mediumUpQuery } {
     width: 30%;
