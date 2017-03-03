@@ -21,7 +21,7 @@ const ClipWrapper = styled.div`
   justify-content: center;
   height: 100%;
   width: 100%;
-  background-image: url('../images/wheat.jpg');
+  background-image: url('${ process.env.PUBLIC_URL }/images/wheat.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -92,7 +92,7 @@ const ScrollAnimation = keyframes`
 `;
 
 const ScrollDownIcon = styled.div`
-  background-image: url('../images/mouse.png');
+  background-image: url('${ process.env.PUBLIC_URL }/images/mouse.png');
   background-position: 0;
   background-repeat: no-repeat;
   background-size: contain;
