@@ -127,13 +127,16 @@ const scrollDown = (e) => {
   });
 }
 
-const Hero = () => (
+const Hero = ({
+  title,
+  subtitle,
+}) => (
   <HeroWrapper>
     <Polygon />
     <ClipWrapper>
       <Center>
-        <Title>Hi, I'm Blake Tarter.</Title>
-        <Subtitle>A Kansas City based web developer</Subtitle>
+        <Title>{ title }</Title>
+        <Subtitle>{ subtitle }</Subtitle>
       </Center>
     </ClipWrapper>
     <ScrollDownCenter>

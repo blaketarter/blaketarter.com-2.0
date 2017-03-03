@@ -5,46 +5,6 @@ import { margin, maxWidth, mediumUpQuery } from '../../globals/sizes';
 import { primary, secondary, black } from '../../globals/colors';
 import { sectionTitle } from '../../globals/fonts';
 
-const worksData = [
-  {
-    title: 'Web Audio Synth',
-    desc: 'Web-based synthesizer using a computer keyboard.',
-    url: 'https://codepen.io/blaketarter/full/GgdOXd/',
-    img: 'audio.png',
-  },
-  {
-    title: 'Random Text Replacer',
-    desc: 'Exploration of how to make similar random phrases.',
-    url: 'https://codepen.io/blaketarter/full/QbxKXm/',
-    img: 'replace.png',
-  },
-  {
-    title: 'PaginatedListView',
-    desc: 'Extension of React-Native ListView to allow easier pagination.',
-    url: 'https://www.npmjs.com/package/react-native-paginated-listview',
-    img: 'listview.png',
-  },
-  {
-    title: 'simple-fp',
-    desc: 'A simple, small, no dependency functional programming library.',
-    url: 'https://www.npmjs.com/package/simple-fp',
-    img: 'fp.png',
-  },
-  {
-    title: 'Dungeon Gen',
-    desc: 'Playing around with randomly generating ascii based dungeons.',
-    url: 'https://github.com/blaketarter/dungeon-gen/blob/master/game.js',
-    img: 'dung.png',
-  },
-  {
-    title: 'Morse Code Generator',
-    desc: 'Javascript code that turns plain text into Morse Code style dots and dashes.',
-    url: 'https://codepen.io/blaketarter/full/bNROPP/',
-    img: 'morse.png',
-  },
-];
-const worksList = worksData.map((workItem, index) => <WorkItem key={index} { ...workItem } />);
-
 const WorksWrapper = styled.section`
   position: relative;
 `;
@@ -101,15 +61,18 @@ const WorkItemsWrapper = styled.ul`
   }
 `;
 
-const MyWork = () => (
+const MyWork = ({
+  title,
+  workItems,
+}) => (
   <WorksWrapper id="my-work">
     <Polygon1 />
     <Polygon2 />
     <Clip>
       <InnerWrapper>
-        <Title>My Work.</Title>
+        <Title>{ title }</Title>
         <WorkItemsWrapper>
-          {worksList}
+          { workItems.map((workItem, index) => <WorkItem key={index} { ...workItem } />) }
         </WorkItemsWrapper>
       </InnerWrapper>
     </Clip>

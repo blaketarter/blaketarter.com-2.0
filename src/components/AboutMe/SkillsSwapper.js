@@ -3,20 +3,6 @@ import styled from 'styled-components';
 import { margin } from '../../globals/sizes';
 import { bodyCopy } from '../../globals/fonts';
 
-const skills = [
-  'HTML5',
-  'React.js',
-  'CSS3',
-  'Angular.js',
-  'React-Native',
-  'Ionic',
-  'Cordova',
-  'Git',
-  'Backbone.js',
-  'Node.js',
-  'Redux',
-];
-
 const shuffle = function shuffle(array) {
   let counter = array.length;
 
@@ -77,7 +63,7 @@ const wordLength = 2000;
 class SkillsSwapper extends React.Component {
   constructor(props) {
     super(props);
-    const skillsShuffled = shuffle(skills);
+    const skillsShuffled = shuffle(this.props.skills);
 
     this.state = {
       skillsRandomized: skillsShuffled,

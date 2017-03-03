@@ -45,34 +45,19 @@ const NavBarLinkWrapper = styled.a`
   color: ${ white };
 `;
 
-const navItems = [
-  {
-    text: 'About Me',
-    href: '#about-me',
-  },
-  {
-    text: 'My Work',
-    href: '#my-work',
-  },
-  {
-    text: 'Find Me',
-    href: '#find-me',
-  },
-];
-
-const NavItemComponents = navItems.map((item, index) => (
-  <NavBarItemWrapper key={index}>
-    <NavBarLinkWrapper href={item.href}>
-      {item.text}
-    </NavBarLinkWrapper>
-  </NavBarItemWrapper>
-));
-
-const Navbar = () => (
+const Navbar = ({
+  navItems,
+}) => (
   <NavbarWrapper>
     <LogoWrapper>blaketarter</LogoWrapper>
     <NavBarInnerWrapper>
-      { NavItemComponents }
+      { navItems.map((item, index) => (
+        <NavBarItemWrapper key={index}>
+          <NavBarLinkWrapper href={item.href}>
+            { item.text }
+          </NavBarLinkWrapper>
+        </NavBarItemWrapper>
+      )) }
     </NavBarInnerWrapper>
   </NavbarWrapper>
 );

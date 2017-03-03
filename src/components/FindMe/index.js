@@ -37,15 +37,17 @@ const Link = styled.a`
   }
 `;
 
-const FindMe = () => (
+const FindMe = ({
+  title,
+  links,
+}) => (
   <MoreAboutMeWrapper id="find-me">
-    <Title>Find Me on the Internet.</Title>
-    <Label>Github <Link href="https://github.com/blaketarter">https://github.com/blaketarter</Link></Label>
-    <Label>Codepen <Link href="https://codepen.io/blaketarter/">https://codepen.io/blaketarter/</Link></Label>
-    <Label>NPM <Link href="https://www.npmjs.com/~blaketarter">https://www.npmjs.com/~blaketarter</Link></Label>
-    <Label>Linkedin <Link href="https://www.linkedin.com/in/blaketarter">https://www.linkedin.com/in/blaketarter</Link></Label>
-    <Label>Twitter <Link href="https://twitter.com/itsblaketarter">https://twitter.com/itsblaketarter</Link></Label>
-    <Label>Medium <Link href="https://medium.com/@itsblaketarter">https://medium.com/@itsblaketarter</Link></Label>
+    <Title>{title}</Title>
+    {links.map((linkData, index) =>
+      <Label key={index}>{linkData.label} <Link
+        href={linkData.link}>{linkData.linkText ? linkData.linkText : linkData.link}</Link>
+      </Label>
+    )}
   </MoreAboutMeWrapper>
 );
 

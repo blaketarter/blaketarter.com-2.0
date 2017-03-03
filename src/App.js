@@ -8,6 +8,7 @@ import FindMe from './components/FindMe';
 import Footer from './components/Footer';
 import { fontFamily } from './globals/fonts';
 import './vendor/normalize.css';
+import db from './db.json';
 
 const Container = styled.div`
   height: 100%;
@@ -18,12 +19,12 @@ const Container = styled.div`
 
 const App = () => (
   <Container>
-    <Navbar />
-    <Hero />
-    <AboutMe />
-    <MyWork />
-    <FindMe />
-    <Footer />
+    <Navbar { ...db.navBar } />
+    <Hero { ...db.hero } />
+    <AboutMe { ...db.aboutMe } />
+    <MyWork { ...db.myWork } />
+    <FindMe { ...db.findMe } />
+    <Footer { ...db.footer } />
   </Container>
 );
 
