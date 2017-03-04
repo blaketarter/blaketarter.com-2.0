@@ -10,12 +10,14 @@
     "styled-components": "^1.4.3"
   },
   "devDependencies": {
+    "react-app-rewire-preact": "^0.1.2",
+    "react-app-rewired": "^0.6.5",
     "react-scripts": "0.9.2",
     "sw-precache": "^5.0.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
     "postbuild": "npm run optimize",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
