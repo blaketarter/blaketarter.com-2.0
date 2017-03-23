@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import AboutMe from './components/AboutMe';
 import MyWork from './components/MyWork';
+import RandomNodesSection from './components/RandomNodesSection';
 import FindMe from './components/FindMe';
 import Footer from './components/Footer';
 import { fontFamily } from './globals/fonts';
@@ -23,6 +24,7 @@ const App = () => (
     <Hero { ...db.hero } />
     <AboutMe { ...db.aboutMe } />
     <MyWork { ...db.myWork } />
+    <RandomNodesSection />
     <FindMe { ...db.findMe } />
     <Footer { ...db.footer } />
   </Container>
