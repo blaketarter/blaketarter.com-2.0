@@ -1,6 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import { white, grey, primary, black } from '../../globals/colors';
+import {
+  white,
+  grey,
+  primary,
+  black,
+  secondary,
+  lightGrey,
+} from '../../globals/colors';
 import { bodyCopy } from '../../globals/fonts';
 import { margin, mediumUpQuery, smallUpQuery } from '../../globals/sizes';
 
@@ -76,6 +83,14 @@ const Right = styled.div`
   flex: 2;
 `;
 
+const Tags = styled.span`
+  color: ${secondary};
+
+  ${smallUpQuery} {
+    color: ${props => (props.isFeatured ? secondary : lightGrey)};
+  }
+`;
+
 class WorkItem extends React.Component {
   constructor(props) {
     super(props);
@@ -105,7 +120,13 @@ class WorkItem extends React.Component {
             <Thumb src={'images/' + img} />
           </Left>
           <Right>
-            <Title>{title}</Title>
+            <Title>
+              {title}
+              <Tags isFeatured={this.isFeatured}>
+                {' '}
+                / {this.props.tags.join(' / ')}
+              </Tags>
+            </Title>
             <Copy hovered={this.state.hovered}>{desc}</Copy>
             <Link href={url}>See It.</Link>
           </Right>

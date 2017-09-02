@@ -47,49 +47,56 @@
           "A React Native application that shows bus stops in the Kansas City area around your current location and hands off navigation to them using the system navigation app.",
         "url":
           "https://play.google.com/store/apps/details?id=com.blaketarter.kcbus",
-        "img": "kcbus.png"
+        "img": "kcbus.png",
+        "tags": ["React-Native", "App"]
       },
       {
         "title": "Web Audio Synth",
         "desc":
           "Web-based synthesizer using the Web Audio API that also displays its waveform using Canvas that can be played with a computer keyboard.",
         "url": "https://codepen.io/blaketarter/full/GgdOXd/",
-        "img": "audio.png"
+        "img": "audio.png",
+        "tags": ["Web-Audio", "Canvas"]
       },
       {
         "title": "Random Text Replacer",
         "desc":
           "Tool to create similar phrases with interchangable words using a simple syntax to select a random word from a list of possibilities.",
         "url": "https://codepen.io/blaketarter/full/QbxKXm/",
-        "img": "replace.png"
+        "img": "replace.png",
+        "tags": ["Tool", "Phrase Generation"]
       },
       {
         "title": "PaginatedListView",
         "desc":
           "Extension of React-Native ListView that takes a fetch function and a page size and automatically handles pagination.",
         "url": "https://www.npmjs.com/package/react-native-paginated-listview",
-        "img": "listview.png"
+        "img": "listview.png",
+        "tags": ["React", "ListView"]
       },
       {
         "title": "simple-fp",
         "desc":
           "A simple, small, no dependency functional programming library used as a tool to explore functional programming concepts.",
         "url": "https://www.npmjs.com/package/simple-fp",
-        "img": "fp.png"
+        "img": "fp.png",
+        "tags": ["Functional Programming", "Library"]
       },
       {
         "title": "Dungeon Gen",
         "desc":
           "Playing around with procedurally generating ascii based dungeons with rooms and envirnmental hazards.",
         "url": "https://github.com/blaketarter/dungeon-gen/blob/master/game.js",
-        "img": "dung.png"
+        "img": "dung.png",
+        "tags": ["Procedural Generation", "ASCII"]
       },
       {
         "title": "Morse Code Generator",
         "desc":
           "Javascript code that turns plain text into Morse Code style dots and dashes.",
         "url": "https://codepen.io/blaketarter/full/bNROPP/",
-        "img": "morse.png"
+        "img": "morse.png",
+        "tags": ["Text Translation"]
       }
     ]
   },

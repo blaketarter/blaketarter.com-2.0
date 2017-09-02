@@ -2,7 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import WorkItem from './WorkItem';
 import FeaturedWorkItem from './FeaturedWorkItem';
-import { margin, maxWidth, mediumUpQuery } from '../../globals/sizes';
+import {
+  margin,
+  maxWidth,
+  mediumUpQuery,
+  smallUpQuery,
+} from '../../globals/sizes';
 import { primary, secondary, black } from '../../globals/colors';
 import { sectionTitle } from '../../globals/fonts';
 
@@ -10,8 +15,12 @@ const WorksWrapper = styled.section`position: relative;`;
 
 const Clip = styled.div`
   background: ${secondary};
-  clip-path: polygon(0 0, 100% 7%, 100% 100%, 0 93%);
+  clip-path: polygon(0 0, 100% 2%, 100% 100%, 0 98%);
   padding: ${3 * margin}px 0;
+
+  ${smallUpQuery} {
+    clip-path: polygon(0 0, 100% 7%, 100% 100%, 0 93%);
+  }
 `;
 
 const Title = styled.h2`
