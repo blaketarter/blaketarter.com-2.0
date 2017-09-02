@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { navbarHeight, margin, smallUpQuery } from '../../globals/sizes';
 import { white } from '../../globals/colors';
+import NavBarLink from './NavBarLink';
 
 const NavbarWrapper = styled.nav`
   height: ${navbarHeight}px;
@@ -18,7 +19,7 @@ const NavbarWrapper = styled.nav`
 
 const LogoWrapper = styled.a`
   font-size: 35px;
-  color: ${ white };
+  color: ${white};
   margin-left: ${margin}px;
 `;
 
@@ -30,7 +31,7 @@ const NavBarInnerWrapper = styled.ul`
   padding: 0;
   display: none;
 
-  ${ smallUpQuery } {
+  ${smallUpQuery} {
     display: flex;
   }
 `;
@@ -40,24 +41,15 @@ const NavBarItemWrapper = styled.li`
   margin: 0 ${margin}px;
 `;
 
-const NavBarLinkWrapper = styled.a`
-  text-decoration: none;
-  color: ${ white };
-`;
-
-const Navbar = ({
-  navItems,
-}) => (
+const Navbar = ({ navItems }) => (
   <NavbarWrapper>
     <LogoWrapper>blaketarter</LogoWrapper>
     <NavBarInnerWrapper>
-      { navItems.map((item, index) => (
+      {navItems.map((item, index) => (
         <NavBarItemWrapper key={index}>
-          <NavBarLinkWrapper href={item.href}>
-            { item.text }
-          </NavBarLinkWrapper>
+          <NavBarLink href={item.href} text={item.text} />
         </NavBarItemWrapper>
-      )) }
+      ))}
     </NavBarInnerWrapper>
   </NavbarWrapper>
 );
