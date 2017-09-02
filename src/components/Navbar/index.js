@@ -42,7 +42,7 @@ const NavBarItemWrapper = styled.li`
 `;
 
 const Navbar = ({ navItems }) => (
-  <NavbarWrapper>
+  <NavbarWrapper id="top">
     <LogoWrapper>blaketarter</LogoWrapper>
     <NavBarInnerWrapper>
       {navItems.map((item, index) => (
