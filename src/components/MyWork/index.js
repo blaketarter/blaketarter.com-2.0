@@ -1,24 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
 import WorkItem from './WorkItem';
+import FeaturedWorkItem from './FeaturedWorkItem';
 import { margin, maxWidth, mediumUpQuery } from '../../globals/sizes';
 import { primary, secondary, black } from '../../globals/colors';
 import { sectionTitle } from '../../globals/fonts';
 
-const WorksWrapper = styled.section`
-  position: relative;
-`;
+const WorksWrapper = styled.section`position: relative;`;
 
 const Clip = styled.div`
-  background: ${ secondary };
+  background: ${secondary};
   clip-path: polygon(0 0, 100% 7%, 100% 100%, 0 93%);
   padding: ${3 * margin}px 0;
 `;
 
 const Title = styled.h2`
   font-size: ${sectionTitle}px;
-  color: ${ black };
-  margin-left: ${ margin }px;
+  color: ${black};
+  margin-left: ${margin}px;
 `;
 
 const Polygon1 = styled.div`
@@ -43,36 +42,32 @@ const Polygon2 = styled.div`
 
 const InnerWrapper = styled.div`
   margin: 0 auto;
-  max-width: ${ maxWidth }px;
+  max-width: ${maxWidth}px;
 `;
 
 const WorkItemsWrapper = styled.ul`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   padding: 0;
-  justify-content: space-between;
   margin: ${margin * 3}px auto;
-  width: 75%;
-
-  ${ mediumUpQuery } {
-    margin: ${margin}px;
-    width: initial;
-  }
 `;
 
-const MyWork = ({
-  title,
-  workItems,
-}) => (
+const MyWork = ({ title, workItems }) => (
   <WorksWrapper id="my-work">
     <Polygon1 />
     <Polygon2 />
     <Clip>
       <InnerWrapper>
-        <Title>{ title }</Title>
+        <Title>{title}</Title>
         <WorkItemsWrapper>
-          { workItems.map((workItem, index) => <WorkItem key={index} { ...workItem } />) }
+          {workItems
+            .slice(0, 5)
+            .map(
+              (workItem, index) =>
+                index === 0 ? (
+                  <FeaturedWorkItem key={index} {...workItem} />
+                ) : (
+                  <WorkItem key={index} {...workItem} />
+                ),
+            )}
         </WorkItemsWrapper>
       </InnerWrapper>
     </Clip>
