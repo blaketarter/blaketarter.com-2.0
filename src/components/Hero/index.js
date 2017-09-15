@@ -1,9 +1,16 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import smoothscroll from 'smoothscroll-polyfill';
-import { heroHeight, margin, maxWidth, smallUpQuery, mobileSizeMod } from '../../globals/sizes';
+import {
+  heroHeight,
+  margin,
+  maxWidth,
+  smallUpQuery,
+  mobileSizeMod,
+} from '../../globals/sizes';
 import { primary, white } from '../../globals/colors';
 import { heroTitle, sectionTitle } from '../../globals/fonts';
+import Gems from '../Gems';
 
 smoothscroll.polyfill();
 
@@ -21,46 +28,47 @@ const ClipWrapper = styled.div`
   justify-content: center;
   height: 100%;
   width: 100%;
-  background-image: url('${ process.env.PUBLIC_URL }/images/wheat.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  // background-image: url('${process.env.PUBLIC_URL}/images/webgl.png');
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // background-position: center;
+  background-color: #f7c284;
   position: relative;
   clip-path: polygon(100% 0, 100% 0, 100% 93%, 0 100%, 0 0);
 
-  &:before {
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.3);
-    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.3); 0%, rgba(0, 0, 0, 0.7); 100%);
-  }
+  // &:before {
+  //   content: '';
+  //   position: absolute;
+  //   height: 100%;
+  //   width: 100%;
+  //   background: rgba(0, 0, 0, 0.3);
+  //   background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.3); 0%, rgba(0, 0, 0, 0.7); 100%);
+  // }
 `;
 
 const Center = styled.div`
   margin: 0 auto;
   position: relative;
   width: 100%;
-  padding: 0 ${ margin }px;
-  max-width: ${ maxWidth }px;
+  padding: 0 ${margin}px;
+  max-width: ${maxWidth}px;
 `;
 
 const Title = styled.h1`
-  color: ${ white };
-  font-size: ${ heroTitle * mobileSizeMod }px;
+  color: ${white};
+  font-size: ${heroTitle * mobileSizeMod}px;
 
-  ${ smallUpQuery } {
-    font-size: ${ heroTitle }px;
+  ${smallUpQuery} {
+    font-size: ${heroTitle}px;
   }
 `;
 
 const Subtitle = styled.p`
-  color: ${ white };
-  font-size: ${ sectionTitle * mobileSizeMod }px;
+  color: ${white};
+  font-size: ${sectionTitle * mobileSizeMod}px;
 
-  ${ smallUpQuery } {
-    font-size: ${ sectionTitle }px;
+  ${smallUpQuery} {
+    font-size: ${sectionTitle}px;
   }
 `;
 
@@ -92,7 +100,7 @@ const ScrollAnimation = keyframes`
 `;
 
 const ScrollDownIcon = styled.div`
-  background-image: url('${ process.env.PUBLIC_URL }/images/mouse.png');
+  background-image: url('${process.env.PUBLIC_URL}/images/mouse.png');
   background-position: 0;
   background-repeat: no-repeat;
   background-size: contain;
@@ -111,32 +119,30 @@ const ScrollDownIcon = styled.div`
     text-align: center;
     width: 100%;
     display: block;
-    animation: ${ ScrollAnimation } 3s infinite;
+    animation: ${ScrollAnimation} 3s infinite;
     position: relative;
     top: 30px;
     will-change: transform, opacity;
   }
 `;
 
-const scrollDown = (e) => {
+const scrollDown = e => {
   e.preventDefault();
   window.scrollBy({
     top: window.innerHeight,
     left: 0,
     behavior: 'smooth',
   });
-}
+};
 
-const Hero = ({
-  title,
-  subtitle,
-}) => (
+const Hero = ({ title, subtitle }) => (
   <HeroWrapper>
     <Polygon />
     <ClipWrapper>
+      <Gems />
       <Center>
-        <Title>{ title }</Title>
-        <Subtitle>{ subtitle }</Subtitle>
+        <Title>{title}</Title>
+        <Subtitle>{subtitle}</Subtitle>
       </Center>
     </ClipWrapper>
     <ScrollDownCenter>
