@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { navbarHeight, margin, smallUpQuery } from '../../globals/sizes';
-import { white } from '../../globals/colors';
+import { white, black } from '../../globals/colors';
 import NavBarLink from './NavBarLink';
 
 const NavbarWrapper = styled.nav`
@@ -19,7 +19,7 @@ const NavbarWrapper = styled.nav`
 
 const LogoWrapper = styled.a`
   font-size: 35px;
-  color: ${white};
+  color: ${black};
   margin-left: ${margin}px;
 `;
 

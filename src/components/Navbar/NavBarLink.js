@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { white } from '../../globals/colors';
+import { white, black } from '../../globals/colors';
 import smoothscroll from 'smoothscroll-polyfill';
 
 smoothscroll.polyfill();
 
 const NavBarLinkWrapper = styled.a`
   text-decoration: none;
-  color: ${white};
+  color: ${black};
 `;
 
 const onClick = (e, href) => {
