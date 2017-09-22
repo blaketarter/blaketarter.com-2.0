@@ -8,7 +8,7 @@ import {
   smallUpQuery,
   mobileSizeMod,
 } from '../../globals/sizes';
-import { primary, white } from '../../globals/colors';
+import { primary, white, black } from '../../globals/colors';
 import { heroTitle, sectionTitle } from '../../globals/fonts';
 import Gems from '../Gems';
 
@@ -55,7 +55,7 @@ const Center = styled.div`
 `;
 
 const Title = styled.h1`
-  color: ${white};
+  color: ${black};
   font-size: ${heroTitle * mobileSizeMod}px;
 
   ${smallUpQuery} {
@@ -64,7 +64,7 @@ const Title = styled.h1`
 `;
 
 const Subtitle = styled.p`
-  color: ${white};
+  color: ${black};
   font-size: ${sectionTitle * mobileSizeMod}px;
 
   ${smallUpQuery} {
@@ -100,7 +100,7 @@ const ScrollAnimation = keyframes`
 `;
 
 const ScrollDownIcon = styled.div`
-  background-image: url('${process.env.PUBLIC_URL}/images/mouse.png');
+  background-image: url('${process.env.PUBLIC_URL}/images/mouse-black.png');
   background-position: 0;
   background-repeat: no-repeat;
   background-size: contain;
@@ -115,7 +115,7 @@ const ScrollDownIcon = styled.div`
 
   &:before {
     content: '•';
-    color: #fff;
+    color: ${black};
     text-align: center;
     width: 100%;
     display: block;
