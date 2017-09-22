@@ -3,13 +3,6 @@ import styled from 'styled-components';
 import start from '../../services/gems';
 import { smallUp } from '../../globals/sizes';
 
-/* TODO
-  - test on mobile devices better
-  - look into lazy loading images
-  - look into disabling the webgel renderer when its not on screen (maybe pause it after a while)
-  - hero text color black
-*/
-
 const Wrapper = styled.div`
   position: absolute;
   top: 0;
@@ -40,7 +33,7 @@ export default class Gems extends Component {
     return (
       <Wrapper>
         <Canvas innerRef={this.onRef} id="gems-canvas" />
-        <script onLoad={this.onLoad} src="/vendor/three.min.js" />
+        <script onLoad={this.onLoad} aysnc src="/vendor/three.min.js" />
       </Wrapper>
     );
   }
