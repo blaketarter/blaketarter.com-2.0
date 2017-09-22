@@ -28,22 +28,9 @@ const ClipWrapper = styled.div`
   justify-content: center;
   height: 100%;
   width: 100%;
-  // background-image: url('${process.env.PUBLIC_URL}/images/webgl.png');
-  // background-repeat: no-repeat;
-  // background-size: cover;
-  // background-position: center;
   background-color: #f7c284;
   position: relative;
   clip-path: polygon(100% 0, 100% 0, 100% 93%, 0 100%, 0 0);
-
-  // &:before {
-  //   content: '';
-  //   position: absolute;
-  //   height: 100%;
-  //   width: 100%;
-  //   background: rgba(0, 0, 0, 0.3);
-  //   background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.3); 0%, rgba(0, 0, 0, 0.7); 100%);
-  // }
 `;
 
 const Center = styled.div`
