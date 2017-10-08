@@ -48,7 +48,8 @@
         "url":
           "https://play.google.com/store/apps/details?id=com.blaketarter.kcbus",
         "img": "kcbus.png",
-        "tags": ["React-Native", "App"]
+        "tags": ["React-Native", "App"],
+        "source": "the Play Store"
       },
       {
         "title": "Web Audio Synth",
@@ -56,7 +57,8 @@
           "Web-based synthesizer using the Web Audio API that also displays its waveform using Canvas that can be played with a computer keyboard.",
         "url": "https://codepen.io/blaketarter/full/GgdOXd/",
         "img": "audio.png",
-        "tags": ["Web-Audio", "Canvas"]
+        "tags": ["Web-Audio", "Canvas"],
+        "source": "Codepen"
       },
       {
         "title": "Random Text Replacer",
@@ -64,7 +66,8 @@
           "Tool to create similar phrases with interchangable words using a simple syntax to select a random word from a list of possibilities.",
         "url": "https://codepen.io/blaketarter/full/QbxKXm/",
         "img": "replace.png",
-        "tags": ["Tool", "Phrase Generation"]
+        "tags": ["Tool", "Phrase Generation"],
+        "source": "Codepen"
       },
       {
         "title": "PaginatedListView",
@@ -72,7 +75,8 @@
           "Extension of React-Native ListView that takes a fetch function and a page size and automatically handles pagination.",
         "url": "https://www.npmjs.com/package/react-native-paginated-listview",
         "img": "listview.png",
-        "tags": ["React", "ListView"]
+        "tags": ["React", "ListView"],
+        "source": "NPM"
       },
       {
         "title": "simple-fp",
@@ -80,7 +84,8 @@
           "A simple, small, no dependency functional programming library used as a tool to explore functional programming concepts.",
         "url": "https://www.npmjs.com/package/simple-fp",
         "img": "fp.png",
-        "tags": ["Functional Programming", "Library"]
+        "tags": ["Functional Programming", "Library"],
+        "source": "NPM"
       },
       {
         "title": "Dungeon Gen",
@@ -88,7 +93,8 @@
           "Playing around with procedurally generating ascii based dungeons with rooms and envirnmental hazards.",
         "url": "https://github.com/blaketarter/dungeon-gen/blob/master/game.js",
         "img": "dung.png",
-        "tags": ["Procedural Generation", "ASCII"]
+        "tags": ["Procedural Generation", "ASCII"],
+        "source": "Github"
       },
       {
         "title": "Morse Code Generator",
@@ -96,7 +102,8 @@
           "Javascript code that turns plain text into Morse Code style dots and dashes.",
         "url": "https://codepen.io/blaketarter/full/bNROPP/",
         "img": "morse.png",
-        "tags": ["Text Translation"]
+        "tags": ["Text Translation"],
+        "source": "Codepen"
       }
     ]
   },

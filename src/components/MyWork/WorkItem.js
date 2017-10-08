@@ -11,6 +11,15 @@ import {
 import { bodyCopy } from '../../globals/fonts';
 import { margin, mediumUpQuery, smallUpQuery } from '../../globals/sizes';
 
+const halfSize = `
+  width: 50%;
+  margin: 0;
+`;
+
+const fullSize = `
+  width: 100%;
+`;
+
 const WorkItemWrapper = styled.li`
   position: relative;
   background: ${white};
@@ -18,8 +27,14 @@ const WorkItemWrapper = styled.li`
   margin: ${margin}px;
   padding: ${margin}px;
   transition: 0.2s ease;
+  ${props => (props.isFeatured ? 'box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2)' : '')};
+
+  &:hover {
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+  }
 
   ${smallUpQuery} {
+    ${props => (props.isFeatured ? fullSize : halfSize)};
     background: ${props => (props.isFeatured ? white : 'transparent')};
   }
 `;
@@ -106,7 +121,7 @@ class WorkItem extends React.Component {
   onMouseLeave = () => this.setState({ hovered: false });
 
   render() {
-    const { title, desc, url, img } = this.props;
+    const { title, desc, url, img, source, } = this.props;
 
     return (
       <WorkItemWrapper
@@ -128,7 +143,7 @@ class WorkItem extends React.Component {
               </Tags>
             </Title>
             <Copy hovered={this.state.hovered}>{desc}</Copy>
-            <Link href={url}>See It.</Link>
+            <Link href={url}>See it on {source}.</Link>
           </Right>
         </InnerWrapper>
       </WorkItemWrapper>

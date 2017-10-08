@@ -6,7 +6,7 @@ import { black } from '../../globals/colors';
 import { sectionTitle, bodyCopy, bodyLineHeight } from '../../globals/fonts';
 
 const AboutMeWrapper = styled.section`
-  margin: ${3 * margin}px auto;
+  margin: ${5 * margin}px auto;
   padding: 0 ${ margin }px;
   max-width: ${ maxWidth }px;
 `;

@@ -5,16 +5,16 @@ import FeaturedWorkItem from './FeaturedWorkItem';
 import {
   margin,
   maxWidth,
-  mediumUpQuery,
   smallUpQuery,
 } from '../../globals/sizes';
-import { primary, secondary, black } from '../../globals/colors';
+import { primary, secondary, black, secondaryDark, primaryDark, } from '../../globals/colors';
 import { sectionTitle } from '../../globals/fonts';
 
 const WorksWrapper = styled.section`position: relative;`;
 
 const Clip = styled.div`
   background: ${secondary};
+  // background: linear-gradient(to bottom right, ${secondaryDark} 0%, ${secondary} 50%, ${secondary} 100%);
   clip-path: polygon(0 0, 100% 2%, 100% 100%, 0 98%);
   -webkit-clip-path: polygon(0 0, 100% 2%, 100% 100%, 0 98%);
   padding: ${3 * margin}px 0;
@@ -37,6 +37,7 @@ const Polygon1 = styled.div`
   width: 100%;
   height: 40%;
   background-color: ${primary};
+  background: linear-gradient(to right, ${primaryDark} 0%, ${primary} 100%);
   transform: translateX(-5vw) rotate(-1deg);
   transform-origin: top right;
 `;
@@ -47,6 +48,7 @@ const Polygon2 = styled.div`
   width: 100%;
   height: 40%;
   background-color: ${primary};
+  background: linear-gradient(to left, ${primaryDark} 0%, ${primary} 100%);
   transform: translateX(-5vw) rotate(-1deg);
   transform-origin: bottom left;
 `;
@@ -59,6 +61,12 @@ const InnerWrapper = styled.div`
 const WorkItemsWrapper = styled.ul`
   padding: 0;
   margin: ${margin * 3}px auto;
+
+  ${smallUpQuery} {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 `;
 
 const MyWork = ({ title, workItems }) => (

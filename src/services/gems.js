@@ -6,7 +6,6 @@ let camera;
 let renderer;
 let directionalLight1;
 let directionalLight2;
-let stats;
 let ambient;
 
 const triangles = [];
@@ -15,7 +14,7 @@ const DIRECTIONAL_COLOR_1 = 0x607d8b;
 const DIRECTIONAL_COLOR_2 = 0xffa000;
 const FOG_COLOR = 0xf7c284;
 // const TRIANGLE_COUNT = 500;
-const TRIANGLE_COUNT = 250;
+const TRIANGLE_COUNT = 100;
 let TRIANGLE_INDEX = 0;
 
 function render() {
@@ -93,8 +92,9 @@ function newTriangle(triangles, scene) {
   );
   material = new window.THREE.MeshLambertMaterial({
     color: 0xffffff,
-    shading: window.THREE.FlatShading,
+    // shading: window.THREE.FlatShading,
   });
+  geometry.computeFlatVertexNormals();
 
   mesh = new window.THREE.Mesh(geometry, material);
 

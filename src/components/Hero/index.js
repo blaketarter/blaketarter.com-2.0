@@ -8,7 +8,7 @@ import {
   smallUpQuery,
   mobileSizeMod,
 } from '../../globals/sizes';
-import { primary, white, black } from '../../globals/colors';
+import { primary, black, primaryDark } from '../../globals/colors';
 import { heroTitle, sectionTitle } from '../../globals/fonts';
 import Gems from '../Gems';
 
@@ -66,6 +66,7 @@ const Polygon = styled.div`
   width: 100%;
   height: 100%;
   background-color: ${primary};
+  background: linear-gradient(to right, ${primaryDark} 0%, ${primary} 100%);
   transform: translateX(-5vw) rotate(1deg);
   transform-origin: bottom right;
 `;

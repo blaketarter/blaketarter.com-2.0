@@ -1,6 +1,6 @@
 export const navbarHeight = 80;
 export const margin = 20;
-export const heroHeight = 95;
+export const heroHeight = 70;
 export const maxWidth = 940;
 export const smallUp = 678;
 export const mediumUp = 992; // used to be 840
