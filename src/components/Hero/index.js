@@ -31,6 +31,7 @@ const ClipWrapper = styled.div`
   background-color: #f7c284;
   position: relative;
   clip-path: polygon(100% 0, 100% 0, 100% 93%, 0 100%, 0 0);
+  -webkit-clip-path: polygon(100% 0, 100% 0, 100% 93%, 0 100%, 0 0);
 `;
 
 const Center = styled.div`

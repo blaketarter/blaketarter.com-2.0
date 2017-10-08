@@ -16,10 +16,12 @@ const WorksWrapper = styled.section`position: relative;`;
 const Clip = styled.div`
   background: ${secondary};
   clip-path: polygon(0 0, 100% 2%, 100% 100%, 0 98%);
+  -webkit-clip-path: polygon(0 0, 100% 2%, 100% 100%, 0 98%);
   padding: ${3 * margin}px 0;
 
   ${smallUpQuery} {
     clip-path: polygon(0 0, 100% 7%, 100% 100%, 0 93%);
+    -webkit-clip-path: polygon(0 0, 100% 7%, 100% 100%, 0 93%);
   }
 `;
 
