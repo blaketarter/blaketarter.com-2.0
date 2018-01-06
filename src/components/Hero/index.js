@@ -24,6 +24,7 @@ const HeroWrapper = styled.section`
 
 const ClipWrapper = styled.div`
   display: flex;
+  overflow: hidden;
   align-items: center;
   justify-content: center;
   height: 100%;
