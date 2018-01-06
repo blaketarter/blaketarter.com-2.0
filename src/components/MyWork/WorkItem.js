@@ -9,7 +9,7 @@ import {
   lightGrey,
 } from '../../globals/colors';
 import { bodyCopy } from '../../globals/fonts';
-import { margin, mediumUpQuery, smallUpQuery } from '../../globals/sizes';
+import { margin, smallUpQuery } from '../../globals/sizes';
 
 const halfSize = `
   width: 50%;

@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { white, black } from '../../globals/colors';
+import { black } from '../../globals/colors';
 import smoothscroll from 'smoothscroll-polyfill';
 
 smoothscroll.polyfill();
