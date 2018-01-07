@@ -5,7 +5,7 @@ import smoothscroll from 'smoothscroll-polyfill';
 
 smoothscroll.polyfill();
 
-const NavBarLinkWrapper = styled.a`
+const NavBarLinkWrapper = styled('a')`
   text-decoration: none;
   color: ${black};
 `;

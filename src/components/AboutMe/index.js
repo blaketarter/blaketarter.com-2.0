@@ -5,18 +5,18 @@ import { margin, maxWidth } from '../../globals/sizes';
 import { black } from '../../globals/colors';
 import { sectionTitle, bodyCopy, bodyLineHeight } from '../../globals/fonts';
 
-const AboutMeWrapper = styled.section`
+const AboutMeWrapper = styled('section')`
   margin: ${5 * margin}px auto;
   padding: 0 ${ margin }px;
   max-width: ${ maxWidth }px;
 `;
 
-const Title = styled.h2`
+const Title = styled('h2')`
   font-size: ${ sectionTitle }px;
   color: ${ black };
 `;
 
-const Summary = styled.p`
+const Summary = styled('p')`
   color: ${ black };
   padding: 0 ${ margin }px;
   font-size: ${ bodyCopy }px;

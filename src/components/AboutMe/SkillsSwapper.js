@@ -23,22 +23,22 @@ const shuffle = function shuffle(array) {
   return array;
 }
 
-const SkillsWrapper = styled.div`
+const SkillsWrapper = styled('div')`
   margin: ${ 3 * margin }px 0;
 `;
 
-const CopyWrapper = styled.div`
+const CopyWrapper = styled('div')`
   font-size: ${ bodyCopy * 1.5 }px;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
 `;
 
-const FrontCopy = styled.span`
+const FrontCopy = styled('span')`
   font-weight: 300;
 `;
 
-const SkillsListWrapper = styled.ul`
+const SkillsListWrapper = styled('ul')`
   margin: 0;
   padding: 0;
   display: inline-block;
@@ -47,7 +47,7 @@ const SkillsListWrapper = styled.ul`
   overflow: hidden;
 `;
 
-const SkillItem = styled.li`
+const SkillItem = styled('li')`
   list-style: none;
   display: inline-block;
   margin-left: ${ props => (props.length) ? (margin / 2) : 0 }px;

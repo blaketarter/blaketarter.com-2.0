@@ -20,7 +20,7 @@ const fullSize = `
   width: 100%;
 `;
 
-const WorkItemWrapper = styled.li`
+const WorkItemWrapper = styled('li')`
   position: relative;
   background: ${white};
   list-style: none;
@@ -39,7 +39,7 @@ const WorkItemWrapper = styled.li`
   }
 `;
 
-const InnerWrapper = styled.div`
+const InnerWrapper = styled('div')`
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -50,27 +50,27 @@ const InnerWrapper = styled.div`
   }
 `;
 
-const Link = styled.a`
+const Link = styled('a')`
   text-decoration: none;
   color: ${primary};
   font-size: ${bodyCopy}px;
   margin: ${margin}px;
 `;
 
-const Title = styled.h3`
+const Title = styled('h3')`
   font-size: ${bodyCopy}px;
   color: ${grey};
   margin-left: ${margin}px;
 `;
 
-const Copy = styled.p`
+const Copy = styled('p')`
   font-size: ${bodyCopy}px;
   color: ${black};
   margin: ${margin}px;
   position: relative;
 `;
 
-const Thumb = styled.img`
+const Thumb = styled('img')`
   width: 100%;
   max-height: 300px;
   object-fit: cover;
@@ -80,7 +80,7 @@ const Thumb = styled.img`
   }
 `;
 
-const Left = styled.div`
+const Left = styled('div')`
   width: 100%;
   z-index: 10;
   display: flex;
@@ -93,12 +93,12 @@ const Left = styled.div`
   }
 `;
 
-const Right = styled.div`
+const Right = styled('div')`
   z-index: 10;
   flex: 2;
 `;
 
-const Tags = styled.span`
+const Tags = styled('span')`
   color: ${secondary};
 
   ${smallUpQuery} {

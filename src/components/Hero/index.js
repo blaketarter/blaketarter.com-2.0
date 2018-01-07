@@ -14,7 +14,7 @@ import Gems from '../Gems';
 
 smoothscroll.polyfill();
 
-const HeroWrapper = styled.section`
+const HeroWrapper = styled('section')`
   height: ${heroHeight}vh;
   position: relative;
   width: 100%;
@@ -22,7 +22,7 @@ const HeroWrapper = styled.section`
   overflow: hidden;
 `;
 
-const ClipWrapper = styled.div`
+const ClipWrapper = styled('div')`
   display: flex;
   overflow: hidden;
   align-items: center;
@@ -35,7 +35,7 @@ const ClipWrapper = styled.div`
   -webkit-clip-path: polygon(100% 0, 100% 0, 100% 93%, 0 100%, 0 0);
 `;
 
-const Center = styled.div`
+const Center = styled('div')`
   margin: 0 auto;
   position: relative;
   width: 100%;
@@ -43,7 +43,7 @@ const Center = styled.div`
   max-width: ${maxWidth}px;
 `;
 
-const Title = styled.h1`
+const Title = styled('h1')`
   color: ${black};
   font-size: ${heroTitle * mobileSizeMod}px;
 
@@ -52,7 +52,7 @@ const Title = styled.h1`
   }
 `;
 
-const Subtitle = styled.p`
+const Subtitle = styled('p')`
   color: ${black};
   font-size: ${sectionTitle * mobileSizeMod}px;
 
@@ -61,7 +61,7 @@ const Subtitle = styled.p`
   }
 `;
 
-const Polygon = styled.div`
+const Polygon = styled('div')`
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -72,7 +72,7 @@ const Polygon = styled.div`
   transform-origin: bottom right;
 `;
 
-const ScrollDownCenter = styled.div`
+const ScrollDownCenter = styled('div')`
   position: absolute;
   bottom: 7vh;
   width: 100%;
@@ -89,7 +89,7 @@ const ScrollAnimation = keyframes`
   }
 `;
 
-const ScrollDownIcon = styled.div`
+const ScrollDownIcon = styled('div')`
   background-image: url('${process.env.PUBLIC_URL}/images/mouse-black.png');
   background-position: 0;
   background-repeat: no-repeat;

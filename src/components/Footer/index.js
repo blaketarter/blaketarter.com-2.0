@@ -18,19 +18,19 @@ const backToTop = e => {
   window.location.href = '#top';
 };
 
-const FooterWrapper = styled.section`
+const FooterWrapper = styled('section')`
   margin: ${margin}px auto;
   padding: 0 ${margin}px;
   max-width: ${maxWidth}px;
 `;
 
-const Copyright = styled.p`
+const Copyright = styled('p')`
   margin: 0;
   padding: 0;
   color: ${black};
 `;
 
-const ToTop = styled.a`
+const ToTop = styled('a')`
   display: inline-block;
   margin: ${margin}px 0;
   text-decoration: none;
