@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import styled from 'preact-emotion';
 import start from '../../services/gems';
 import { smallUp } from '../../globals/sizes';
 

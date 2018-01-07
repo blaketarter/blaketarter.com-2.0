@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'preact-emotion';
 import { black } from '../../globals/colors';
 import smoothscroll from 'smoothscroll-polyfill';
 
