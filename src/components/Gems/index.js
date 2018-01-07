@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import styled from 'preact-emotion';
 import start from '../../services/gems';
 import { smallUp } from '../../globals/sizes';
 
-const Wrapper = styled.div`
+const Wrapper = styled('div')`
   position: absolute;
   top: 0;
   left: 0;
@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   bottom: 0;
 `;
 
-const Canvas = styled.canvas`
+const Canvas = styled('canvas')`
   height: 100%;
   width: 100%;
 `;

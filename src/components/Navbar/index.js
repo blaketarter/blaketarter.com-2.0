@@ -1,10 +1,10 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'preact-emotion';
 import { navbarHeight, margin, smallUpQuery } from '../../globals/sizes';
 import { black } from '../../globals/colors';
 import NavBarLink from './NavBarLink';
 
-const NavbarWrapper = styled.nav`
+const NavbarWrapper = styled('nav')`
   height: ${navbarHeight}px;
   width: 100%;
   display: flex;
@@ -17,13 +17,13 @@ const NavbarWrapper = styled.nav`
   z-index: 100;
 `;
 
-const LogoWrapper = styled.a`
+const LogoWrapper = styled('a')`
   font-size: 35px;
   color: ${black};
   margin-left: ${margin}px;
 `;
 
-const NavBarInnerWrapper = styled.ul`
+const NavBarInnerWrapper = styled('ul')`
   flex-direction: row;
   justify-content: space-around;
   align-items: stretch;
@@ -36,7 +36,7 @@ const NavBarInnerWrapper = styled.ul`
   }
 `;
 
-const NavBarItemWrapper = styled.li`
+const NavBarItemWrapper = styled('li')`
   list-style: none;
   margin: 0 ${margin}px;
 `;

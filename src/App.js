@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'preact-emotion';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import AboutMe from './components/AboutMe';
@@ -10,7 +10,7 @@ import { fontFamily } from './globals/fonts';
 import './vendor/normalize.css';
 import db from './db.json';
 
-const Container = styled.div`
+const Container = styled('div')`
   height: 100%;
   width: 100%;
   max-width: 100%;

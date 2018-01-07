@@ -4,10 +4,11 @@
   "private": true,
   "homepage": ".",
   "dependencies": {
+    "emotion": "^8.0.12",
+    "preact-emotion": "^8.0.12",
     "react": "16.2.0",
     "react-dom": "16.2.0",
-    "smoothscroll-polyfill": "^0.4.0",
-    "styled-components": "^2.4.0"
+    "smoothscroll-polyfill": "^0.4.0"
   },
   "devDependencies": {
     "react-app-rewire-preact": "^1.0.1",
