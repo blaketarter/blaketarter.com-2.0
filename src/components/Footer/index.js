@@ -15,7 +15,12 @@ const backToTop = e => {
     behavior: 'smooth',
   });
 
-  window.location.href = '#top';
+  if (window.history.pushState) {
+    window.history.pushState(null, null, '#top');
+  } else {
+    window.location.href = '#top';
+  }
+  
 };
 
 const FooterWrapper = styled('section')`

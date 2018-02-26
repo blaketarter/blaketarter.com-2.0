@@ -21,8 +21,10 @@
   },
   "aboutMe": {
     "title": "About Me.",
-    "summary":
-      "Blake is a Javascript developer with 3+ years of experience planning, creating, and maintaining websites and various application platforms. Some technologies that he uses on a regular basis are React, Angular, and Ionic. His projects include client and consumer facing websites, as well as react-native and hybrid applications. He has experience working in a team environment, exceeds in time management skills, and strives to remain on the cutting-edge of the front-end development scene.",
+    "summary": [
+      "Blake is a Javascript developer with 3+ years of experience planning, creating, and maintaining websites and various application platforms. Some technologies that he uses on a regular basis are React, Redux, and Node. His projects include client and consumer facing websites, as well as react-native and hybrid applications. He has experience working in a team environment, exceeds in time management skills, and strives to remain on the cutting-edge of the front-end development scene.",
+      "Currently Blake works at [Crema](https://www.crema.us/), a product agency that partners with funded startups and existing brands to create technology solutions and new digital ventures. He also does some freelance work in his spare time with [Midwestern Originals](https://www.midwesternoriginals.com/)."
+    ],
     "skillsStartCopy": "I know",
     "skills": [
       "HTML5",

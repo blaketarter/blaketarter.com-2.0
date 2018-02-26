@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'preact-emotion';
+import Link from '../Link';
 import {
   white,
   grey,
-  primary,
   black,
   secondary,
   lightGrey,
@@ -50,23 +50,14 @@ const InnerWrapper = styled('div')`
   }
 `;
 
-const Link = styled('a')`
-  text-decoration: none;
-  color: ${primary};
-  font-size: ${bodyCopy}px;
-  margin: ${margin}px;
-`;
-
 const Title = styled('h3')`
   font-size: ${bodyCopy}px;
   color: ${grey};
-  margin-left: ${margin}px;
 `;
 
 const Copy = styled('p')`
   font-size: ${bodyCopy}px;
   color: ${black};
-  margin: ${margin}px;
   position: relative;
 `;
 
@@ -96,6 +87,7 @@ const Left = styled('div')`
 const Right = styled('div')`
   z-index: 10;
   flex: 2;
+  padding-left: ${margin}px;
 `;
 
 const Tags = styled('span')`

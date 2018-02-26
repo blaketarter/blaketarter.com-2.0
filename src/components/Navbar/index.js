@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'preact-emotion';
-import { navbarHeight, margin, smallUpQuery } from '../../globals/sizes';
+import { navbarHeight, margin, smallUpQuery, maxWidth } from '../../globals/sizes';
 import { black } from '../../globals/colors';
 import NavBarLink from './NavBarLink';
 
@@ -9,12 +9,21 @@ const NavbarWrapper = styled('nav')`
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 100;
+`;
+
+const NavbarCenter = styled('div')`
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  max-width: ${maxWidth}px;
 `;
 
 const LogoWrapper = styled('a')`
@@ -43,14 +52,16 @@ const NavBarItemWrapper = styled('li')`
 
 const Navbar = ({ navItems }) => (
   <NavbarWrapper id="top">
-    <LogoWrapper>blaketarter</LogoWrapper>
-    <NavBarInnerWrapper>
-      {navItems.map((item, index) => (
-        <NavBarItemWrapper key={index}>
-          <NavBarLink href={item.href} text={item.text} />
-        </NavBarItemWrapper>
-      ))}
-    </NavBarInnerWrapper>
+    <NavbarCenter>
+      <LogoWrapper>blaketarter</LogoWrapper>
+      <NavBarInnerWrapper>
+        {navItems.map((item, index) => (
+          <NavBarItemWrapper key={index}>
+            <NavBarLink href={item.href} text={item.text} />
+          </NavBarItemWrapper>
+        ))}
+      </NavBarInnerWrapper>
+    </NavbarCenter>
   </NavbarWrapper>
 );
 

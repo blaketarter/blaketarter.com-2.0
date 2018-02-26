@@ -17,7 +17,11 @@ const onClick = (e, href) => {
     e.preventDefault();
     el.scrollIntoView({ behavior: 'smooth' });
 
-    window.location.href = href;
+    if (window.history.pushState) {
+      window.history.pushState(null, null, href);
+    } else {
+      window.location.href = href;
+    }
   }
 };
 
