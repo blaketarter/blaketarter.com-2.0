@@ -24,7 +24,7 @@
     "postbuild": "npm run optimize",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "optimize": "node ./node_modules/sw-precache/cli.js --root='build/' --static-file-globs='build/**/!(*map*)'",
+    "optimize": "node ./node_modules/sw-precache/cli.js --root='build/' --static-file-globs='build/**/!(*map*|*CNAME*)'",
     "deploy": "npm run build && GIT_DEPLOY_DIR=build ./deploy.sh"
   }
 }
