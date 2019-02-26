@@ -113,7 +113,7 @@ class WorkItem extends React.Component {
   onMouseLeave = () => this.setState({ hovered: false });
 
   render() {
-    const { title, desc, url, img, source, } = this.props;
+    const { title, desc, url, img, source, alt = title } = this.props;
 
     return (
       <WorkItemWrapper
@@ -124,7 +124,7 @@ class WorkItem extends React.Component {
       >
         <InnerWrapper>
           <Left>
-            <Thumb src={'images/' + img} />
+            <Thumb src={'images/' + img} alt={alt} />
           </Left>
           <Right>
             <Title>

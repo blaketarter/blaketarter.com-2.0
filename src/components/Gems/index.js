@@ -32,7 +32,7 @@ export default class Gems extends Component {
   render() {
     return (
       <Wrapper>
-        <Canvas innerRef={this.onRef} id="gems-canvas" />
+        <Canvas innerRef={this.onRef} id="gems-canvas" role="img" aria-label="falling gems in motion" />
         <script onLoad={this.onLoad} aysnc src="/vendor/three.min.js" />
       </Wrapper>
     );
