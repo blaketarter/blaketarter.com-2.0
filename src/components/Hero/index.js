@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { keyframes } from 'preact-emotion';
+import styled from 'preact-emotion';
 import smoothscroll from 'smoothscroll-polyfill';
 import {
   heroHeight,
@@ -72,59 +72,6 @@ const Polygon = styled('div')`
   transform-origin: bottom right;
 `;
 
-const ScrollDownCenter = styled('div')`
-  position: absolute;
-  bottom: 7vh;
-  width: 100%;
-`;
-
-const ScrollAnimation = keyframes`
-  from {
-    opacity: 1;
-  }
-
-  to {
-    transform: translateY(-30px);
-    opacity: 0;
-  }
-`;
-
-const ScrollDownIcon = styled('div')`
-  background-image: url('${process.env.PUBLIC_URL}/images/mouse-black.png');
-  background-position: 0;
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 50px;
-  margin: 0 auto;
-  width: 25px;
-  position: relative;
-
-  &:hover {
-    cursor: pointer;
-  }
-
-  &:before {
-    content: '•';
-    color: ${black};
-    text-align: center;
-    width: 100%;
-    display: block;
-    animation: ${ScrollAnimation} 3s infinite;
-    position: relative;
-    top: 30px;
-    will-change: transform, opacity;
-  }
-`;
-
-const scrollDown = e => {
-  e.preventDefault();
-  window.scrollBy({
-    top: window.innerHeight,
-    left: 0,
-    behavior: 'smooth',
-  });
-};
-
 const Hero = ({ title, subtitle }) => (
   <HeroWrapper>
     <Polygon />
@@ -135,9 +82,6 @@ const Hero = ({ title, subtitle }) => (
         <Subtitle>{subtitle}</Subtitle>
       </Center>
     </ClipWrapper>
-    <ScrollDownCenter>
-      <ScrollDownIcon onClick={scrollDown} />
-    </ScrollDownCenter>
   </HeroWrapper>
 );
 
