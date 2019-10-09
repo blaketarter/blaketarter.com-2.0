@@ -2,11 +2,9 @@ import React from 'react';
 import styled from 'preact-emotion';
 import Link from '../Link';
 import { margin } from '../../globals/sizes';
-import { black } from '../../globals/colors';
 import { bodyCopy, bodyLineHeight } from '../../globals/fonts';
 
 const SummaryWrapper = styled('p')`
-  color: ${ black };
   padding: 0 ${ margin }px;
   font-size: ${ bodyCopy }px;
   line-height: ${ bodyLineHeight }em;

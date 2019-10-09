@@ -8,11 +8,26 @@ let directionalLight1;
 let directionalLight2;
 let ambient;
 
+const colorSchemeMedia = window.matchMedia('(prefers-color-scheme: dark)');
+
+function setFogColor() {
+  FOG_COLOR = colorSchemeMedia.matches ? 0x19191d : 0xf7c284;
+  scene.fog = new window.THREE.FogExp2(FOG_COLOR, 0.002);
+  renderer.setClearColor(scene.fog.color);
+}
+
+function randomBetween(min, max) {
+  const whole_min = Math.ceil(min);
+  const whole_max = Math.floor(max);
+  return Math.floor(Math.random() * (whole_max - whole_min + 1)) + whole_min;
+}
+
 const triangles = [];
 const AMBIENT_COLOR = 0x536dfe;
 const DIRECTIONAL_COLOR_1 = 0x607d8b;
 const DIRECTIONAL_COLOR_2 = 0xffa000;
-const FOG_COLOR = 0xf7c284;
+let FOG_COLOR = colorSchemeMedia.matches ? 0x19191d : 0xf7c284;
+colorSchemeMedia.addEventListener("change", setFogColor);
 // const TRIANGLE_COUNT = 500;
 const TRIANGLE_COUNT = 100;
 let TRIANGLE_INDEX = 0;
@@ -135,7 +150,7 @@ export default function start(canvasRef, isMobile) {
     0.1,
     1000,
   );
-  camera.position.set(0, -500, 0);
+  camera.position.set(randomBetween(-500, 500), randomBetween(-500, 500), randomBetween(-500, 500));
   camera.lookAt(new window.THREE.Vector3(0, 500, 0));
 
   if (!isMobile) {

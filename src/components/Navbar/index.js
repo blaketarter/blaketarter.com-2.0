@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'preact-emotion';
-import { navbarHeight, margin, smallUpQuery, maxWidth } from '../../globals/sizes';
-import { black } from '../../globals/colors';
+import { navbarHeight, margin, smallUpQuery, maxWidth, darkModeQuery } from '../../globals/sizes';
 import NavBarLink from './NavBarLink';
+import { white } from '../../globals/colors';
 
 const NavbarWrapper = styled('nav')`
   height: ${navbarHeight}px;
@@ -28,8 +28,11 @@ const NavbarCenter = styled('div')`
 
 const LogoWrapper = styled('a')`
   font-size: 35px;
-  color: ${black};
   margin-left: ${margin}px;
+
+  ${darkModeQuery} {
+    color: ${white};
+  }
 `;
 
 const NavBarInnerWrapper = styled('ul')`

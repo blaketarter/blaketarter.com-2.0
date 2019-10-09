@@ -6,3 +6,5 @@ export const black = '#222222';
 export const white = '#ffffff';
 export const grey = '#666666';
 export const lightGrey = '#aaaaaa';
+export const darkBackground = '#34333c';
+export const darkLighterBackground = '#4f4d5a';

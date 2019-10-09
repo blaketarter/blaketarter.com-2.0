@@ -6,15 +6,15 @@ import {
   margin,
   maxWidth,
   smallUpQuery,
+  darkModeQuery,
 } from '../../globals/sizes';
-import { primary, secondary, black, secondaryDark, primaryDark, } from '../../globals/colors';
+import { primary, secondary, primaryDark, darkLighterBackground, } from '../../globals/colors';
 import { sectionTitle } from '../../globals/fonts';
 
 const WorksWrapper = styled('section')`position: relative;`;
 
 const Clip = styled('div')`
   background: ${secondary};
-  // background: linear-gradient(to bottom right, ${secondaryDark} 0%, ${secondary} 50%, ${secondary} 100%);
   clip-path: polygon(0 0, 100% 2%, 100% 100%, 0 98%);
   -webkit-clip-path: polygon(0 0, 100% 2%, 100% 100%, 0 98%);
   padding: ${3 * margin}px 0;
@@ -23,11 +23,14 @@ const Clip = styled('div')`
     clip-path: polygon(0 0, 100% 7%, 100% 100%, 0 93%);
     -webkit-clip-path: polygon(0 0, 100% 7%, 100% 100%, 0 93%);
   }
+
+  ${darkModeQuery} {
+    background: ${darkLighterBackground};
+  }
 `;
 
 const Title = styled('h2')`
   font-size: ${sectionTitle}px;
-  color: ${black};
   margin-left: ${margin}px;
 `;
 
@@ -40,6 +43,10 @@ const Polygon1 = styled('div')`
   background: linear-gradient(to right, ${primaryDark} 0%, ${primary} 100%);
   transform: translateX(-5vw) rotate(-1deg);
   transform-origin: top right;
+
+  ${darkModeQuery} {
+    opacity: 0.5;
+  }
 `;
 
 const Polygon2 = styled('div')`
@@ -51,6 +58,10 @@ const Polygon2 = styled('div')`
   background: linear-gradient(to left, ${primaryDark} 0%, ${primary} 100%);
   transform: translateX(-5vw) rotate(-1deg);
   transform-origin: bottom left;
+
+  ${darkModeQuery} {
+    opacity: 0.5;
+  }
 `;
 
 const InnerWrapper = styled('div')`

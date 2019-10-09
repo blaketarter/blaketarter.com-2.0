@@ -7,8 +7,9 @@ import {
   maxWidth,
   smallUpQuery,
   mobileSizeMod,
+  darkModeQuery,
 } from '../../globals/sizes';
-import { primary, black, primaryDark } from '../../globals/colors';
+import { primary, primaryDark, black, white } from '../../globals/colors';
 import { heroTitle, sectionTitle } from '../../globals/fonts';
 import Gems from '../Gems';
 
@@ -33,6 +34,10 @@ const ClipWrapper = styled('div')`
   position: relative;
   clip-path: polygon(100% 0, 100% 0, 100% 93%, 0 100%, 0 0);
   -webkit-clip-path: polygon(100% 0, 100% 0, 100% 93%, 0 100%, 0 0);
+
+  ${darkModeQuery} {
+    background-color: #19191d;
+  }
 `;
 
 const Center = styled('div')`
@@ -41,6 +46,7 @@ const Center = styled('div')`
   width: 100%;
   padding: 0 ${margin}px;
   max-width: ${maxWidth}px;
+  pointer-events: none;
 `;
 
 const Title = styled('h1')`
@@ -50,6 +56,10 @@ const Title = styled('h1')`
   ${smallUpQuery} {
     font-size: ${heroTitle}px;
   }
+
+  ${darkModeQuery} {
+    color: ${white};
+  }
 `;
 
 const Subtitle = styled('p')`
@@ -58,6 +68,10 @@ const Subtitle = styled('p')`
 
   ${smallUpQuery} {
     font-size: ${sectionTitle}px;
+  }
+
+  ${darkModeQuery} {
+    color: ${white};
   }
 `;
 
@@ -70,6 +84,10 @@ const Polygon = styled('div')`
   background: linear-gradient(to right, ${primaryDark} 0%, ${primary} 100%);
   transform: translateX(-5vw) rotate(1deg);
   transform-origin: bottom right;
+
+  ${darkModeQuery} {
+    opacity: 0.5;
+  }
 `;
 
 const Hero = ({ title, subtitle }) => (
