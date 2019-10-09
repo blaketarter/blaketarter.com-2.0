@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'preact-emotion';
 import smoothscroll from 'smoothscroll-polyfill';
-import { margin, maxWidth } from '../../globals/sizes';
-import { black, primary } from '../../globals/colors';
+import { margin, maxWidth, darkModeQuery } from '../../globals/sizes';
+import { black, primary, white } from '../../globals/colors';
 
 smoothscroll.polyfill();
 
@@ -24,8 +24,8 @@ const backToTop = e => {
 };
 
 const FooterWrapper = styled('section')`
-  margin: ${margin}px auto;
-  padding: 0 ${margin}px;
+  margin: 0 auto;
+  padding: ${margin}px;
   max-width: ${maxWidth}px;
 `;
 
@@ -33,11 +33,15 @@ const Copyright = styled('p')`
   margin: 0;
   padding: 0;
   color: ${black};
+
+  ${darkModeQuery} {
+    color: ${white};
+  }
 `;
 
 const ToTop = styled('a')`
   display: inline-block;
-  margin: ${margin}px 0;
+  margin-bottom: ${margin}px;
   text-decoration: none;
   color: ${primary};
 `;

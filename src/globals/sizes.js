@@ -7,3 +7,4 @@ export const mediumUp = 992; // used to be 840
 export const mobileSizeMod = 0.66;
 export const smallUpQuery = `@media (min-width: ${smallUp}px)`;
 export const mediumUpQuery = `@media (min-width: ${mediumUp}px)`;
+export const darkModeQuery = '@media (prefers-color-scheme: dark)';

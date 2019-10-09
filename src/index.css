@@ -16,3 +16,9 @@ html {
 *:after {
   box-sizing: inherit;
 }
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #34333c;
+  }
+}

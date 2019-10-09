@@ -4,12 +4,12 @@ import Link from '../Link';
 import {
   white,
   grey,
-  black,
   secondary,
   lightGrey,
+  darkBackground,
 } from '../../globals/colors';
 import { bodyCopy } from '../../globals/fonts';
-import { margin, smallUpQuery } from '../../globals/sizes';
+import { margin, smallUpQuery, darkModeQuery } from '../../globals/sizes';
 
 const halfSize = `
   width: 50%;
@@ -33,9 +33,17 @@ const WorkItemWrapper = styled('li')`
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
   }
 
+  ${darkModeQuery} {
+    background: ${darkBackground};
+  }
+
   ${smallUpQuery} {
     ${props => (props.isFeatured ? fullSize : halfSize)};
     background: ${props => (props.isFeatured ? white : 'transparent')};
+
+    ${darkModeQuery} {
+      background: ${props => (props.isFeatured ? darkBackground : 'transparent')};
+    }
   }
 `;
 
@@ -53,11 +61,14 @@ const InnerWrapper = styled('div')`
 const Title = styled('h3')`
   font-size: ${bodyCopy}px;
   color: ${grey};
+
+  ${darkModeQuery} {
+    color: ${white};
+  }
 `;
 
 const Copy = styled('p')`
   font-size: ${bodyCopy}px;
-  color: ${black};
   position: relative;
 `;
 

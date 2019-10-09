@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'preact-emotion';
-import { margin, maxWidth, mediumUpQuery } from '../../globals/sizes';
-import { black } from '../../globals/colors';
+import { margin, maxWidth, mediumUpQuery, darkModeQuery } from '../../globals/sizes';
+import { black, white } from '../../globals/colors';
 import { sectionTitle, largeCopy, bodyCopy } from '../../globals/fonts';
 
 const MoreAboutMeWrapper = styled('footer')`
@@ -12,13 +12,11 @@ const MoreAboutMeWrapper = styled('footer')`
 
 const Title = styled('h2')`
   font-size: ${ sectionTitle }px;
-  color: ${ black };
 `;
 
 const Label = styled('label')`
   font-size: ${largeCopy}px;
   font-weight: 700;
-  color: ${ black };
   display: block;
   margin: ${ margin }px 0;
 `;
@@ -26,7 +24,7 @@ const Label = styled('label')`
 const Link = styled('a')`
   font-size: ${ bodyCopy }px;
   font-weight: normal;
-  color: ${ black };
+  color: ${black};
   display: block;
   width: 100%;
   word-break: break-all;
@@ -34,6 +32,10 @@ const Link = styled('a')`
   ${ mediumUpQuery } {
     margin-left: ${ margin / 3 }px;
     display: initial;
+  }
+
+  ${darkModeQuery} {
+    color: ${white};
   }
 `;
 

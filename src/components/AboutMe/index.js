@@ -3,7 +3,6 @@ import styled from 'preact-emotion';
 import SkillsSwapper from './SkillsSwapper';
 import Summary from './Summary';
 import { margin, maxWidth } from '../../globals/sizes';
-import { black } from '../../globals/colors';
 import { sectionTitle } from '../../globals/fonts';
 
 const AboutMeWrapper = styled('section')`
@@ -14,7 +13,6 @@ const AboutMeWrapper = styled('section')`
 
 const Title = styled('h2')`
   font-size: ${ sectionTitle }px;
-  color: ${ black };
 `;
 
 const AboutMe = ({
