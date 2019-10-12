@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styled from 'preact-emotion';
+import styled from 'react-emotion';
 import start from '../../services/gems';
 import { smallUp } from '../../globals/sizes';
 
@@ -24,6 +24,16 @@ export default class Gems extends Component {
 
   onRef = canvasEl => (this.canvasRef = canvasEl);
 
+  componentDidMount = () => {
+    const script = document.createElement("script");
+
+    script.src = "/vendor/three.min.js";
+    script.async = true;
+    script.onload = this.onLoad;
+
+    document.body.appendChild(script);
+  }
+
   onLoad = () => {
     const isMobile = window.innerWidth < smallUp;
     start(this.canvasRef, isMobile);
@@ -33,7 +43,6 @@ export default class Gems extends Component {
     return (
       <Wrapper>
         <Canvas innerRef={this.onRef} id="gems-canvas" role="img" aria-label="falling gems in motion" />
-        <script onLoad={this.onLoad} aysnc src="/vendor/three.min.js" />
       </Wrapper>
     );
   }

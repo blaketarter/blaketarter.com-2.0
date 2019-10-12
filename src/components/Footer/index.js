@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'preact-emotion';
+import styled from 'react-emotion';
 import smoothscroll from 'smoothscroll-polyfill';
 import { margin, maxWidth, darkModeQuery } from '../../globals/sizes';
 import { black, primary, white } from '../../globals/colors';

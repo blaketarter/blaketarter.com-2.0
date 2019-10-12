@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'preact-emotion';
+import styled from 'react-emotion';
 import WorkItem from './WorkItem';
 import FeaturedWorkItem from './FeaturedWorkItem';
 import {

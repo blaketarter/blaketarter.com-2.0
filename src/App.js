@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'preact-emotion';
+import styled from 'react-emotion';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import AboutMe from './components/AboutMe';

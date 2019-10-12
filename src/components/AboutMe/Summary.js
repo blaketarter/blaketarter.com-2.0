@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'preact-emotion';
+import styled from 'react-emotion';
 import Link from '../Link';
 import { margin } from '../../globals/sizes';
 import { bodyCopy, bodyLineHeight } from '../../globals/fonts';
@@ -28,7 +28,7 @@ const Summary = ({ copy }) => {
     return (<SummaryWrapper>{matches.reduce((elements, match) => {
       const index = elements.length - 1;
       const split = elements[index].split(match[0]);
-      return [...elements.slice(0, index), split[0], (<Link href={match[2]}>{match[1]}</Link>), split[1]];
+      return [...elements.slice(0, index), split[0], (<Link key={match[2]} href={match[2]}>{match[1]}</Link>), split[1]];
     }, [copy])}</SummaryWrapper>);
   } else {
     return (<SummaryWrapper>{copy}</SummaryWrapper>);
