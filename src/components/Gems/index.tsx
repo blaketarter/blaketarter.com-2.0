@@ -3,26 +3,17 @@ import styled from '@emotion/styled'
 import start from '../../services/gems';
 import { smallUp } from '../../globals/sizes';
 
-const Wrapper = styled('div')`
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-`;
+interface Props { }
 
-const Canvas = styled('canvas')`
-  height: 100%;
-  width: 100%;
-`;
+class Gems extends Component<Props> {
+  canvasRef: HTMLCanvasElement | null;
 
-export default class Gems extends Component {
-  constructor() {
-    super();
+  constructor(props: Props) {
+    super(props);
     this.canvasRef = null;
   }
 
-  onRef = canvasEl => (this.canvasRef = canvasEl);
+  onRef = (canvasEl: HTMLCanvasElement | null) => (this.canvasRef = canvasEl);
 
   componentDidMount = () => {
     const script = document.createElement("script");
@@ -47,3 +38,18 @@ export default class Gems extends Component {
     );
   }
 }
+
+const Wrapper = styled('div')`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+`;
+
+const Canvas = styled('canvas')`
+  height: 100%;
+  width: 100%;
+`;
+
+export default Gems;

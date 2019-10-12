@@ -11,6 +11,65 @@ import {
 import { bodyCopy } from '../../globals/fonts';
 import { margin, smallUpQuery, darkModeQuery } from '../../globals/sizes';
 
+interface Props {
+  title: string;
+  desc: string;
+  url: string;
+  img: string;
+  source: string
+  alt?: string;
+  tags: string[]
+}
+
+interface State {
+  hovered: boolean;
+}
+
+class WorkItem extends React.Component<Props, State> {
+  constructor(props: Props) {
+    super(props);
+    this.state = {
+      hovered: false,
+    };
+  }
+
+  isFeatured = false;
+
+  onMouseEnter = () => this.setState({ hovered: true });
+
+  onMouseLeave = () => this.setState({ hovered: false });
+
+  render() {
+    const { title, desc, url, img, source, alt = title } = this.props;
+
+    return (
+      <WorkItemWrapper
+        onMouseEnter={this.onMouseEnter}
+        onMouseLeave={this.onMouseLeave}
+        hovered={this.state.hovered}
+        isFeatured={this.isFeatured}
+      >
+        <InnerWrapper>
+          <Left>
+            <Thumb src={'images/' + img} alt={alt} />
+          </Left>
+          <Right>
+            <Title>
+              {title}
+              <Tags isFeatured={this.isFeatured}>
+                {' '}
+                / {this.props.tags.join(' / ')}
+              </Tags>
+            </Title>
+            <Copy>{desc}</Copy>
+            <Link href={url}>See it on {source}.</Link>
+          </Right>
+        </InnerWrapper>
+      </WorkItemWrapper>
+    );
+  }
+}
+
 const halfSize = `
   width: 50%;
   margin: 0;
@@ -20,7 +79,14 @@ const fullSize = `
   width: 100%;
 `;
 
-const WorkItemWrapper = styled('li')`
+interface WorkItemWrapperProps {
+  onMouseEnter: () => unknown;
+  onMouseLeave: () => unknown;
+  hovered: boolean;
+  isFeatured: boolean;
+}
+
+const WorkItemWrapper = styled('li')<WorkItemWrapperProps>`
   position: relative;
   background: ${white};
   list-style: none;
@@ -101,57 +167,12 @@ const Right = styled('div')`
   padding-left: ${margin}px;
 `;
 
-const Tags = styled('span')`
+const Tags = styled('span')<{ isFeatured: boolean }>`
   color: ${secondary};
 
   ${smallUpQuery} {
     color: ${props => (props.isFeatured ? secondary : lightGrey)};
   }
 `;
-
-class WorkItem extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      hovered: false,
-    };
-  }
-
-  isFeatured = false;
-
-  onMouseEnter = () => this.setState({ hovered: true });
-
-  onMouseLeave = () => this.setState({ hovered: false });
-
-  render() {
-    const { title, desc, url, img, source, alt = title } = this.props;
-
-    return (
-      <WorkItemWrapper
-        onMouseEnter={this.onMouseEnter}
-        onMouseLeave={this.onMouseLeave}
-        hovered={this.state.hovered}
-        isFeatured={this.isFeatured}
-      >
-        <InnerWrapper>
-          <Left>
-            <Thumb src={'images/' + img} alt={alt} />
-          </Left>
-          <Right>
-            <Title>
-              {title}
-              <Tags isFeatured={this.isFeatured}>
-                {' '}
-                / {this.props.tags.join(' / ')}
-              </Tags>
-            </Title>
-            <Copy hovered={this.state.hovered}>{desc}</Copy>
-            <Link href={url}>See it on {source}.</Link>
-          </Right>
-        </InnerWrapper>
-      </WorkItemWrapper>
-    );
-  }
-}
 
 export default WorkItem;

@@ -8,7 +8,7 @@ import FindMe from '../FindMe';
 import Footer from '../Footer';
 import { fontFamily } from '../../globals/fonts';
 import '../../vendor/normalize.css';
-import db from '../../db.json';
+import db from '../../db';
 import { darkModeQuery } from '../../globals/sizes';
 import { darkBackground, white, black } from '../../globals/colors';
 

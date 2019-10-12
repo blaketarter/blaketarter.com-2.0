@@ -11,6 +11,43 @@ import {
 import { primary, secondary, primaryDark, darkLighterBackground, } from '../../globals/colors';
 import { sectionTitle } from '../../globals/fonts';
 
+interface Props {
+  title: string;
+  workItems: Array<{
+    "title": string;
+    "desc": string;
+    "url": string;
+    "img": string;
+    "alt": string;
+    "tags": string[];
+    "source": string;
+  }>;
+}
+
+const MyWork = ({ title, workItems }: Props) => (
+  <WorksWrapper id="my-work">
+    <Polygon1 />
+    <Polygon2 />
+    <Clip>
+      <InnerWrapper>
+        <Title>{title}</Title>
+        <WorkItemsWrapper>
+          {workItems
+            .slice(0, 5)
+            .map(
+              (workItem, index) =>
+                index === 0 ? (
+                  <FeaturedWorkItem key={index} {...workItem} />
+                ) : (
+                  <WorkItem key={index} {...workItem} />
+                ),
+            )}
+        </WorkItemsWrapper>
+      </InnerWrapper>
+    </Clip>
+  </WorksWrapper>
+);
+
 const WorksWrapper = styled('section')`position: relative;`;
 
 const Clip = styled('div')`
@@ -79,29 +116,5 @@ const WorkItemsWrapper = styled('ul')`
     flex-wrap: wrap;
   }
 `;
-
-const MyWork = ({ title, workItems }) => (
-  <WorksWrapper id="my-work">
-    <Polygon1 />
-    <Polygon2 />
-    <Clip>
-      <InnerWrapper>
-        <Title>{title}</Title>
-        <WorkItemsWrapper>
-          {workItems
-            .slice(0, 5)
-            .map(
-              (workItem, index) =>
-                index === 0 ? (
-                  <FeaturedWorkItem key={index} {...workItem} />
-                ) : (
-                  <WorkItem key={index} {...workItem} />
-                ),
-            )}
-        </WorkItemsWrapper>
-      </InnerWrapper>
-    </Clip>
-  </WorksWrapper>
-);
 
 export default MyWork;

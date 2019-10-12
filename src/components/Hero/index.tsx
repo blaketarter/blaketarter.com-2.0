@@ -15,6 +15,24 @@ import Gems from '../Gems';
 
 smoothscroll.polyfill();
 
+interface Props {
+  title: string;
+  subtitle: string;
+}
+
+const Hero = ({ title, subtitle }: Props) => (
+  <HeroWrapper>
+    <Polygon />
+    <ClipWrapper>
+      <Gems />
+      <Center>
+        <Title>{title}</Title>
+        <Subtitle>{subtitle}</Subtitle>
+      </Center>
+    </ClipWrapper>
+  </HeroWrapper>
+);
+
 const HeroWrapper = styled('section')`
   height: ${heroHeight}vh;
   position: relative;
@@ -89,18 +107,5 @@ const Polygon = styled('div')`
     opacity: 0.5;
   }
 `;
-
-const Hero = ({ title, subtitle }) => (
-  <HeroWrapper>
-    <Polygon />
-    <ClipWrapper>
-      <Gems />
-      <Center>
-        <Title>{title}</Title>
-        <Subtitle>{subtitle}</Subtitle>
-      </Center>
-    </ClipWrapper>
-  </HeroWrapper>
-);
 
 export default Hero;
