@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'react-emotion';
+import styled from '@emotion/styled'
 import Link from '../Link';
 import { margin } from '../../globals/sizes';
 import { bodyCopy, bodyLineHeight } from '../../globals/fonts';

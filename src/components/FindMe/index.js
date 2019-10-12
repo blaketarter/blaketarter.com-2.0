@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'react-emotion';
+import styled from '@emotion/styled'
 import { margin, maxWidth, mediumUpQuery, darkModeQuery } from '../../globals/sizes';
 import { black, white } from '../../globals/colors';
 import { sectionTitle, largeCopy, bodyCopy } from '../../globals/fonts';

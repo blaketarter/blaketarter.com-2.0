@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styled from 'react-emotion';
+import styled from '@emotion/styled'
 import start from '../../services/gems';
 import { smallUp } from '../../globals/sizes';
 
@@ -42,7 +42,7 @@ export default class Gems extends Component {
   render() {
     return (
       <Wrapper>
-        <Canvas innerRef={this.onRef} id="gems-canvas" role="img" aria-label="falling gems in motion" />
+        <Canvas ref={this.onRef} id="gems-canvas" role="img" aria-label="falling gems in motion" />
       </Wrapper>
     );
   }

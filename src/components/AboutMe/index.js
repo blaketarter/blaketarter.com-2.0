@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'react-emotion';
+import styled from '@emotion/styled'
 import SkillsSwapper from './SkillsSwapper';
 import Summary from './Summary';
 import { margin, maxWidth } from '../../globals/sizes';
