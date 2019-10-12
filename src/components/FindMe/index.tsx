@@ -1,10 +1,32 @@
 import React from 'react';
-import styled from 'preact-emotion';
+import styled from '@emotion/styled'
 import { margin, maxWidth, mediumUpQuery, darkModeQuery } from '../../globals/sizes';
 import { black, white } from '../../globals/colors';
 import { sectionTitle, largeCopy, bodyCopy } from '../../globals/fonts';
+interface Props {
+  title: string;
+  links: Array<{
+    label: string;
+    link: string;
+    linkText: string | null;
+  }>;
+}
 
-const MoreAboutMeWrapper = styled('footer')`
+const FindMe = ({
+  title,
+  links,
+}: Props) => (
+  <MoreAboutMeWrapper id="find-me">
+    <Title>{title}</Title>
+    {links.map((linkData, index) =>
+      <Label key={index}>{linkData.label} <Link
+        href={linkData.link}>{linkData.linkText ? linkData.linkText : linkData.link}</Link>
+      </Label>
+    )}
+  </MoreAboutMeWrapper>
+);
+
+  const MoreAboutMeWrapper = styled('footer')`
   margin: ${3 * margin}px auto;
   padding: 0 ${ margin }px;
   max-width: ${ maxWidth }px;
@@ -39,18 +61,5 @@ const Link = styled('a')`
   }
 `;
 
-const FindMe = ({
-  title,
-  links,
-}) => (
-  <MoreAboutMeWrapper id="find-me">
-    <Title>{title}</Title>
-    {links.map((linkData, index) =>
-      <Label key={index}>{linkData.label} <Link
-        href={linkData.link}>{linkData.linkText ? linkData.linkText : linkData.link}</Link>
-      </Label>
-    )}
-  </MoreAboutMeWrapper>
-);
 
 export default FindMe;

@@ -4,27 +4,39 @@
   "private": true,
   "homepage": ".",
   "dependencies": {
-    "emotion": "^8.0.12",
-    "preact": "^8.2.7",
-    "preact-compat": "^3.18.0",
-    "preact-emotion": "^8.0.12",
-    "react": "16.2.0",
-    "react-dom": "16.2.0",
-    "smoothscroll-polyfill": "^0.4.0"
+    "@emotion/core": "^10.0.21",
+    "@emotion/styled": "^10.0.17",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "smoothscroll-polyfill": "^0.4.4"
   },
   "devDependencies": {
-    "react-app-rewire-preact": "^1.0.1",
-    "react-app-rewired": "^1.4.0",
-    "react-scripts": "1.0.17",
-    "sw-precache": "^5.2.0"
+    "@types/react": "^16.9.5",
+    "@types/react-dom": "^16.9.1",
+    "@types/smoothscroll-polyfill": "^0.3.1",
+    "react-scripts": "^3.2.0",
+    "sw-precache": "^5.2.1",
+    "typescript": "^3.6.4"
   },
   "scripts": {
-    "start": "react-app-rewired start",
-    "build": "react-app-rewired build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "postbuild": "npm run optimize",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "optimize": "node ./node_modules/sw-precache/cli.js --root='build/' --static-file-globs='build/**/!(*map*|*CNAME*)'",
     "deploy": "npm run build && GIT_DEPLOY_DIR=build ./deploy.sh"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

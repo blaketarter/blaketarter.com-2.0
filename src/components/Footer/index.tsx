@@ -1,12 +1,12 @@
-import React from 'react';
-import styled from 'preact-emotion';
+import React, { MouseEvent } from 'react';
+import styled from '@emotion/styled'
 import smoothscroll from 'smoothscroll-polyfill';
 import { margin, maxWidth, darkModeQuery } from '../../globals/sizes';
 import { black, primary, white } from '../../globals/colors';
 
 smoothscroll.polyfill();
 
-const backToTop = e => {
+const backToTop = (e: MouseEvent<HTMLAnchorElement>) => {
   e.preventDefault();
 
   window.scrollTo({
@@ -16,7 +16,7 @@ const backToTop = e => {
   });
 
   if (window.history.pushState) {
-    window.history.pushState(null, null, '#top');
+    window.history.pushState(null, '#top', '#top');
   } else {
     window.location.href = '#top';
   }
@@ -46,13 +46,17 @@ const ToTop = styled('a')`
   color: ${primary};
 `;
 
-const Footer = ({ copyright }) => (
+interface Props {
+  copyright: String;
+}
+
+const Footer = ({ copyright }: Props) => (
   <FooterWrapper>
     <ToTop href="#top" onClick={backToTop}>
       ↑ Back to the Top.
     </ToTop>
     <Copyright>
-      {copyright.replace(/(CURR_YEAR)/, new Date().getFullYear())}
+      {copyright.replace(/(CURR_YEAR)/, `${new Date().getFullYear()}`)}
     </Copyright>
   </FooterWrapper>
 );

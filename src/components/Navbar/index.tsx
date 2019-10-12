@@ -1,8 +1,27 @@
 import React from 'react';
-import styled from 'preact-emotion';
+import styled from '@emotion/styled'
 import { navbarHeight, margin, smallUpQuery, maxWidth, darkModeQuery } from '../../globals/sizes';
 import NavBarLink from './NavBarLink';
 import { white } from '../../globals/colors';
+
+interface Props {
+  navItems: Array<{ text: string, href: string}>;
+}
+
+const Navbar = ({ navItems }: Props) => (
+  <NavbarWrapper id="top">
+    <NavbarCenter>
+      <LogoWrapper>blaketarter</LogoWrapper>
+      <NavBarInnerWrapper>
+        {navItems.map((item, index) => (
+          <NavBarItemWrapper key={index}>
+            <NavBarLink href={item.href} text={item.text} />
+          </NavBarItemWrapper>
+        ))}
+      </NavBarInnerWrapper>
+    </NavbarCenter>
+  </NavbarWrapper>
+);
 
 const NavbarWrapper = styled('nav')`
   height: ${navbarHeight}px;
@@ -52,20 +71,5 @@ const NavBarItemWrapper = styled('li')`
   list-style: none;
   margin: 0 ${margin}px;
 `;
-
-const Navbar = ({ navItems }) => (
-  <NavbarWrapper id="top">
-    <NavbarCenter>
-      <LogoWrapper>blaketarter</LogoWrapper>
-      <NavBarInnerWrapper>
-        {navItems.map((item, index) => (
-          <NavBarItemWrapper key={index}>
-            <NavBarLink href={item.href} text={item.text} />
-          </NavBarItemWrapper>
-        ))}
-      </NavBarInnerWrapper>
-    </NavbarCenter>
-  </NavbarWrapper>
-);
 
 export default Navbar;
