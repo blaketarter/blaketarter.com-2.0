@@ -11,8 +11,11 @@
     "smoothscroll-polyfill": "^0.4.4"
   },
   "devDependencies": {
+    "@types/react": "^16.9.5",
+    "@types/react-dom": "^16.9.1",
     "react-scripts": "^3.2.0",
-    "sw-precache": "^5.2.1"
+    "sw-precache": "^5.2.1",
+    "typescript": "^3.6.4"
   },
   "scripts": {
     "start": "react-scripts start",
