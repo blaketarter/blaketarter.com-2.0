@@ -5,16 +5,16 @@ import { margin } from "../../globals/sizes"
 import { bodyCopy, bodyLineHeight } from "../../globals/fonts"
 
 interface Props {
-  copy: string
+  children: string
 }
 
 const linkRe = /\[([\w\s']+)\]\(([\w|:|/|.]+)\)/g
 
-export const Summary = ({ copy }: Props) => {
-  if (copy.search(linkRe) > -1) {
+export const HighlightLinks = ({ children }: Props) => {
+  if (children.search(linkRe) > -1) {
     const matches: RegExpExecArray[] = []
     let expMatch: RegExpExecArray | null
-    while ((expMatch = linkRe.exec(copy))) {
+    while ((expMatch = linkRe.exec(children))) {
       // eslint-disable-line
       matches.push(expMatch)
     }
@@ -33,12 +33,12 @@ export const Summary = ({ copy }: Props) => {
               split[1],
             ]
           },
-          [copy],
+          [children],
         )}
       </SummaryWrapper>
     )
   } else {
-    return <SummaryWrapper>{copy}</SummaryWrapper>
+    return <SummaryWrapper>{children}</SummaryWrapper>
   }
 }
 

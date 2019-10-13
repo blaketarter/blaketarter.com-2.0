@@ -9,18 +9,42 @@ import {
 import { black, white } from "../../globals/colors"
 import { sectionTitle, largeCopy, bodyCopy } from "../../globals/fonts"
 
-interface Props {
-  title: string
-  links: Array<{
-    label: string
-    link: string
-    linkText: string | null
-  }>
-}
+const links = [
+  {
+    label: "Github",
+    link: "https://github.com/blaketarter",
+    linkText: null,
+  },
+  {
+    label: "Codepen",
+    link: "https://codepen.io/blaketarter/",
+    linkText: null,
+  },
+  {
+    label: "NPM",
+    link: "https://www.npmjs.com/~blaketarter",
+    linkText: null,
+  },
+  {
+    label: "Linkedin",
+    link: "https://www.linkedin.com/in/blaketarter",
+    linkText: null,
+  },
+  {
+    label: "Twitter",
+    link: "https://twitter.com/itsblaketarter",
+    linkText: null,
+  },
+  {
+    label: "Medium",
+    link: "https://medium.com/@itsblaketarter",
+    linkText: null,
+  },
+]
 
-export const FindMe = ({ title, links }: Props) => (
+export const FindMe = () => (
   <MoreAboutMeWrapper id="find-me">
-    <Title>{title}</Title>
+    <Title>Find Me on the Internet.</Title>
     {links.map((linkData, index) => (
       <Label key={index}>
         {linkData.label}{" "}

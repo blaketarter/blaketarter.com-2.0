@@ -15,19 +15,14 @@ import { Gems } from "../Gems"
 
 smoothscroll.polyfill()
 
-interface Props {
-  title: string
-  subtitle: string
-}
-
-export const Hero = ({ title, subtitle }: Props) => (
+export const Hero = () => (
   <HeroWrapper>
     <Polygon />
     <ClipWrapper>
       <Gems />
       <Center>
-        <Title>{title}</Title>
-        <Subtitle>{subtitle}</Subtitle>
+        <Title>Hi, I&apos;m Blake Tarter.</Title>
+        <Subtitle>A Kansas City based web developer</Subtitle>
       </Center>
     </ClipWrapper>
   </HeroWrapper>

@@ -10,17 +10,28 @@ import {
 import { NavBarLink } from "../NavBarLink"
 import { white } from "../../globals/colors"
 
-interface Props {
-  navItems: Array<{ text: string; href: string }>
-}
+const navItems = [
+  {
+    text: "About Me",
+    href: "#about-me",
+  },
+  {
+    text: "My Work",
+    href: "#my-work",
+  },
+  {
+    text: "Find Me",
+    href: "#find-me",
+  },
+]
 
-export const Navbar = ({ navItems }: Props) => (
+export const Navbar = () => (
   <NavbarWrapper id="top">
     <NavbarCenter>
       <LogoWrapper>blaketarter</LogoWrapper>
       <NavBarInnerWrapper>
-        {navItems.map((item, index) => (
-          <NavBarItemWrapper key={index}>
+        {navItems.map(item => (
+          <NavBarItemWrapper key={item.href}>
             <NavBarLink href={item.href} text={item.text} />
           </NavBarItemWrapper>
         ))}
