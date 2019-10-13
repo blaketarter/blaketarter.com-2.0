@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "@emotion/styled"
-import { WorkItem } from "../WorkItem/WorkItem"
+import { WorkItem } from "../WorkItem"
 import {
   margin,
   maxWidth,
