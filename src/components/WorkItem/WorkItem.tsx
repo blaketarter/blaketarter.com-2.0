@@ -1,12 +1,12 @@
 import React from 'react';
-import styled from '@emotion/styled'
+import styled from '@emotion/styled';
 import { Link } from '../Link';
 import {
   white,
   grey,
   secondary,
   lightGrey,
-  darkBackground,
+  darkBackground
 } from '../../globals/colors';
 import { bodyCopy } from '../../globals/fonts';
 import { margin, smallUpQuery, darkModeQuery } from '../../globals/sizes';
@@ -16,9 +16,9 @@ interface Props {
   desc: string;
   url: string;
   img: string;
-  source: string
+  source: string;
   alt?: string;
-  tags: string[]
+  tags: string[];
   isFeatured?: boolean;
 }
 
@@ -30,7 +30,7 @@ export class WorkItem extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {
-      hovered: false,
+      hovered: false
     };
   }
 
@@ -39,7 +39,15 @@ export class WorkItem extends React.Component<Props, State> {
   onMouseLeave = () => this.setState({ hovered: false });
 
   render() {
-    const { title, desc, url, img, source, alt = title, isFeatured } = this.props;
+    const {
+      title,
+      desc,
+      url,
+      img,
+      source,
+      alt = title,
+      isFeatured
+    } = this.props;
 
     return (
       <WorkItemWrapper
@@ -92,7 +100,8 @@ const WorkItemWrapper = styled('li')<WorkItemWrapperProps>`
   margin: ${margin}px;
   padding: ${margin}px;
   transition: 0.2s ease;
-  ${props => (props.isFeatured ? 'box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2)' : '')};
+  ${props =>
+    props.isFeatured ? 'box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2)' : ''};
 
   &:hover {
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
@@ -107,7 +116,8 @@ const WorkItemWrapper = styled('li')<WorkItemWrapperProps>`
     background: ${props => (props.isFeatured ? white : 'transparent')};
 
     ${darkModeQuery} {
-      background: ${props => (props.isFeatured ? darkBackground : 'transparent')};
+      background: ${props =>
+        props.isFeatured ? darkBackground : 'transparent'};
     }
   }
 `;

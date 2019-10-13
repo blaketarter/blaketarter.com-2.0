@@ -1,3 +1,4 @@
+// eslint-disable-file
 let canvasEle;
 
 let controls;

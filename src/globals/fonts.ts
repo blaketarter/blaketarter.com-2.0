@@ -1,4 +1,4 @@
-export const fontFamily = '\'Roboto\', sans-serif';
+export const fontFamily = "'Roboto', sans-serif";
 
 export const heroTitle = 62;
 export const sectionTitle = 42;

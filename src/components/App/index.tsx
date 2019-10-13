@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from '@emotion/styled'
+import styled from '@emotion/styled';
 import { Navbar } from '../Navbar';
 import { Hero } from '../Hero';
 import { AboutMe } from '../AboutMe';
@@ -14,12 +14,12 @@ import { darkBackground, white, black } from '../../globals/colors';
 
 export const App = () => (
   <Container>
-    <Navbar { ...db.navBar } />
-    <Hero { ...db.hero } />
-    <AboutMe { ...db.aboutMe } />
-    <MyWork { ...db.myWork } />
-    <FindMe { ...db.findMe } />
-    <Footer { ...db.footer } />
+    <Navbar {...db.navBar} />
+    <Hero {...db.hero} />
+    <AboutMe {...db.aboutMe} />
+    <MyWork {...db.myWork} />
+    <FindMe {...db.findMe} />
+    <Footer {...db.footer} />
   </Container>
 );
 

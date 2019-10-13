@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from '@emotion/styled'
+import styled from '@emotion/styled';
 import smoothscroll from 'smoothscroll-polyfill';
 import {
   heroHeight,
@@ -7,7 +7,7 @@ import {
   maxWidth,
   smallUpQuery,
   mobileSizeMod,
-  darkModeQuery,
+  darkModeQuery
 } from '../../globals/sizes';
 import { primary, primaryDark, black, white } from '../../globals/colors';
 import { heroTitle, sectionTitle } from '../../globals/fonts';

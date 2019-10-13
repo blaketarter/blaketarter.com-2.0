@@ -1,25 +1,30 @@
 import React from 'react';
-import styled from '@emotion/styled'
+import styled from '@emotion/styled';
 import { WorkItem } from '../WorkItem/WorkItem';
 import {
   margin,
   maxWidth,
   smallUpQuery,
-  darkModeQuery,
+  darkModeQuery
 } from '../../globals/sizes';
-import { primary, secondary, primaryDark, darkLighterBackground, } from '../../globals/colors';
+import {
+  primary,
+  secondary,
+  primaryDark,
+  darkLighterBackground
+} from '../../globals/colors';
 import { sectionTitle } from '../../globals/fonts';
 
 interface Props {
   title: string;
   workItems: Array<{
-    "title": string;
-    "desc": string;
-    "url": string;
-    "img": string;
-    "alt": string;
-    "tags": string[];
-    "source": string;
+    title: string;
+    desc: string;
+    url: string;
+    img: string;
+    alt: string;
+    tags: string[];
+    source: string;
   }>;
 }
 
@@ -31,19 +36,22 @@ export const MyWork = ({ title, workItems }: Props) => (
       <InnerWrapper>
         <Title>{title}</Title>
         <WorkItemsWrapper>
-          {workItems
-            .slice(0, 5)
-            .map(
-              (workItem, index) =>
-                  <WorkItem key={workItem.url} isFeatured={index === 0} {...workItem} />
-            )}
+          {workItems.slice(0, 5).map((workItem, index) => (
+            <WorkItem
+              key={workItem.url}
+              isFeatured={index === 0}
+              {...workItem}
+            />
+          ))}
         </WorkItemsWrapper>
       </InnerWrapper>
     </Clip>
   </WorksWrapper>
 );
 
-const WorksWrapper = styled('section')`position: relative;`;
+const WorksWrapper = styled('section')`
+  position: relative;
+`;
 
 const Clip = styled('div')`
   background: ${secondary};

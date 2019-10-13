@@ -1,5 +1,5 @@
 import React, { MouseEvent } from 'react';
-import styled from '@emotion/styled'
+import styled from '@emotion/styled';
 import { black, white } from '../../globals/colors';
 import smoothscroll from 'smoothscroll-polyfill';
 import { darkModeQuery } from '../../globals/sizes';
@@ -10,12 +10,6 @@ interface Props {
   href: string;
   text: string;
 }
-
-export const NavBarLink = ({ href, text }: Props) => (
-  <NavBarLinkWrapper href={href} onClick={e => onClick(e, href)}>
-    {text}
-  </NavBarLinkWrapper>
-);
 
 const onClick = (e: MouseEvent<HTMLAnchorElement>, href: string) => {
   const el = document.getElementById(href.slice(1));
@@ -31,6 +25,12 @@ const onClick = (e: MouseEvent<HTMLAnchorElement>, href: string) => {
     }
   }
 };
+
+export const NavBarLink = ({ href, text }: Props) => (
+  <NavBarLinkWrapper href={href} onClick={e => onClick(e, href)}>
+    {text}
+  </NavBarLinkWrapper>
+);
 
 const NavBarLinkWrapper = styled('a')`
   text-decoration: none;

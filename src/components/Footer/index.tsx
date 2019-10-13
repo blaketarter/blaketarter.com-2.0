@@ -1,5 +1,5 @@
 import React, { MouseEvent } from 'react';
-import styled from '@emotion/styled'
+import styled from '@emotion/styled';
 import smoothscroll from 'smoothscroll-polyfill';
 import { margin, maxWidth, darkModeQuery } from '../../globals/sizes';
 import { black, primary, white } from '../../globals/colors';
@@ -7,8 +7,24 @@ import { black, primary, white } from '../../globals/colors';
 smoothscroll.polyfill();
 
 interface Props {
-  copyright: String;
+  copyright: string;
 }
+
+const backToTop = (e: MouseEvent<HTMLAnchorElement>) => {
+  e.preventDefault();
+
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: 'smooth'
+  });
+
+  if (window.history.pushState) {
+    window.history.pushState(null, '#top', '#top');
+  } else {
+    window.location.href = '#top';
+  }
+};
 
 export const Footer = ({ copyright }: Props) => (
   <FooterWrapper>
@@ -20,23 +36,6 @@ export const Footer = ({ copyright }: Props) => (
     </Copyright>
   </FooterWrapper>
 );
-
-const backToTop = (e: MouseEvent<HTMLAnchorElement>) => {
-  e.preventDefault();
-
-  window.scrollTo({
-    top: 0,
-    left: 0,
-    behavior: 'smooth',
-  });
-
-  if (window.history.pushState) {
-    window.history.pushState(null, '#top', '#top');
-  } else {
-    window.location.href = '#top';
-  }
-  
-};
 
 const FooterWrapper = styled('section')`
   margin: 0 auto;

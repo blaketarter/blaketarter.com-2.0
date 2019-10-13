@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
-import styled from '@emotion/styled'
+import styled from '@emotion/styled';
 import { start } from '../../services/gems';
 import { smallUp } from '../../globals/sizes';
 
-interface Props { }
-
-export class Gems extends Component<Props> {
+export class Gems extends Component<{}> {
   canvasRef: HTMLCanvasElement | null;
 
-  constructor(props: Props) {
+  constructor(props: {}) {
     super(props);
     this.canvasRef = null;
   }
@@ -16,14 +14,14 @@ export class Gems extends Component<Props> {
   onRef = (canvasEl: HTMLCanvasElement | null) => (this.canvasRef = canvasEl);
 
   componentDidMount = () => {
-    const script = document.createElement("script");
+    const script = document.createElement('script');
 
-    script.src = "/vendor/three.min.js";
+    script.src = '/vendor/three.min.js';
     script.async = true;
     script.onload = this.onLoad;
 
     document.body.appendChild(script);
-  }
+  };
 
   onLoad = () => {
     const isMobile = window.innerWidth < smallUp;
@@ -33,7 +31,12 @@ export class Gems extends Component<Props> {
   render() {
     return (
       <Wrapper>
-        <Canvas ref={this.onRef} id="gems-canvas" role="img" aria-label="falling gems in motion" />
+        <Canvas
+          ref={this.onRef}
+          id="gems-canvas"
+          role="img"
+          aria-label="falling gems in motion"
+        />
       </Wrapper>
     );
   }

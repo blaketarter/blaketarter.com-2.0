@@ -1,7 +1,5 @@
-import styled from '@emotion/styled'
-import {
-  primary,
-} from '../../globals/colors';
+import styled from '@emotion/styled';
+import { primary } from '../../globals/colors';
 import { bodyCopy } from '../../globals/fonts';
 
 export const Link = styled('a')`

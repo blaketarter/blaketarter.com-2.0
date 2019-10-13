@@ -1,11 +1,17 @@
 import React from 'react';
-import styled from '@emotion/styled'
-import { navbarHeight, margin, smallUpQuery, maxWidth, darkModeQuery } from '../../globals/sizes';
+import styled from '@emotion/styled';
+import {
+  navbarHeight,
+  margin,
+  smallUpQuery,
+  maxWidth,
+  darkModeQuery
+} from '../../globals/sizes';
 import { NavBarLink } from '../NavBarLink';
 import { white } from '../../globals/colors';
 
 interface Props {
-  navItems: Array<{ text: string, href: string}>;
+  navItems: Array<{ text: string; href: string }>;
 }
 
 export const Navbar = ({ navItems }: Props) => (
