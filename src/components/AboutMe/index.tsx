@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { SkillsSwapper } from '../SkillsSwapper';
-import { Summary } from '../Summary/Summary';
+import { Summary } from '../Summary';
 import { margin, maxWidth } from '../../globals/sizes';
 import { sectionTitle } from '../../globals/fonts';
 

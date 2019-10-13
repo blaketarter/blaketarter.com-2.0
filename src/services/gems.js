@@ -1,4 +1,5 @@
-// eslint-disable-file
+/* eslint-disable */
+
 let canvasEle;
 
 let controls;
@@ -28,7 +29,7 @@ const AMBIENT_COLOR = 0x536dfe;
 const DIRECTIONAL_COLOR_1 = 0x607d8b;
 const DIRECTIONAL_COLOR_2 = 0xffa000;
 let FOG_COLOR = colorSchemeMedia.matches ? 0x19191d : 0xf7c284;
-colorSchemeMedia.addEventListener("change", setFogColor);
+colorSchemeMedia.addEventListener('change', setFogColor);
 // const TRIANGLE_COUNT = 500;
 const TRIANGLE_COUNT = 100;
 let TRIANGLE_INDEX = 0;
@@ -41,8 +42,8 @@ function render() {
 }
 
 function animate() {
-  let minVelocity = 2;
-  let maxVelocity = 15;
+  const minVelocity = 2;
+  const maxVelocity = 15;
 
   if (controls) {
     controls.update();
@@ -80,34 +81,35 @@ const onWindowResize = () => {
 };
 
 function newTriangle(triangles, scene) {
-  let radiusTop = 0;
-  let maxRadius = 5;
-  let minRadius = 20;
-  let radiusBottom = Math.random() * (maxRadius - minRadius + 1) + minRadius;
-  let height = 20;
-  let maxSides = 5;
-  let minSides = 3;
-  let sidesBottom = Math.floor(
-    Math.random() * (maxSides - minSides + 1) + minSides,
+  const radiusTop = 0;
+  const maxRadius = 5;
+  const minRadius = 20;
+  const radiusBottom = Math.random() * (maxRadius - minRadius + 1) + minRadius;
+  const height = 20;
+  const maxSides = 5;
+  const minSides = 3;
+  const sidesBottom = Math.floor(
+    Math.random() * (maxSides - minSides + 1) + minSides
   );
-  let sidesTop = 1;
+  const sidesTop = 1;
   let geometry;
   let material;
   let mesh;
-  let isReverse = Math.random() >= 0.5;
-  let minVelocity = 2;
-  let maxVelocity = 15;
-  let velocity = Math.random() * (maxVelocity - minVelocity + 1) + minVelocity;
+  const isReverse = Math.random() >= 0.5;
+  const minVelocity = 2;
+  const maxVelocity = 15;
+  const velocity =
+    Math.random() * (maxVelocity - minVelocity + 1) + minVelocity;
 
   geometry = new window.THREE.CylinderGeometry(
     radiusTop,
     radiusBottom,
     height,
     sidesBottom,
-    sidesTop,
+    sidesTop
   );
   material = new window.THREE.MeshLambertMaterial({
-    color: 0xffffff,
+    color: 0xffffff
     // shading: window.THREE.FlatShading,
   });
   geometry.computeFlatVertexNormals();
@@ -149,9 +151,13 @@ export function start(canvasRef, isMobile) {
     75,
     canvasEle.clientWidth / canvasEle.clientHeight,
     0.1,
-    1000,
+    1000
   );
-  camera.position.set(randomBetween(-500, 500), randomBetween(-500, 500), randomBetween(-500, 500));
+  camera.position.set(
+    randomBetween(-500, 500),
+    randomBetween(-500, 500),
+    randomBetween(-500, 500)
+  );
   camera.lookAt(new window.THREE.Vector3(0, 500, 0));
 
   if (!isMobile) {
@@ -167,7 +173,7 @@ export function start(canvasRef, isMobile) {
 
   renderer = new window.THREE.WebGLRenderer({
     antialias: false,
-    canvas: canvasEle,
+    canvas: canvasEle
   });
   renderer.setClearColor(scene.fog.color);
   renderer.setPixelRatio(window.devicePixelRatio);
