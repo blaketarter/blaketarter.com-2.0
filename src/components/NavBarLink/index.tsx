@@ -11,7 +11,7 @@ interface Props {
   text: string;
 }
 
-const NavbarLink = ({ href, text }: Props) => (
+export const NavBarLink = ({ href, text }: Props) => (
   <NavBarLinkWrapper href={href} onClick={e => onClick(e, href)}>
     {text}
   </NavBarLinkWrapper>
@@ -40,5 +40,3 @@ const NavBarLinkWrapper = styled('a')`
     color: ${white};
   }
 `;
-
-export default NavbarLink;

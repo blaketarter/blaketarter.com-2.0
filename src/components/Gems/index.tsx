@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import styled from '@emotion/styled'
-import start from '../../services/gems';
+import { start } from '../../services/gems';
 import { smallUp } from '../../globals/sizes';
 
 interface Props { }
 
-class Gems extends Component<Props> {
+export class Gems extends Component<Props> {
   canvasRef: HTMLCanvasElement | null;
 
   constructor(props: Props) {
@@ -51,5 +51,3 @@ const Canvas = styled('canvas')`
   height: 100%;
   width: 100%;
 `;
-
-export default Gems;

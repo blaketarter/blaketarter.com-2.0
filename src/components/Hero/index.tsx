@@ -11,7 +11,7 @@ import {
 } from '../../globals/sizes';
 import { primary, primaryDark, black, white } from '../../globals/colors';
 import { heroTitle, sectionTitle } from '../../globals/fonts';
-import Gems from '../Gems';
+import { Gems } from '../Gems';
 
 smoothscroll.polyfill();
 
@@ -20,7 +20,7 @@ interface Props {
   subtitle: string;
 }
 
-const Hero = ({ title, subtitle }: Props) => (
+export const Hero = ({ title, subtitle }: Props) => (
   <HeroWrapper>
     <Polygon />
     <ClipWrapper>
@@ -107,5 +107,3 @@ const Polygon = styled('div')`
     opacity: 0.5;
   }
 `;
-
-export default Hero;

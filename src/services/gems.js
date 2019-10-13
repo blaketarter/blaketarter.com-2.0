@@ -134,7 +134,7 @@ function newTriangle(triangles, scene) {
   triangles.push(mesh);
 }
 
-export default function start(canvasRef, isMobile) {
+export function start(canvasRef, isMobile) {
   canvasEle = canvasRef;
   window.addEventListener('resize', onWindowResize, false);
 

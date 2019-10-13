@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled'
-import WorkItem from '../WorkItem/WorkItem';
+import { WorkItem } from '../WorkItem/WorkItem';
 import {
   margin,
   maxWidth,
@@ -23,7 +23,7 @@ interface Props {
   }>;
 }
 
-const MyWork = ({ title, workItems }: Props) => (
+export const MyWork = ({ title, workItems }: Props) => (
   <WorksWrapper id="my-work">
     <Polygon1 />
     <Polygon2 />
@@ -111,5 +111,3 @@ const WorkItemsWrapper = styled('ul')`
     flex-wrap: wrap;
   }
 `;
-
-export default MyWork;

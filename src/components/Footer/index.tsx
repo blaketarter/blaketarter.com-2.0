@@ -6,6 +6,21 @@ import { black, primary, white } from '../../globals/colors';
 
 smoothscroll.polyfill();
 
+interface Props {
+  copyright: String;
+}
+
+export const Footer = ({ copyright }: Props) => (
+  <FooterWrapper>
+    <ToTop href="#top" onClick={backToTop}>
+      ↑ Back to the Top.
+    </ToTop>
+    <Copyright>
+      {copyright.replace(/(CURR_YEAR)/, `${new Date().getFullYear()}`)}
+    </Copyright>
+  </FooterWrapper>
+);
+
 const backToTop = (e: MouseEvent<HTMLAnchorElement>) => {
   e.preventDefault();
 
@@ -45,20 +60,3 @@ const ToTop = styled('a')`
   text-decoration: none;
   color: ${primary};
 `;
-
-interface Props {
-  copyright: String;
-}
-
-const Footer = ({ copyright }: Props) => (
-  <FooterWrapper>
-    <ToTop href="#top" onClick={backToTop}>
-      ↑ Back to the Top.
-    </ToTop>
-    <Copyright>
-      {copyright.replace(/(CURR_YEAR)/, `${new Date().getFullYear()}`)}
-    </Copyright>
-  </FooterWrapper>
-);
-
-export default Footer;

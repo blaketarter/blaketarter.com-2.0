@@ -3,6 +3,7 @@ import styled from '@emotion/styled'
 import { margin, maxWidth, mediumUpQuery, darkModeQuery } from '../../globals/sizes';
 import { black, white } from '../../globals/colors';
 import { sectionTitle, largeCopy, bodyCopy } from '../../globals/fonts';
+
 interface Props {
   title: string;
   links: Array<{
@@ -12,7 +13,7 @@ interface Props {
   }>;
 }
 
-const FindMe = ({
+export const FindMe = ({
   title,
   links,
 }: Props) => (
@@ -60,6 +61,3 @@ const Link = styled('a')`
     color: ${white};
   }
 `;
-
-
-export default FindMe;

@@ -1,14 +1,14 @@
 import React from 'react';
 import styled from '@emotion/styled'
 import { navbarHeight, margin, smallUpQuery, maxWidth, darkModeQuery } from '../../globals/sizes';
-import NavBarLink from '../NavBarLink/NavBarLink';
+import { NavBarLink } from '../NavBarLink';
 import { white } from '../../globals/colors';
 
 interface Props {
   navItems: Array<{ text: string, href: string}>;
 }
 
-const Navbar = ({ navItems }: Props) => (
+export const Navbar = ({ navItems }: Props) => (
   <NavbarWrapper id="top">
     <NavbarCenter>
       <LogoWrapper>blaketarter</LogoWrapper>
@@ -71,5 +71,3 @@ const NavBarItemWrapper = styled('li')`
   list-style: none;
   margin: 0 ${margin}px;
 `;
-
-export default Navbar;

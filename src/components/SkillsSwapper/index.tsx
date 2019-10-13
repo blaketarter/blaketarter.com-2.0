@@ -14,7 +14,7 @@ interface State {
   mode: string,
 }
 
-class SkillsSwapper extends React.Component<Props, State> {
+export class SkillsSwapper extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
     const skillsShuffled = shuffle(this.props.skills);
@@ -137,5 +137,3 @@ const SkillItem = styled('li') <{ index: number; length: number }>`
 const keystrokeLength = 50;
 
 const wordLength = 2000;
-
-export default SkillsSwapper;

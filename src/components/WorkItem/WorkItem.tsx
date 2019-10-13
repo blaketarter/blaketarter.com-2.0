@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled'
-import Link from '../Link';
+import { Link } from '../Link';
 import {
   white,
   grey,
@@ -26,7 +26,7 @@ interface State {
   hovered: boolean;
 }
 
-class WorkItem extends React.Component<Props, State> {
+export class WorkItem extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {
@@ -173,5 +173,3 @@ const Tags = styled('span')<{ isFeatured?: boolean }>`
     color: ${props => (props.isFeatured ? secondary : lightGrey)};
   }
 `;
-
-export default WorkItem;

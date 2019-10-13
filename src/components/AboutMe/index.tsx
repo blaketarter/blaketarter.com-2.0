@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled'
-import SkillsSwapper from '../SkillsSwapper/SkillsSwapper';
-import Summary from '../Summary/Summary';
+import { SkillsSwapper } from '../SkillsSwapper';
+import { Summary } from '../Summary/Summary';
 import { margin, maxWidth } from '../../globals/sizes';
 import { sectionTitle } from '../../globals/fonts';
 
@@ -12,7 +12,7 @@ interface Props {
   skillsStartCopy: string;
 }
 
-const AboutMe = ({
+export const AboutMe = ({
   title,
   summary,
   skills,
@@ -34,5 +34,3 @@ const AboutMe = ({
 const Title = styled('h2')`
   font-size: ${ sectionTitle }px;
 `;
-
-export default AboutMe;

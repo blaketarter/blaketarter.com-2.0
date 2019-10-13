@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled'
-import Link from '../Link';
+import { Link } from '../Link';
 import { margin } from '../../globals/sizes';
 import { bodyCopy, bodyLineHeight } from '../../globals/fonts';
 
@@ -8,7 +8,7 @@ interface Props {
   copy: string;
 }
 
-const Summary = ({ copy }: Props) => {
+export const Summary = ({ copy }: Props) => {
   if (copy.search(linkRe) > -1) {
     const matches: RegExpExecArray[] = []
     let expMatch: RegExpExecArray | null;
@@ -47,5 +47,3 @@ const SummaryWrapper = styled('p')`
 `;
 
 const linkRe = /\[([\w\s']+)\]\(([\w|:|/|.]+)\)/g;
-
-export default Summary;
