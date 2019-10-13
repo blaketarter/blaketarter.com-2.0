@@ -8,18 +8,17 @@ import { FindMe } from "../FindMe"
 import { Footer } from "../Footer"
 import { fontFamily } from "../../globals/fonts"
 import "../../vendor/normalize.css"
-import db from "../../db"
 import { darkModeQuery } from "../../globals/sizes"
 import { darkBackground, white, black } from "../../globals/colors"
 
 export const App = () => (
   <Container>
-    <Navbar {...db.navBar} />
-    <Hero {...db.hero} />
-    <AboutMe {...db.aboutMe} />
-    <MyWork {...db.myWork} />
-    <FindMe {...db.findMe} />
-    <Footer {...db.footer} />
+    <Navbar />
+    <Hero />
+    <AboutMe />
+    <MyWork />
+    <FindMe />
+    <Footer />
   </Container>
 )
 

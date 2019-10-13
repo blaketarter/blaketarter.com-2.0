@@ -6,10 +6,6 @@ import { black, primary, white } from "../../globals/colors"
 
 smoothscroll.polyfill()
 
-interface Props {
-  copyright: string
-}
-
 const backToTop = (e: MouseEvent<HTMLAnchorElement>) => {
   e.preventDefault()
 
@@ -26,13 +22,16 @@ const backToTop = (e: MouseEvent<HTMLAnchorElement>) => {
   }
 }
 
-export const Footer = ({ copyright }: Props) => (
+export const Footer = () => (
   <FooterWrapper>
     <ToTop href="#top" onClick={backToTop}>
       ↑ Back to the Top.
     </ToTop>
     <Copyright>
-      {copyright.replace(/(CURR_YEAR)/, `${new Date().getFullYear()}`)}
+      {"© CURR_YEAR Blake Tarter".replace(
+        /(CURR_YEAR)/,
+        `${new Date().getFullYear()}`,
+      )}
     </Copyright>
   </FooterWrapper>
 )
