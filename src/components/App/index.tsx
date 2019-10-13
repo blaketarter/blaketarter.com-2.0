@@ -1,16 +1,16 @@
-import React from 'react';
-import styled from '@emotion/styled';
-import { Navbar } from '../Navbar';
-import { Hero } from '../Hero';
-import { AboutMe } from '../AboutMe';
-import { MyWork } from '../MyWork';
-import { FindMe } from '../FindMe';
-import { Footer } from '../Footer';
-import { fontFamily } from '../../globals/fonts';
-import '../../vendor/normalize.css';
-import db from '../../db';
-import { darkModeQuery } from '../../globals/sizes';
-import { darkBackground, white, black } from '../../globals/colors';
+import React from "react"
+import styled from "@emotion/styled"
+import { Navbar } from "../Navbar"
+import { Hero } from "../Hero"
+import { AboutMe } from "../AboutMe"
+import { MyWork } from "../MyWork"
+import { FindMe } from "../FindMe"
+import { Footer } from "../Footer"
+import { fontFamily } from "../../globals/fonts"
+import "../../vendor/normalize.css"
+import db from "../../db"
+import { darkModeQuery } from "../../globals/sizes"
+import { darkBackground, white, black } from "../../globals/colors"
 
 export const App = () => (
   <Container>
@@ -21,9 +21,9 @@ export const App = () => (
     <FindMe {...db.findMe} />
     <Footer {...db.footer} />
   </Container>
-);
+)
 
-const Container = styled('div')`
+const Container = styled("div")`
   height: 100%;
   width: 100%;
   max-width: 100%;
@@ -34,4 +34,4 @@ const Container = styled('div')`
     background: ${darkBackground};
     color: ${white};
   }
-`;
+`

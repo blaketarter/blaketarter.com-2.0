@@ -1,23 +1,23 @@
-import React from 'react';
-import styled from '@emotion/styled';
-import smoothscroll from 'smoothscroll-polyfill';
+import React from "react"
+import styled from "@emotion/styled"
+import smoothscroll from "smoothscroll-polyfill"
 import {
   heroHeight,
   margin,
   maxWidth,
   smallUpQuery,
   mobileSizeMod,
-  darkModeQuery
-} from '../../globals/sizes';
-import { primary, primaryDark, black, white } from '../../globals/colors';
-import { heroTitle, sectionTitle } from '../../globals/fonts';
-import { Gems } from '../Gems';
+  darkModeQuery,
+} from "../../globals/sizes"
+import { primary, primaryDark, black, white } from "../../globals/colors"
+import { heroTitle, sectionTitle } from "../../globals/fonts"
+import { Gems } from "../Gems"
 
-smoothscroll.polyfill();
+smoothscroll.polyfill()
 
 interface Props {
-  title: string;
-  subtitle: string;
+  title: string
+  subtitle: string
 }
 
 export const Hero = ({ title, subtitle }: Props) => (
@@ -31,17 +31,17 @@ export const Hero = ({ title, subtitle }: Props) => (
       </Center>
     </ClipWrapper>
   </HeroWrapper>
-);
+)
 
-const HeroWrapper = styled('section')`
+const HeroWrapper = styled("section")`
   height: ${heroHeight}vh;
   position: relative;
   width: 100%;
   width: 100vw;
   overflow: hidden;
-`;
+`
 
-const ClipWrapper = styled('div')`
+const ClipWrapper = styled("div")`
   display: flex;
   overflow: hidden;
   align-items: center;
@@ -56,18 +56,18 @@ const ClipWrapper = styled('div')`
   ${darkModeQuery} {
     background-color: #19191d;
   }
-`;
+`
 
-const Center = styled('div')`
+const Center = styled("div")`
   margin: 0 auto;
   position: relative;
   width: 100%;
   padding: 0 ${margin}px;
   max-width: ${maxWidth}px;
   pointer-events: none;
-`;
+`
 
-const Title = styled('h1')`
+const Title = styled("h1")`
   color: ${black};
   font-size: ${heroTitle * mobileSizeMod}px;
 
@@ -78,9 +78,9 @@ const Title = styled('h1')`
   ${darkModeQuery} {
     color: ${white};
   }
-`;
+`
 
-const Subtitle = styled('p')`
+const Subtitle = styled("p")`
   color: ${black};
   font-size: ${sectionTitle * mobileSizeMod}px;
 
@@ -91,9 +91,9 @@ const Subtitle = styled('p')`
   ${darkModeQuery} {
     color: ${white};
   }
-`;
+`
 
-const Polygon = styled('div')`
+const Polygon = styled("div")`
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -106,4 +106,4 @@ const Polygon = styled('div')`
   ${darkModeQuery} {
     opacity: 0.5;
   }
-`;
+`

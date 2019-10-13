@@ -1,31 +1,31 @@
-import React from 'react';
-import styled from '@emotion/styled';
-import { WorkItem } from '../WorkItem/WorkItem';
+import React from "react"
+import styled from "@emotion/styled"
+import { WorkItem } from "../WorkItem/WorkItem"
 import {
   margin,
   maxWidth,
   smallUpQuery,
-  darkModeQuery
-} from '../../globals/sizes';
+  darkModeQuery,
+} from "../../globals/sizes"
 import {
   primary,
   secondary,
   primaryDark,
-  darkLighterBackground
-} from '../../globals/colors';
-import { sectionTitle } from '../../globals/fonts';
+  darkLighterBackground,
+} from "../../globals/colors"
+import { sectionTitle } from "../../globals/fonts"
 
 interface Props {
-  title: string;
+  title: string
   workItems: Array<{
-    title: string;
-    desc: string;
-    url: string;
-    img: string;
-    alt: string;
-    tags: string[];
-    source: string;
-  }>;
+    title: string
+    desc: string
+    url: string
+    img: string
+    alt: string
+    tags: string[]
+    source: string
+  }>
 }
 
 export const MyWork = ({ title, workItems }: Props) => (
@@ -47,13 +47,13 @@ export const MyWork = ({ title, workItems }: Props) => (
       </InnerWrapper>
     </Clip>
   </WorksWrapper>
-);
+)
 
-const WorksWrapper = styled('section')`
+const WorksWrapper = styled("section")`
   position: relative;
-`;
+`
 
-const Clip = styled('div')`
+const Clip = styled("div")`
   background: ${secondary};
   clip-path: polygon(0 0, 100% 2%, 100% 100%, 0 98%);
   -webkit-clip-path: polygon(0 0, 100% 2%, 100% 100%, 0 98%);
@@ -67,14 +67,14 @@ const Clip = styled('div')`
   ${darkModeQuery} {
     background: ${darkLighterBackground};
   }
-`;
+`
 
-const Title = styled('h2')`
+const Title = styled("h2")`
   font-size: ${sectionTitle}px;
   margin-left: ${margin}px;
-`;
+`
 
-const Polygon1 = styled('div')`
+const Polygon1 = styled("div")`
   position: absolute;
   top: 0;
   width: 100%;
@@ -87,9 +87,9 @@ const Polygon1 = styled('div')`
   ${darkModeQuery} {
     opacity: 0.5;
   }
-`;
+`
 
-const Polygon2 = styled('div')`
+const Polygon2 = styled("div")`
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -102,14 +102,14 @@ const Polygon2 = styled('div')`
   ${darkModeQuery} {
     opacity: 0.5;
   }
-`;
+`
 
-const InnerWrapper = styled('div')`
+const InnerWrapper = styled("div")`
   margin: 0 auto;
   max-width: ${maxWidth}px;
-`;
+`
 
-const WorkItemsWrapper = styled('ul')`
+const WorkItemsWrapper = styled("ul")`
   padding: 0;
   margin: ${margin * 3}px auto;
 
@@ -118,4 +118,4 @@ const WorkItemsWrapper = styled('ul')`
     flex-direction: row;
     flex-wrap: wrap;
   }
-`;
+`
