@@ -1,14 +1,20 @@
-import React from 'react';
-import styled from '@emotion/styled'
-import { navbarHeight, margin, smallUpQuery, maxWidth, darkModeQuery } from '../../globals/sizes';
-import NavBarLink from './NavBarLink';
-import { white } from '../../globals/colors';
+import React from "react"
+import styled from "@emotion/styled"
+import {
+  navbarHeight,
+  margin,
+  smallUpQuery,
+  maxWidth,
+  darkModeQuery,
+} from "../../globals/sizes"
+import { NavBarLink } from "../NavBarLink"
+import { white } from "../../globals/colors"
 
 interface Props {
-  navItems: Array<{ text: string, href: string}>;
+  navItems: Array<{ text: string; href: string }>
 }
 
-const Navbar = ({ navItems }: Props) => (
+export const Navbar = ({ navItems }: Props) => (
   <NavbarWrapper id="top">
     <NavbarCenter>
       <LogoWrapper>blaketarter</LogoWrapper>
@@ -21,9 +27,9 @@ const Navbar = ({ navItems }: Props) => (
       </NavBarInnerWrapper>
     </NavbarCenter>
   </NavbarWrapper>
-);
+)
 
-const NavbarWrapper = styled('nav')`
+const NavbarWrapper = styled("nav")`
   height: ${navbarHeight}px;
   width: 100%;
   display: flex;
@@ -34,27 +40,27 @@ const NavbarWrapper = styled('nav')`
   top: 0;
   left: 0;
   z-index: 100;
-`;
+`
 
-const NavbarCenter = styled('div')`
+const NavbarCenter = styled("div")`
   flex: 1 0 auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   max-width: ${maxWidth}px;
-`;
+`
 
-const LogoWrapper = styled('a')`
+const LogoWrapper = styled("a")`
   font-size: 35px;
   margin-left: ${margin}px;
 
   ${darkModeQuery} {
     color: ${white};
   }
-`;
+`
 
-const NavBarInnerWrapper = styled('ul')`
+const NavBarInnerWrapper = styled("ul")`
   flex-direction: row;
   justify-content: space-around;
   align-items: stretch;
@@ -65,11 +71,9 @@ const NavBarInnerWrapper = styled('ul')`
   ${smallUpQuery} {
     display: flex;
   }
-`;
+`
 
-const NavBarItemWrapper = styled('li')`
+const NavBarItemWrapper = styled("li")`
   list-style: none;
   margin: 0 ${margin}px;
-`;
-
-export default Navbar;
+`
