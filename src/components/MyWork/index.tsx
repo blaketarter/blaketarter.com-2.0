@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled'
-import WorkItem from './WorkItem';
-import FeaturedWorkItem from './FeaturedWorkItem';
+import WorkItem from '../WorkItem/WorkItem';
 import {
   margin,
   maxWidth,
@@ -36,11 +35,7 @@ const MyWork = ({ title, workItems }: Props) => (
             .slice(0, 5)
             .map(
               (workItem, index) =>
-                index === 0 ? (
-                  <FeaturedWorkItem key={index} {...workItem} />
-                ) : (
-                  <WorkItem key={index} {...workItem} />
-                ),
+                  <WorkItem key={workItem.url} isFeatured={index === 0} {...workItem} />
             )}
         </WorkItemsWrapper>
       </InnerWrapper>

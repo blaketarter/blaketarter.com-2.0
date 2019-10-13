@@ -19,6 +19,7 @@ interface Props {
   source: string
   alt?: string;
   tags: string[]
+  isFeatured?: boolean;
 }
 
 interface State {
@@ -33,21 +34,19 @@ class WorkItem extends React.Component<Props, State> {
     };
   }
 
-  isFeatured = false;
-
   onMouseEnter = () => this.setState({ hovered: true });
 
   onMouseLeave = () => this.setState({ hovered: false });
 
   render() {
-    const { title, desc, url, img, source, alt = title } = this.props;
+    const { title, desc, url, img, source, alt = title, isFeatured } = this.props;
 
     return (
       <WorkItemWrapper
         onMouseEnter={this.onMouseEnter}
         onMouseLeave={this.onMouseLeave}
         hovered={this.state.hovered}
-        isFeatured={this.isFeatured}
+        isFeatured={isFeatured}
       >
         <InnerWrapper>
           <Left>
@@ -56,7 +55,7 @@ class WorkItem extends React.Component<Props, State> {
           <Right>
             <Title>
               {title}
-              <Tags isFeatured={this.isFeatured}>
+              <Tags isFeatured={isFeatured}>
                 {' '}
                 / {this.props.tags.join(' / ')}
               </Tags>
@@ -83,7 +82,7 @@ interface WorkItemWrapperProps {
   onMouseEnter: () => unknown;
   onMouseLeave: () => unknown;
   hovered: boolean;
-  isFeatured: boolean;
+  isFeatured?: boolean;
 }
 
 const WorkItemWrapper = styled('li')<WorkItemWrapperProps>`
@@ -167,7 +166,7 @@ const Right = styled('div')`
   padding-left: ${margin}px;
 `;
 
-const Tags = styled('span')<{ isFeatured: boolean }>`
+const Tags = styled('span')<{ isFeatured?: boolean }>`
   color: ${secondary};
 
   ${smallUpQuery} {
