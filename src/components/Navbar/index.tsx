@@ -10,7 +10,7 @@ import {
 import { NavBarLink } from "../NavBarLink"
 import { white } from "../../utils/colors"
 
-const navItems = [
+export const navItems = [
   {
     text: "About Me",
     href: "#about-me",

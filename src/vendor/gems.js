@@ -29,7 +29,11 @@ const AMBIENT_COLOR = 0x536dfe
 const DIRECTIONAL_COLOR_1 = 0x607d8b
 const DIRECTIONAL_COLOR_2 = 0xffa000
 let FOG_COLOR = colorSchemeMedia.matches ? 0x19191d : 0xf7c284
-colorSchemeMedia.addEventListener("change", setFogColor)
+
+if (colorSchemeMedia.addEventListener) {
+  colorSchemeMedia.addEventListener("change", setFogColor)
+}
+
 // const TRIANGLE_COUNT = 500;
 const TRIANGLE_COUNT = 100
 let TRIANGLE_INDEX = 0

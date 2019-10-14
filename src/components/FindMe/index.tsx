@@ -9,7 +9,7 @@ import {
 import { black, white } from "../../utils/colors"
 import { sectionTitle, largeCopy, bodyCopy } from "../../utils/fonts"
 
-const links = [
+export const links = [
   {
     label: "Github",
     link: "https://github.com/blaketarter",

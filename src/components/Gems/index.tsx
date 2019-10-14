@@ -2,6 +2,8 @@ import React, { useRef, useEffect, useCallback } from "react"
 import styled from "@emotion/styled"
 import { start } from "../../vendor/gems"
 import { smallUp } from "../../utils/sizes"
+import "matchmedia-polyfill"
+import "matchmedia-polyfill/matchMedia.addListener"
 
 export const Gems = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
