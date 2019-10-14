@@ -1,4 +1,4 @@
-export const shuffle = function shuffle(array: any[]) {
+export const shuffle = function shuffle<T>(array: Array<T>) {
   let counter = array.length
   // While there are elements in the array
   while (counter > 0) {

@@ -15,7 +15,7 @@ import {
 } from "../../utils/colors"
 import { sectionTitle } from "../../utils/fonts"
 
-const workItems = [
+export const workItems = [
   {
     title: "KCMO Bus Stops",
     desc:
@@ -98,7 +98,11 @@ const workItems = [
   },
 ]
 
-export const MyWork = () => (
+interface Props {
+  count?: number
+}
+
+export const MyWork = ({ count = 5 }: Props) => (
   <WorksWrapper id="my-work">
     <Polygon1 />
     <Polygon2 />
@@ -106,7 +110,7 @@ export const MyWork = () => (
       <InnerWrapper>
         <Title>My Work.</Title>
         <WorkItemsWrapper>
-          {workItems.slice(0, 5).map((workItem, index) => (
+          {workItems.slice(0, count).map((workItem, index) => (
             <WorkItem
               key={workItem.url}
               isFeatured={index === 0}
