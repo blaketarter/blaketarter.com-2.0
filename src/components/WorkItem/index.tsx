@@ -22,59 +22,33 @@ interface Props {
   isFeatured?: boolean
 }
 
-interface State {
-  hovered: boolean
-}
-
-export class WorkItem extends React.Component<Props, State> {
-  constructor(props: Props) {
-    super(props)
-    this.state = {
-      hovered: false,
-    }
-  }
-
-  onMouseEnter = () => this.setState({ hovered: true })
-
-  onMouseLeave = () => this.setState({ hovered: false })
-
-  render() {
-    const {
-      title,
-      desc,
-      url,
-      img,
-      source,
-      alt = title,
-      isFeatured,
-    } = this.props
-
-    return (
-      <WorkItemWrapper
-        onMouseEnter={this.onMouseEnter}
-        onMouseLeave={this.onMouseLeave}
-        hovered={this.state.hovered}
-        isFeatured={isFeatured}
-      >
-        <InnerWrapper>
-          <Left>
-            <Thumb src={"images/" + img} alt={alt} />
-          </Left>
-          <Right>
-            <Title>
-              {title}
-              <Tags isFeatured={isFeatured}>
-                {" "}
-                / {this.props.tags.join(" / ")}
-              </Tags>
-            </Title>
-            <Copy>{desc}</Copy>
-            <Link href={url}>See it on {source}.</Link>
-          </Right>
-        </InnerWrapper>
-      </WorkItemWrapper>
-    )
-  }
+export const WorkItem = ({
+  title,
+  desc,
+  url,
+  img,
+  source,
+  alt = title,
+  tags,
+  isFeatured,
+}: Props) => {
+  return (
+    <WorkItemWrapper isFeatured={isFeatured}>
+      <InnerWrapper>
+        <Left>
+          <Thumb src={"images/" + img} alt={alt} />
+        </Left>
+        <Right>
+          <Title>
+            {title}
+            <Tags isFeatured={isFeatured}> / {tags.join(" / ")}</Tags>
+          </Title>
+          <Copy>{desc}</Copy>
+          <Link href={url}>See it on {source}.</Link>
+        </Right>
+      </InnerWrapper>
+    </WorkItemWrapper>
+  )
 }
 
 const halfSize = `
@@ -87,9 +61,6 @@ const fullSize = `
 `
 
 interface WorkItemWrapperProps {
-  onMouseEnter: () => unknown
-  onMouseLeave: () => unknown
-  hovered: boolean
   isFeatured?: boolean
 }
 
