@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useCallback } from "react"
 import styled from "@emotion/styled"
-import { margin } from "../../globals/sizes"
-import { bodyCopy } from "../../globals/fonts"
+import { margin } from "../../utils/sizes"
+import { bodyCopy } from "../../utils/fonts"
+import { shuffle } from "../../utils/shuffle"
 
 interface Props {
   skills: string[]
@@ -11,26 +12,6 @@ interface Props {
 const keystrokeLength = 50
 
 const wordLength = 2000
-
-const shuffle = function shuffle(array: any[]) {
-  let counter = array.length
-
-  // While there are elements in the array
-  while (counter > 0) {
-    // Pick a random index
-    const index = Math.floor(Math.random() * counter)
-
-    // Decrease counter by 1
-    counter--
-
-    // And swap the last element with it
-    const temp = array[counter]
-    array[counter] = array[index]
-    array[index] = temp
-  }
-
-  return array
-}
 
 export const SkillsSwapper = ({ copy, skills }: Props) => {
   const [{ skillsRandomized, currentSkill }, setState] = useState(() => {

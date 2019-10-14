@@ -7,9 +7,9 @@ import {
   secondary,
   lightGrey,
   darkBackground,
-} from "../../globals/colors"
-import { bodyCopy } from "../../globals/fonts"
-import { margin, smallUpQuery, darkModeQuery } from "../../globals/sizes"
+} from "../../utils/colors"
+import { bodyCopy } from "../../utils/fonts"
+import { margin, smallUpQuery, darkModeQuery } from "../../utils/sizes"
 
 interface Props {
   title: string

@@ -6,14 +6,14 @@ import {
   maxWidth,
   smallUpQuery,
   darkModeQuery,
-} from "../../globals/sizes"
+} from "../../utils/sizes"
 import {
   primary,
   secondary,
   primaryDark,
   darkLighterBackground,
-} from "../../globals/colors"
-import { sectionTitle } from "../../globals/fonts"
+} from "../../utils/colors"
+import { sectionTitle } from "../../utils/fonts"
 
 const workItems = [
   {

@@ -2,8 +2,8 @@ import React from "react"
 import styled from "@emotion/styled"
 import { SkillsSwapper } from "../SkillsSwapper"
 import { HighlightLinks } from "../HighlightLinks"
-import { margin, maxWidth } from "../../globals/sizes"
-import { sectionTitle } from "../../globals/fonts"
+import { margin, maxWidth } from "../../utils/sizes"
+import { sectionTitle } from "../../utils/fonts"
 
 const skills = [
   "React",

@@ -6,10 +6,10 @@ import { AboutMe } from "../AboutMe"
 import { MyWork } from "../MyWork"
 import { FindMe } from "../FindMe"
 import { Footer } from "../Footer"
-import { fontFamily } from "../../globals/fonts"
+import { fontFamily } from "../../utils/fonts"
 import "../../vendor/normalize.css"
-import { darkModeQuery } from "../../globals/sizes"
-import { darkBackground, white, black } from "../../globals/colors"
+import { darkModeQuery } from "../../utils/sizes"
+import { darkBackground, white, black } from "../../utils/colors"
 
 export const App = () => (
   <Container>

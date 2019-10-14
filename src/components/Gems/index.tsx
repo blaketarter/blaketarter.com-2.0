@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useCallback } from "react"
 import styled from "@emotion/styled"
-import { start } from "../../services/gems"
-import { smallUp } from "../../globals/sizes"
+import { start } from "../../vendor/gems"
+import { smallUp } from "../../utils/sizes"
 
 export const Gems = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null)

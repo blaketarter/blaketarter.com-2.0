@@ -6,9 +6,9 @@ import {
   smallUpQuery,
   maxWidth,
   darkModeQuery,
-} from "../../globals/sizes"
+} from "../../utils/sizes"
 import { NavBarLink } from "../NavBarLink"
-import { white } from "../../globals/colors"
+import { white } from "../../utils/colors"
 
 const navItems = [
   {
