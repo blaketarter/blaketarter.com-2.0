@@ -1,59 +1,16 @@
-import React, { useState, useEffect, useCallback } from "react"
+import React from "react"
 import styled from "@emotion/styled"
 import { margin } from "../../utils/sizes"
 import { bodyCopy } from "../../utils/fonts"
-import { shuffle } from "../../utils/shuffle"
+import { useSkillsSwapper } from "../../utils/useSkillsSwapper"
 
 interface Props {
   skills: string[]
   copy: string
 }
 
-const keystrokeLength = 50
-
-const wordLength = 2000
-
 export const SkillsSwapper = ({ copy, skills }: Props) => {
-  const [{ skillsRandomized, currentSkill }, setState] = useState(() => {
-    const skillsRandomized = shuffle(skills)
-    return {
-      skillsRandomized,
-      currentSkill: skillsRandomized[0],
-    }
-  })
-
-  const deleteLetterOrWord = useCallback(() => {
-    const mode = skillsRandomized[0].length ? "letter" : "word"
-    switch (mode) {
-      case "word":
-        setTimeout(() => {
-          const firstWord = skillsRandomized[1]
-
-          setState({
-            skillsRandomized: [
-              firstWord,
-              ...skillsRandomized.slice(2),
-              currentSkill,
-            ],
-            currentSkill: firstWord,
-          })
-        }, wordLength)
-        break
-      case "letter":
-        setTimeout(() => {
-          const firstWord = skillsRandomized[0].substring(1)
-
-          setState({
-            skillsRandomized: [firstWord, ...skillsRandomized.slice(1)],
-            currentSkill,
-          })
-        }, keystrokeLength)
-    }
-  }, [skillsRandomized, currentSkill])
-
-  useEffect(() => {
-    window.requestAnimationFrame(deleteLetterOrWord)
-  }, [deleteLetterOrWord])
+  const { skillsRandomized } = useSkillsSwapper(skills)
 
   const skillsList = skillsRandomized.map((skill, index) => (
     <SkillItem index={index} key={index} length={skill.length}>
