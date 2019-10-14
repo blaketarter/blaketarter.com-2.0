@@ -12,6 +12,11 @@
     "smoothscroll-polyfill": "^0.4.4"
   },
   "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@storybook/addon-actions": "^5.2.3",
+    "@storybook/addon-links": "^5.2.3",
+    "@storybook/addons": "^5.2.3",
+    "@storybook/react": "^5.2.3",
     "@testing-library/react": "^9.3.0",
     "@types/jest": "^24.0.18",
     "@types/react": "^16.9.5",
@@ -19,10 +24,12 @@
     "@types/smoothscroll-polyfill": "^0.3.1",
     "@typescript-eslint/eslint-plugin": "^2.3.3",
     "@typescript-eslint/parser": "^2.3.3",
+    "babel-loader": "^8.0.6",
     "eslint-config-prettier": "^6.4.0",
     "eslint-config-react": "^1.1.7",
     "eslint-plugin-prettier": "^3.1.1",
     "husky": "^3.0.9",
+    "loki": "^0.18.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.18.2",
     "react-scripts": "^3.2.0",
@@ -38,7 +45,10 @@
     "eject": "react-scripts eject",
     "optimize": "node ./node_modules/sw-precache/cli.js --root='build/' --static-file-globs='build/**/!(*map*|*CNAME*)'",
     "deploy": "npm run build && GIT_DEPLOY_DIR=build ./deploy.sh",
-    "ci": "CI=true run-s lint test build"
+    "ci": "CI=true run-s lint test build",
+    "storybook": "NODE_ENV=test start-storybook -s ./public -p 6006",
+    "build-storybook": "build-storybook",
+    "loki": "NODE_ENV=test loki test --port 6006"
   },
   "husky": {
     "hooks": {
@@ -56,5 +66,32 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "!node_modules",
+      "!src/**/(stories).{ts,tsx}",
+      "!src/index.tsx",
+      "!src/serviceWorker.ts",
+      "!src/**/(test).{ts,tsx}",
+      "!**/*.d.ts",
+      "src/**/*.{ts,tsx}"
+    ]
+  },
+  "loki": {
+    "requireReference": true,
+    "configurations": {
+      "chrome.laptop": {
+        "target": "chrome.docker",
+        "width": 1366,
+        "height": 768,
+        "deviceScaleFactor": 1,
+        "mobile": false
+      },
+      "chrome.iphone7": {
+        "target": "chrome.docker",
+        "preset": "iPhone 7"
+      }
+    }
   }
 }

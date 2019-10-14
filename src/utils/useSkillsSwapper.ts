@@ -45,7 +45,9 @@ export const useSkillsSwapper = (
   }, [skillsRandomized, currentSkill])
 
   useEffect(() => {
-    const id = window.requestAnimationFrame(deleteLetterOrWord)
+    const id = window.requestAnimationFrame(
+      process.env.NODE_ENV !== "test" ? deleteLetterOrWord : () => {},
+    )
 
     return () => window.cancelAnimationFrame(id)
   }, [deleteLetterOrWord])

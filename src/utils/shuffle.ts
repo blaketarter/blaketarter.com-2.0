@@ -1,4 +1,8 @@
 export const shuffle = function shuffle<T>(array: Array<T>) {
+  if (process.env.NODE_ENV === "test") {
+    return array
+  }
+
   let counter = array.length
   // While there are elements in the array
   while (counter > 0) {
