@@ -10,7 +10,9 @@ export const Gems = () => {
 
   const onLoad = useCallback(() => {
     const isMobile = window.innerWidth < smallUp
-    start(canvasRef.current, isMobile)
+    if (canvasRef.current) {
+      start(canvasRef.current, isMobile)
+    }
   }, [canvasRef])
 
   useEffect(() => {
@@ -21,6 +23,10 @@ export const Gems = () => {
     script.onload = onLoad
 
     document.body.appendChild(script)
+
+    return () => {
+      script.remove()
+    }
   }, [onLoad])
 
   return (
