@@ -1,45 +1,36 @@
-import React, { Component } from "react"
+import React, { useRef, useEffect, useCallback } from "react"
 import styled from "@emotion/styled"
-import { start } from "../../services/gems"
-import { smallUp } from "../../globals/sizes"
+import { start } from "../../vendor/gems"
+import { smallUp } from "../../utils/sizes"
 
-export class Gems extends Component<{}> {
-  canvasRef: HTMLCanvasElement | null
+export const Gems = () => {
+  const canvasRef = useRef<HTMLCanvasElement>(null)
 
-  constructor(props: {}) {
-    super(props)
-    this.canvasRef = null
-  }
+  const onLoad = useCallback(() => {
+    const isMobile = window.innerWidth < smallUp
+    start(canvasRef.current, isMobile)
+  }, [canvasRef])
 
-  onRef = (canvasEl: HTMLCanvasElement | null) => (this.canvasRef = canvasEl)
-
-  componentDidMount = () => {
+  useEffect(() => {
     const script = document.createElement("script")
 
     script.src = "/vendor/three.min.js"
     script.async = true
-    script.onload = this.onLoad
+    script.onload = onLoad
 
     document.body.appendChild(script)
-  }
+  }, [onLoad])
 
-  onLoad = () => {
-    const isMobile = window.innerWidth < smallUp
-    start(this.canvasRef, isMobile)
-  }
-
-  render() {
-    return (
-      <Wrapper>
-        <Canvas
-          ref={this.onRef}
-          id="gems-canvas"
-          role="img"
-          aria-label="falling gems in motion"
-        />
-      </Wrapper>
-    )
-  }
+  return (
+    <Wrapper>
+      <Canvas
+        ref={canvasRef}
+        id="gems-canvas"
+        role="img"
+        aria-label="falling gems in motion"
+      />
+    </Wrapper>
+  )
 }
 
 const Wrapper = styled("div")`

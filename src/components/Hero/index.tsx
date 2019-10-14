@@ -8,9 +8,9 @@ import {
   smallUpQuery,
   mobileSizeMod,
   darkModeQuery,
-} from "../../globals/sizes"
-import { primary, primaryDark, black, white } from "../../globals/colors"
-import { heroTitle, sectionTitle } from "../../globals/fonts"
+} from "../../utils/sizes"
+import { primary, primaryDark, black, white } from "../../utils/colors"
+import { heroTitle, sectionTitle } from "../../utils/fonts"
 import { Gems } from "../Gems"
 
 smoothscroll.polyfill()

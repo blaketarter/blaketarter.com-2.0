@@ -1,8 +1,8 @@
 import React, { MouseEvent } from "react"
 import styled from "@emotion/styled"
-import { black, white } from "../../globals/colors"
+import { black, white } from "../../utils/colors"
 import smoothscroll from "smoothscroll-polyfill"
-import { darkModeQuery } from "../../globals/sizes"
+import { darkModeQuery } from "../../utils/sizes"
 
 smoothscroll.polyfill()
 

@@ -5,9 +5,9 @@ import {
   maxWidth,
   mediumUpQuery,
   darkModeQuery,
-} from "../../globals/sizes"
-import { black, white } from "../../globals/colors"
-import { sectionTitle, largeCopy, bodyCopy } from "../../globals/fonts"
+} from "../../utils/sizes"
+import { black, white } from "../../utils/colors"
+import { sectionTitle, largeCopy, bodyCopy } from "../../utils/fonts"
 
 const links = [
   {
