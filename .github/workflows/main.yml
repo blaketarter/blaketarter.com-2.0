@@ -33,3 +33,16 @@ jobs:
         with:
           name: visual_tests
           path: .loki
+  build-and-deploy:
+    needs: [lint, test, visual]
+    runs-on: ubuntu-latest
+    if: github.ref == 'develop'
+    steps:
+    - uses: actions/checkout@master
+    - name: npm install, build, and deploy
+      uses: JamesIves/github-pages-deploy-action@master
+      env:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: build
+        BUILD_SCRIPT: npm install && npm run build
