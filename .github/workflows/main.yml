@@ -27,3 +27,9 @@ jobs:
         run: |
           npm install
           CI=true npm run visual
+      - name: upload visual test results
+        if: failure()
+        uses: actions/upload-artifact@v1
+        with:
+          name: visual_tests
+          path: .loki
