@@ -10,7 +10,7 @@ jobs:
     - name: npm install and lint
       run: |
         npm install
-        npm run lint
+        CI=true npm run lint
   test:
     runs-on: ubuntu-latest
     steps:
@@ -18,4 +18,4 @@ jobs:
     - name: npm install and test
       run: |
         npm install
-        npm test
+        CI=true npm test
