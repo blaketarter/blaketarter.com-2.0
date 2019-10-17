@@ -29,10 +29,11 @@
     "eslint-config-react": "^1.1.7",
     "eslint-plugin-prettier": "^3.1.1",
     "husky": "^3.0.9",
-    "loki": "^0.18.0",
+    "loki": "oblador/loki#dd8e2894e58eb2fd5cee1c20b3e773d724b659fa",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.18.2",
     "react-scripts": "^3.2.0",
+    "start-server-and-test": "^1.10.6",
     "sw-precache": "^5.2.1",
     "typescript": "^3.6.4"
   },
@@ -45,10 +46,12 @@
     "eject": "react-scripts eject",
     "optimize": "node ./node_modules/sw-precache/cli.js --root='build/' --static-file-globs='build/**/!(*map*|*CNAME*)'",
     "deploy": "npm run build && GIT_DEPLOY_DIR=build ./deploy.sh",
-    "ci": "CI=true run-s lint test build",
+    "ci": "CI=true run-s lint test visual build",
     "storybook": "NODE_ENV=test start-storybook -s ./public -p 6006",
-    "build-storybook": "build-storybook",
-    "loki": "NODE_ENV=test loki test --port 6006"
+    "storybook:ci": "NODE_ENV=test start-storybook -s ./public -p 5000 --ci",
+    "loki": "NODE_ENV=test loki test --port 6006",
+    "loki:ci": "NODE_ENV=test loki test --port 5000",
+    "visual": "CI=true start-server-and-test storybook:ci http://localhost:5000 loki:ci"
   },
   "husky": {
     "hooks": {
@@ -86,11 +89,13 @@
         "width": 1366,
         "height": 768,
         "deviceScaleFactor": 1,
-        "mobile": false
+        "mobile": false,
+        "disableAutomaticViewportHeight": true
       },
       "chrome.iphone7": {
         "target": "chrome.docker",
-        "preset": "iPhone 7"
+        "preset": "iPhone 7",
+        "disableAutomaticViewportHeight": true
       }
     }
   }

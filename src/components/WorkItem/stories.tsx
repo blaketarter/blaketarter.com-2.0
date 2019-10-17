@@ -8,7 +8,7 @@ export const renders = () => (
     title="Title"
     desc="Description"
     url="https://example.com"
-    img="foo"
+    img="fp.png"
     source="test"
     alt="alt text"
     tags={["tag1", "tag2"]}
