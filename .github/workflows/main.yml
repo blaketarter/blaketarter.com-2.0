@@ -36,7 +36,7 @@ jobs:
   debug:
     needs: [lint, test, visual]
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/debug-deploy-action'
+    if: github.ref == 'refs/heads/foo'
     steps:
       - name: debug action
         run: |
