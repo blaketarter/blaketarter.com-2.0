@@ -1,9 +1,14 @@
 export const fontFamily = "'Roboto', sans-serif"
 
-export const heroTitle = 62
-export const sectionTitle = 42
-export const largeCopy = 24
-export const bodyCopy = 18
-export const smallCopy = 14
+export const baseFontSize = "16px"
 
-export const bodyLineHeight = 1.5
+export const heroTitleFontSize = "4rem"
+export const heroTitleMobileFontSize = "2.625rem"
+
+export const sectionTitleFontSize = "2.625rem"
+export const sectionTitleMobileFontSize = "1.75rem"
+
+export const largeCopyFontSize = "1.5rem"
+
+export const bodyCopyFontSize = "1.125rem"
+export const bodyCopyLineHeight = "1.5rem"

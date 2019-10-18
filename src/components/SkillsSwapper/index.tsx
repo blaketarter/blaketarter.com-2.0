@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "@emotion/styled"
 import { margin } from "../../utils/sizes"
-import { bodyCopy } from "../../utils/fonts"
 import { useSkillsSwapper } from "../../utils/useSkillsSwapper"
 
 interface Props {
@@ -33,7 +32,7 @@ const SkillsWrapper = styled("div")`
 `
 
 const CopyWrapper = styled("div")`
-  font-size: ${bodyCopy * 1.5}px;
+  font-size: var(--large-copy-font-size);
   display: flex;
   flex-direction: row;
   justify-content: flex-start;

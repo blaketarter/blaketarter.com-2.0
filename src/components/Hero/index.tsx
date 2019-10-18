@@ -6,11 +6,9 @@ import {
   margin,
   maxWidth,
   smallUpQuery,
-  mobileSizeMod,
   darkModeQuery,
 } from "../../utils/sizes"
 import { primary, primaryDark, black, white } from "../../utils/colors"
-import { heroTitle, sectionTitle } from "../../utils/fonts"
 import { Gems } from "../Gems"
 
 smoothscroll.polyfill()
@@ -64,10 +62,10 @@ const Center = styled("div")`
 
 const Title = styled("h1")`
   color: ${black};
-  font-size: ${heroTitle * mobileSizeMod}px;
+  font-size: var(--hero-title-mobile-font-size);
 
   ${smallUpQuery} {
-    font-size: ${heroTitle}px;
+    font-size: var(--hero-title-font-size);
   }
 
   ${darkModeQuery} {
@@ -77,10 +75,10 @@ const Title = styled("h1")`
 
 const Subtitle = styled("p")`
   color: ${black};
-  font-size: ${sectionTitle * mobileSizeMod}px;
+  font-size: var(--section-title-mobile-font-size);
 
   ${smallUpQuery} {
-    font-size: ${sectionTitle}px;
+    font-size: var(--section-title-font-size);
   }
 
   ${darkModeQuery} {

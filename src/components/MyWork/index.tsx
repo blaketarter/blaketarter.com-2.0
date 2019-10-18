@@ -13,7 +13,6 @@ import {
   primaryDark,
   darkLighterBackground,
 } from "../../utils/colors"
-import { sectionTitle } from "../../utils/fonts"
 
 export const workItems = [
   {
@@ -144,7 +143,7 @@ const Clip = styled("div")`
 `
 
 const Title = styled("h2")`
-  font-size: ${sectionTitle}px;
+  font-size: var(--section-title-font-size);
   margin-left: ${margin}px;
 `
 

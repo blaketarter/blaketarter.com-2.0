@@ -8,7 +8,6 @@ import {
   lightGrey,
   darkBackground,
 } from "../../utils/colors"
-import { bodyCopy } from "../../utils/fonts"
 import { margin, smallUpQuery, darkModeQuery } from "../../utils/sizes"
 
 interface Props {
@@ -105,7 +104,7 @@ const InnerWrapper = styled("div")`
 `
 
 const Title = styled("h3")`
-  font-size: ${bodyCopy}px;
+  font-size: var(--body-copy-font-size);
   color: ${grey};
 
   ${darkModeQuery} {
@@ -114,7 +113,7 @@ const Title = styled("h3")`
 `
 
 const Copy = styled("p")`
-  font-size: ${bodyCopy}px;
+  font-size: var(--body-copy-font-size);
   position: relative;
 `
 
