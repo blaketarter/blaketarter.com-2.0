@@ -38,7 +38,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: debug action
-        run: echo 'hello world'
+        run: |
+          echo 'hello world'
+          echo ${{ github.ref }}
   build-and-deploy:
     needs: [lint, test, visual]
     runs-on: ubuntu-latest
