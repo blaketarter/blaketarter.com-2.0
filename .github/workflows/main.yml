@@ -33,6 +33,12 @@ jobs:
         with:
           name: visual_tests
           path: .loki
+  debug:
+    needs: [lint, test, visual]
+    runs-on: ubuntu-latest
+    steps:
+      - name: debug action
+        run: echo 'hello world'
   build-and-deploy:
     needs: [lint, test, visual]
     runs-on: ubuntu-latest
