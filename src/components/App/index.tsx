@@ -31,6 +31,7 @@ const Container = styled("div")`
   max-width: 100%;
   font-family: var(--font-family);
   color: ${black};
+  background: ${white};
 
   ${darkModeQuery} {
     background: ${darkBackground};
