@@ -41,7 +41,7 @@ export const Navbar = () => (
 )
 
 const NavbarWrapper = styled("nav")`
-  height: ${navbarHeight}px;
+  height: ${navbarHeight};
   width: 100%;
   display: flex;
   flex-direction: row;

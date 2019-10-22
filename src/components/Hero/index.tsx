@@ -27,7 +27,7 @@ export const Hero = () => (
 )
 
 const HeroWrapper = styled("section")`
-  height: ${heroHeight}vh;
+  height: ${heroHeight};
   position: relative;
   width: 100%;
   width: 100vw;
