@@ -1,8 +1,8 @@
 import React from "react"
 import styled from "@emotion/styled"
 import smoothscroll from "smoothscroll-polyfill"
-import { margin, maxWidth, darkModeQuery } from "../../utils/sizes"
-import { black, primary, white } from "../../utils/colors"
+import { margin, maxWidth } from "../../utils/sizes"
+import { primary } from "../../utils/colors"
 import { backToTop } from "../../utils/backToTop"
 
 smoothscroll.polyfill()
@@ -30,11 +30,7 @@ const FooterWrapper = styled("section")`
 const Copyright = styled("p")`
   margin: 0;
   padding: 0;
-  color: ${black};
-
-  ${darkModeQuery} {
-    color: ${white};
-  }
+  color: var(--font-color);
 `
 
 const ToTop = styled("a")`

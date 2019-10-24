@@ -3,7 +3,6 @@ import styled from "@emotion/styled"
 import { SkillsSwapper } from "../SkillsSwapper"
 import { HighlightLinks } from "../HighlightLinks"
 import { margin, maxWidth } from "../../utils/sizes"
-import { sectionTitle } from "../../utils/fonts"
 
 const skills = [
   "React",
@@ -49,5 +48,5 @@ const AboutMeWrapper = styled("section")`
 `
 
 const Title = styled("h2")`
-  font-size: ${sectionTitle}px;
+  font-size: var(--section-title-font-size);
 `

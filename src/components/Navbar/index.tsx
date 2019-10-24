@@ -1,14 +1,8 @@
 import React from "react"
 import styled from "@emotion/styled"
-import {
-  navbarHeight,
-  margin,
-  smallUpQuery,
-  maxWidth,
-  darkModeQuery,
-} from "../../utils/sizes"
+import { navbarHeight, margin, smallUpQuery, maxWidth } from "../../utils/sizes"
 import { NavBarLink } from "../NavBarLink"
-import { white } from "../../utils/colors"
+import { ThemeModeSwitcher } from "../ThemeModeSwitcher"
 
 export const navItems = [
   {
@@ -25,23 +19,26 @@ export const navItems = [
   },
 ]
 
-export const Navbar = () => (
-  <NavbarWrapper id="top">
-    <NavbarCenter>
-      <LogoWrapper>blaketarter</LogoWrapper>
-      <NavBarInnerWrapper>
-        {navItems.map(item => (
-          <NavBarItemWrapper key={item.href}>
-            <NavBarLink href={item.href} text={item.text} />
-          </NavBarItemWrapper>
-        ))}
-      </NavBarInnerWrapper>
-    </NavbarCenter>
-  </NavbarWrapper>
-)
+export const Navbar = () => {
+  return (
+    <NavbarWrapper id="top">
+      <NavbarCenter>
+        <LogoWrapper tabIndex={0}>blaketarter</LogoWrapper>
+        <NavBarInnerWrapper>
+          {navItems.map(item => (
+            <NavBarItemWrapper key={item.href}>
+              <NavBarLink href={item.href} text={item.text} />
+            </NavBarItemWrapper>
+          ))}
+        </NavBarInnerWrapper>
+      </NavbarCenter>
+      <ThemeModeSwitcher />
+    </NavbarWrapper>
+  )
+}
 
 const NavbarWrapper = styled("nav")`
-  height: ${navbarHeight}px;
+  height: ${navbarHeight};
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -65,10 +62,7 @@ const NavbarCenter = styled("div")`
 const LogoWrapper = styled("a")`
   font-size: 35px;
   margin-left: ${margin}px;
-
-  ${darkModeQuery} {
-    color: ${white};
-  }
+  color: var(--logo-font-color);
 `
 
 const NavBarInnerWrapper = styled("ul")`

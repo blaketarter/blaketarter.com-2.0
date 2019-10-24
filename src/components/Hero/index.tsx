@@ -1,16 +1,8 @@
 import React from "react"
 import styled from "@emotion/styled"
 import smoothscroll from "smoothscroll-polyfill"
-import {
-  heroHeight,
-  margin,
-  maxWidth,
-  smallUpQuery,
-  mobileSizeMod,
-  darkModeQuery,
-} from "../../utils/sizes"
-import { primary, primaryDark, black, white } from "../../utils/colors"
-import { heroTitle, sectionTitle } from "../../utils/fonts"
+import { heroHeight, margin, maxWidth, smallUpQuery } from "../../utils/sizes"
+import { primary, primaryDark } from "../../utils/colors"
 import { Gems } from "../Gems"
 
 smoothscroll.polyfill()
@@ -29,7 +21,7 @@ export const Hero = () => (
 )
 
 const HeroWrapper = styled("section")`
-  height: ${heroHeight}vh;
+  height: ${heroHeight};
   position: relative;
   width: 100%;
   width: 100vw;
@@ -43,14 +35,10 @@ const ClipWrapper = styled("div")`
   justify-content: center;
   height: 100%;
   width: 100%;
-  background-color: #f7c284;
+  background-color: var(--hero-background-color);
   position: relative;
   clip-path: polygon(100% 0, 100% 0, 100% 93%, 0 100%, 0 0);
   -webkit-clip-path: polygon(100% 0, 100% 0, 100% 93%, 0 100%, 0 0);
-
-  ${darkModeQuery} {
-    background-color: #19191d;
-  }
 `
 
 const Center = styled("div")`
@@ -63,28 +51,20 @@ const Center = styled("div")`
 `
 
 const Title = styled("h1")`
-  color: ${black};
-  font-size: ${heroTitle * mobileSizeMod}px;
+  color: var(--font-color);
+  font-size: var(--hero-title-mobile-font-size);
 
   ${smallUpQuery} {
-    font-size: ${heroTitle}px;
-  }
-
-  ${darkModeQuery} {
-    color: ${white};
+    font-size: var(--hero-title-font-size);
   }
 `
 
 const Subtitle = styled("p")`
-  color: ${black};
-  font-size: ${sectionTitle * mobileSizeMod}px;
+  color: var(--font-color);
+  font-size: var(--section-title-mobile-font-size);
 
   ${smallUpQuery} {
-    font-size: ${sectionTitle}px;
-  }
-
-  ${darkModeQuery} {
-    color: ${white};
+    font-size: var(--section-title-font-size);
   }
 `
 
@@ -97,8 +77,5 @@ const Polygon = styled("div")`
   background: linear-gradient(to right, ${primaryDark} 0%, ${primary} 100%);
   transform: translateX(-5vw) rotate(1deg);
   transform-origin: bottom right;
-
-  ${darkModeQuery} {
-    opacity: 0.5;
-  }
+  opacity: var(--polygon-opacity);
 `

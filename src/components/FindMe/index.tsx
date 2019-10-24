@@ -1,13 +1,6 @@
 import React from "react"
 import styled from "@emotion/styled"
-import {
-  margin,
-  maxWidth,
-  mediumUpQuery,
-  darkModeQuery,
-} from "../../utils/sizes"
-import { black, white } from "../../utils/colors"
-import { sectionTitle, largeCopy, bodyCopy } from "../../utils/fonts"
+import { margin, maxWidth, mediumUpQuery } from "../../utils/sizes"
 
 export const links = [
   {
@@ -63,20 +56,20 @@ const MoreAboutMeWrapper = styled("footer")`
 `
 
 const Title = styled("h2")`
-  font-size: ${sectionTitle}px;
+  font-size: var(--section-title-font-size);
 `
 
 const Label = styled("label")`
-  font-size: ${largeCopy}px;
+  font-size: var(--large-copy-font-size);
   font-weight: 700;
   display: block;
   margin: ${margin}px 0;
 `
 
 const Link = styled("a")`
-  font-size: ${bodyCopy}px;
+  font-size: var(--body-copy-font-size);
   font-weight: normal;
-  color: ${black};
+  color: var(--font-color);
   display: block;
   width: 100%;
   word-break: break-all;
@@ -84,9 +77,5 @@ const Link = styled("a")`
   ${mediumUpQuery} {
     margin-left: ${margin / 3}px;
     display: initial;
-  }
-
-  ${darkModeQuery} {
-    color: ${white};
   }
 `
