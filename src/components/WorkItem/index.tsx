@@ -1,14 +1,8 @@
 import React from "react"
 import styled from "@emotion/styled"
 import { Link } from "../Link"
-import {
-  white,
-  grey,
-  secondary,
-  lightGrey,
-  darkBackground,
-} from "../../utils/colors"
-import { margin, smallUpQuery, darkModeQuery } from "../../utils/sizes"
+import { secondary, lightGrey } from "../../utils/colors"
+import { margin, smallUpQuery } from "../../utils/sizes"
 
 interface Props {
   title: string
@@ -65,7 +59,7 @@ interface WorkItemWrapperProps {
 
 const WorkItemWrapper = styled("li")<WorkItemWrapperProps>`
   position: relative;
-  background: ${white};
+  background: var(--background-color);
   list-style: none;
   margin: ${margin}px;
   padding: ${margin}px;
@@ -77,18 +71,12 @@ const WorkItemWrapper = styled("li")<WorkItemWrapperProps>`
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
   }
 
-  ${darkModeQuery} {
-    background: ${darkBackground};
-  }
-
   ${smallUpQuery} {
     ${props => (props.isFeatured ? fullSize : halfSize)};
-    background: ${props => (props.isFeatured ? white : "transparent")};
-
-    ${darkModeQuery} {
-      background: ${props =>
-        props.isFeatured ? darkBackground : "transparent"};
-    }
+    background: ${props =>
+      props.isFeatured
+        ? "var(--featured-item-background-color)"
+        : "transparent"};
   }
 `
 
@@ -105,11 +93,7 @@ const InnerWrapper = styled("div")`
 
 const Title = styled("h3")`
   font-size: var(--body-copy-font-size);
-  color: ${grey};
-
-  ${darkModeQuery} {
-    color: ${white};
-  }
+  color: var(--font-color);
 `
 
 const Copy = styled("p")`

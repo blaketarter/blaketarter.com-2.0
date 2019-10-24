@@ -1,8 +1,6 @@
 import React, { MouseEvent } from "react"
 import styled from "@emotion/styled"
-import { black, white } from "../../utils/colors"
 import smoothscroll from "smoothscroll-polyfill"
-import { darkModeQuery } from "../../utils/sizes"
 
 smoothscroll.polyfill()
 
@@ -34,9 +32,5 @@ export const NavBarLink = ({ href, text }: Props) => (
 
 const NavBarLinkWrapper = styled("a")`
   text-decoration: none;
-  color: ${black};
-
-  ${darkModeQuery} {
-    color: ${white};
-  }
+  color: var(--font-color);
 `

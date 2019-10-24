@@ -1,18 +1,8 @@
 import React from "react"
 import styled from "@emotion/styled"
 import { WorkItem } from "../WorkItem"
-import {
-  margin,
-  maxWidth,
-  smallUpQuery,
-  darkModeQuery,
-} from "../../utils/sizes"
-import {
-  primary,
-  secondary,
-  primaryDark,
-  darkLighterBackground,
-} from "../../utils/colors"
+import { margin, maxWidth, smallUpQuery } from "../../utils/sizes"
+import { primary, primaryDark } from "../../utils/colors"
 
 export const workItems = [
   {
@@ -127,7 +117,7 @@ const WorksWrapper = styled("section")`
 `
 
 const Clip = styled("div")`
-  background: ${secondary};
+  background: var(--secondary-background-color);
   clip-path: polygon(0 0, 100% 2%, 100% 100%, 0 98%);
   -webkit-clip-path: polygon(0 0, 100% 2%, 100% 100%, 0 98%);
   padding: ${3 * margin}px 0;
@@ -135,10 +125,6 @@ const Clip = styled("div")`
   ${smallUpQuery} {
     clip-path: polygon(0 0, 100% 7%, 100% 100%, 0 93%);
     -webkit-clip-path: polygon(0 0, 100% 7%, 100% 100%, 0 93%);
-  }
-
-  ${darkModeQuery} {
-    background: ${darkLighterBackground};
   }
 `
 
@@ -156,10 +142,7 @@ const Polygon1 = styled("div")`
   background: linear-gradient(to right, ${primaryDark} 0%, ${primary} 100%);
   transform: translateX(-5vw) rotate(-1deg);
   transform-origin: top right;
-
-  ${darkModeQuery} {
-    opacity: 0.5;
-  }
+  opacity: var(--polygon-opacity);
 `
 
 const Polygon2 = styled("div")`
@@ -171,10 +154,7 @@ const Polygon2 = styled("div")`
   background: linear-gradient(to left, ${primaryDark} 0%, ${primary} 100%);
   transform: translateX(-5vw) rotate(-1deg);
   transform-origin: bottom left;
-
-  ${darkModeQuery} {
-    opacity: 0.5;
-  }
+  opacity: var(--polygon-opacity);
 `
 
 const InnerWrapper = styled("div")`

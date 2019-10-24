@@ -12,8 +12,11 @@ let ambient
 
 const colorSchemeMedia = window.matchMedia("(prefers-color-scheme: dark)")
 
-function setFogColor() {
+export function setFogColor(force) {
   FOG_COLOR = colorSchemeMedia.matches ? 0x19191d : 0xf7c284
+  if (force) {
+    FOG_COLOR = force === "dark" ? 0x19191d : 0xf7c284
+  }
   scene.fog = new window.THREE.FogExp2(FOG_COLOR, 0.002)
   renderer.setClearColor(scene.fog.color)
 }
@@ -29,10 +32,6 @@ const AMBIENT_COLOR = 0x536dfe
 const DIRECTIONAL_COLOR_1 = 0x607d8b
 const DIRECTIONAL_COLOR_2 = 0xffa000
 let FOG_COLOR = colorSchemeMedia.matches ? 0x19191d : 0xf7c284
-
-if (colorSchemeMedia.addEventListener) {
-  colorSchemeMedia.addEventListener("change", setFogColor)
-}
 
 // const TRIANGLE_COUNT = 500;
 const TRIANGLE_COUNT = 100
