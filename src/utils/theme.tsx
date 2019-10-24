@@ -95,10 +95,17 @@ export const ThemeContext = createContext<ThemeState>({
   rootCss: lightModeTheme,
 })
 
-export const ThemeProvider: FC = ({ children }) => {
-  const persistedMode = useRef<themeMode | null>(localStorage.getItem(
-    "mode",
-  ) as themeMode | null)
+export const ThemeProvider: FC<{
+  defaultMode?: themeMode
+  persist?: boolean
+}> = ({ children, defaultMode, persist = true }) => {
+  const persistedMode = useRef<themeMode | null>(
+    defaultMode
+      ? defaultMode
+      : persist
+      ? (localStorage.getItem("mode") as themeMode | null)
+      : null,
+  )
   const [mode, setMode] = useState<themeMode>(
     persistedMode.current
       ? persistedMode.current
@@ -109,10 +116,12 @@ export const ThemeProvider: FC = ({ children }) => {
 
   const setModeWithPersist = useCallback(
     (mode: themeMode) => {
-      localStorage.setItem("mode", mode)
+      if (persist) {
+        localStorage.setItem("mode", mode)
+      }
       setMode(mode)
     },
-    [setMode],
+    [persist],
   )
 
   useEffect(() => {

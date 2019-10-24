@@ -11,10 +11,21 @@ export const ThemeModeSwitcher = () => {
       <ThemeModeButton
         active={mode === "light"}
         onClick={() => setMode("light")}
+        role="checkbox"
+        tabIndex={0}
+        aria-label="enable light mode"
+        aria-checked={mode === "light"}
       >
         <SunSVG fill={mode === "light"} />
       </ThemeModeButton>
-      <ThemeModeButton active={mode === "dark"} onClick={() => setMode("dark")}>
+      <ThemeModeButton
+        active={mode === "dark"}
+        onClick={() => setMode("dark")}
+        role="checkbox"
+        tabIndex={0}
+        aria-label="enable dark mode"
+        aria-checked={mode === "dark"}
+      >
         <MoonSVG fill={mode === "dark"} />
       </ThemeModeButton>
     </Container>

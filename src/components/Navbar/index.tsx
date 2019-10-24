@@ -23,7 +23,7 @@ export const Navbar = () => {
   return (
     <NavbarWrapper id="top">
       <NavbarCenter>
-        <LogoWrapper>blaketarter</LogoWrapper>
+        <LogoWrapper tabIndex={0}>blaketarter</LogoWrapper>
         <NavBarInnerWrapper>
           {navItems.map(item => (
             <NavBarItemWrapper key={item.href}>

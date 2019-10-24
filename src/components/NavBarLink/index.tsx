@@ -25,7 +25,7 @@ const onClick = (e: MouseEvent<HTMLAnchorElement>, href: string) => {
 }
 
 export const NavBarLink = ({ href, text }: Props) => (
-  <NavBarLinkWrapper href={href} onClick={e => onClick(e, href)}>
+  <NavBarLinkWrapper href={href} onClick={e => onClick(e, href)} tabIndex={0}>
     {text}
   </NavBarLinkWrapper>
 )

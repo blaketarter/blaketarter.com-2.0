@@ -7,22 +7,17 @@ import { MyWork } from "../MyWork"
 import { FindMe } from "../FindMe"
 import { Footer } from "../Footer"
 import "../../vendor/normalize.css"
-import { GlobalStyles } from "../GlobalStyles"
-import { ThemeProvider } from "../../utils/theme"
 
 export const App = () => {
   return (
-    <ThemeProvider>
-      <GlobalStyles />
-      <Container>
-        <Navbar />
-        <Hero />
-        <AboutMe />
-        <MyWork />
-        <FindMe />
-        <Footer />
-      </Container>
-    </ThemeProvider>
+    <Container>
+      <Navbar />
+      <Hero />
+      <AboutMe />
+      <MyWork />
+      <FindMe />
+      <Footer />
+    </Container>
   )
 }
 
