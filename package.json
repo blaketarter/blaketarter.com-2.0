@@ -46,12 +46,13 @@
     "eject": "react-scripts eject",
     "optimize": "node ./node_modules/sw-precache/cli.js --root='build/' --static-file-globs='build/**/!(*map*|*CNAME*)'",
     "deploy": "npm run build && GIT_DEPLOY_DIR=build ./deploy.sh",
-    "ci": "CI=true run-s lint test visual build",
+    "ci": "CI=true run-s lint typecheck test visual build",
     "storybook": "NODE_ENV=test start-storybook -s ./public -p 6006",
     "storybook:ci": "NODE_ENV=test start-storybook -s ./public -p 5000 --ci",
     "loki": "NODE_ENV=test loki test --port 6006",
     "loki:ci": "NODE_ENV=test loki test --port 5000",
-    "visual": "CI=true start-server-and-test storybook:ci http://localhost:5000 loki:ci"
+    "visual": "CI=true start-server-and-test storybook:ci http://localhost:5000 loki:ci",
+    "typecheck": "tsc"
   },
   "husky": {
     "hooks": {
